@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_C_full",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_C_full-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 1,
+      "reason": "仅为生成计划，未落实5-8章SHALL要求"
+    },
+    "可操作性": {
+      "score": 1,
+      "reason": "无检查项目、责任人、时限及输出表单"
+    },
+    "内部一致性": {
+      "score": 2,
+      "reason": "列项基本自洽，但CFG-04引用未展开"
+    },
+    "PDCA闭环": {
+      "score": 1,
+      "reason": "仅说明拟编制步骤，无整改验证闭环"
+    },
+    "专业深度": {
+      "score": 1,
+      "reason": "内容通用，缺少医学实验室专业审查要点"
+    }
+  }
+}

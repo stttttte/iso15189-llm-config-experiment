@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H3_skeleton",
+  "task": "C1",
+  "rep": 1,
+  "file": "gpt4o_H3_skeleton-C1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键缺口较全，但条款对应不够系统"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，含时限与输出方向"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构完整，问题分级与结论基本一致"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、验证，闭环较完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、L-J图、PT/EQA等专业细节"
+    }
+  }
+}

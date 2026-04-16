@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "C1",
+  "rep": 2,
+  "file": "H2_keep_examples-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "能识别关键缺口，但未系统映射全部SHALL。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改要求较具体，但责任岗位与时限不全。"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构较清晰，引用较闭环，少量表单悬空。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含整改、验证与再审核，改进链条基本完整。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、不确定度、EQA/PT等专业细节。"
+    }
+  }
+}

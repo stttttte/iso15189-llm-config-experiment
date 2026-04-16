@@ -1,0 +1,29 @@
+{
+  "group": "A_bare",
+  "task": "C4",
+  "rep": 2,
+  "file": "A_bare-C4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖IQC、EQA、MU主要求，定性项目缺失"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有频次时限，但岗位职责与表单节点不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "主要引用闭环，ANA-005不确定度衔接偏弱"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有目标、执行、失控处理和复审，改进机制略粗"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、L-J图、MU、EQA/PT等专业内容"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "C2",
+  "rep": 3,
+  "file": "F_template-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖多项关键条款，但缺人员职责落实"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改要求较具体，但岗位时限表单未全闭环"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "有交叉引用，但部分文件表单悬空未定义"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、纠正、验证思路，改进链条较完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、ISE、基线、线性等专业细节"
+    }
+  }
+}

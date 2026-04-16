@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B4",
+  "rep": 3,
+  "file": "G_template_rules-B4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖8.9主要输入，缺投诉等要素"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任时限较清楚，表单输出明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "表单清单基本闭环，少量引用偏悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有执行跟踪与改进计划，效果验证偏弱"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "有LIS、EQA、LJ图等，细节仍偏通用"
+    }
+  }
+}

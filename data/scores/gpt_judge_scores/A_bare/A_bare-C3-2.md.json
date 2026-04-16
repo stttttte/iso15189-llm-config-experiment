@@ -1,0 +1,29 @@
+{
+  "group": "A_bare",
+  "task": "C3",
+  "rep": 2,
+  "file": "A_bare-C3-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "识别缺口较准，但8.3等条款遗漏明显"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改时限和文件编号明确，执行细节略粗"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "能发现引用错误，但清单与NON-001表述矛盾"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有整改计划和验证安排，缺效果评价细则"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、Delta、FMEA等，专业性较强"
+    }
+  }
+}

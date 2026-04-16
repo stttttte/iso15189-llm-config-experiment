@@ -1,0 +1,29 @@
+{
+  "group": "B_simple",
+  "task": "C2",
+  "rep": 2,
+  "file": "B_simple-C2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "紧扣关键SHALL，覆盖较全但未全面展开"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，责任与时限部分明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "条款、缺陷、结论基本闭环，无明显冲突"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、时限与再提交，改进链较完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、HIL、参考区间等专业细节"
+    }
+  }
+}

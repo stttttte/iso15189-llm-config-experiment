@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "B2",
+  "rep": 3,
+  "file": "F_template-B2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "基本覆盖7.3.7各项要求，少数替代方案要求偏弱"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "检查点较具体，但缺责任岗位、时限和表单编号"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多处提程序和记录表，但未列受控文件清单"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划执行检查改进要素，整改验证机制较简略"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、Sigma、EQA偏倚、TEa及POCT比对"
+    }
+  }
+}

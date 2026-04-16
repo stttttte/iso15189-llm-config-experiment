@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A4",
+  "rep": 3,
+  "file": "G_template_rules-A4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 5,
+      "reason": "8.9输入输出及跟踪要求覆盖完整"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责时限明确，但缺表单编号支撑"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "章节号与8.9/8.4并存，引用略混乱"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "计划、执行、验证、改进及再输入完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、EQA、危急值等专业内容"
+    }
+  }
+}

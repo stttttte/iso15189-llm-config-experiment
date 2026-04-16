@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A2",
+  "rep": 2,
+  "file": "G_template_rules-A2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 5,
+      "reason": "6.4各项要求基本均转化为落实措施"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、判定和表单编号均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，个别预案/规程未列编号"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划、执行、评估、纠正与效果验证"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、TEa、PCR、冷链等专业细节"
+    }
+  }
+}

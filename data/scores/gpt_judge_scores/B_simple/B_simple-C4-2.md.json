@@ -1,0 +1,29 @@
+{
+  "group": "B_simple",
+  "task": "C4",
+  "rep": 2,
+  "file": "B_simple-C4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖IQC、EQA/PT、MU，定性项目缺失"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有频次时限，但岗位、表单编号不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "章节衔接较好，部分关联文件待同步"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有监测、处置、评估，改进验证略简"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、L-J、MU、EQA/PT，细节仍可深化"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "B_simple",
+  "task": "C4",
+  "rep": 3,
+  "file": "B_simple-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "主要要求已落地，缺项目级表单引用"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "频次时限明确，部分责任到岗不够细"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "相关文件较齐全，附录闭环基本完整"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "计划执行检查改进链条完整清晰"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、Sigma、MU、CUSUM等细节"
+    }
+  }
+}

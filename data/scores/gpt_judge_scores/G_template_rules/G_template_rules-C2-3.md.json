@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "C2",
+  "rep": 3,
+  "file": "G_template_rules-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖关键条款，但未见全部SHALL系统展开"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改措施较具体，原SOP执行细节仍明显不足"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "有前后篇闭环思路，但多处引用文件未证实"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含检查整改追溯改进，验证机制基本完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "Westgard、ISE斜率、携带污染等细节充分"
+    }
+  }
+}

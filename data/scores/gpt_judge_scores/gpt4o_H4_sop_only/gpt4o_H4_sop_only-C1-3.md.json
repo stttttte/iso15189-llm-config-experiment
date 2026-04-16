@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H4_sop_only",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_H4_sop_only-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键缺陷较全，但未逐条映射SHALL"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "问题定位清楚，整改方向明确，便于执行"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "分级逻辑统一，前后结论基本一致"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "涵盖问题、分级、整改与再审批要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、EQA/PT、MU接口等细节"
+    }
+  }
+}

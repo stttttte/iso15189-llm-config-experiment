@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_F_template",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_F_template-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别关键缺陷，但未逐条对标标准。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "问题定位清楚，整改建议多数可执行。"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构完整，分级逻辑和结论基本一致。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "涵盖问题、风险、整改与复核建议。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、L-J图、EQA等专业细节。"
+    }
+  }
+}

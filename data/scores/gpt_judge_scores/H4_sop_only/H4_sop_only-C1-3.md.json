@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C1",
+  "rep": 3,
+  "file": "H4_sop_only-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "能识别关键SHALL缺口，但偏审查结论非条款映射"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "整改措施含责任对象、时限、方法和表单编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "审查逻辑较清楚，但CNAS-GL37版本引用存疑"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含抽样审查、整改、分阶段复核和升级处置"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "覆盖Westgard、西格玛、不确定度和EQA替代评估"
+    }
+  }
+}

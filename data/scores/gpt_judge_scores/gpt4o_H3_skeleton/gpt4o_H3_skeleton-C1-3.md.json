@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H3_skeleton",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_H3_skeleton-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别主要缺陷到位，但未逐条核实SHALL落实证据"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "问题指向较具体，整改建议可执行，仍少时限岗位"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "能识别频次冲突和程序边界问题，逻辑较清晰"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "覆盖计划执行检查改进，强调失控追溯与纠正措施"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、L-J图、EQA/PT等，专业性较强"
+    }
+  }
+}

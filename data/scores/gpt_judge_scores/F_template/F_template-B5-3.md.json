@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "B5",
+  "rep": 3,
+  "file": "F_template-B5-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "整改较完整，但与8.7/8.8对应不够直接"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "责任、时限、步骤、证据均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "职责基本清晰，少数表单编号未明确"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划执行、验证、报告影响评估与预防"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "结合生化、Westgard、LIS授权等场景"
+    }
+  }
+}

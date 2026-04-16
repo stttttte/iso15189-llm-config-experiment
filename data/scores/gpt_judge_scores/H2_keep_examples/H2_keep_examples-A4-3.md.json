@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "A4",
+  "rep": 3,
+  "file": "H2_keep_examples-A4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 5,
+      "reason": "8.9输入输出记录要求覆盖完整且已细化落实"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "责任岗位、时限、记录表单明确，可直接执行"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，但程序文件内容未在章内核对"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划实施、跟踪验证、逾期升级与下次评审反馈"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、不确定度、TAT等，仍偏管理层面"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "C2",
+  "rep": 2,
+  "file": "F_template-C2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键条款缺口较准，但整改落地证据不足"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "不符合描述具体，含优先级与时限，较可执行"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "条款、问题、建议基本对应，闭合性较好"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有问题识别和整改要求，缺效果验证与再评价"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、Delta Check、LIS等，较贴近检验实际"
+    }
+  }
+}

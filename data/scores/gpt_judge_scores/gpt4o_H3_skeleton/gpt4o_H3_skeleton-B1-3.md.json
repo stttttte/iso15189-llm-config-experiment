@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H3_skeleton",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_H3_skeleton-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但多为核查点非SHALL展开"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有审核方法和判定栏，但缺责任人时限表单号"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "引用《内审不符合项报告》未列文件编号"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含整改跟踪和评审闭环，但缺内审计划接口细化"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含MU、delta check、危急值等，专项细节仍不足"
+    }
+  }
+}

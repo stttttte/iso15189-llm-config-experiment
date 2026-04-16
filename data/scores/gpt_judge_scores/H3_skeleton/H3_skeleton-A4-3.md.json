@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "A4",
+  "rep": 3,
+  "file": "H3_skeleton-A4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 5,
+      "reason": "输入输出及跟踪要求基本全面落实"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "责任岗位、时限、记录表单均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "条款映射章节号表述与正文略不一致"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "策划、实施、跟踪验证、RCA改进完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "体现LIS、MU、TAT等，但检验细节仍偏少"
+    }
+  }
+}

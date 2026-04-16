@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "C4",
+  "rep": 3,
+  "file": "G_template_rules-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "术语和EQA/PT落实较好，未见全程序SHALL全覆盖证据"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "有责任人、时限、表单，替代评估执行细节仍略粗"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "与ANA-004等衔接较好，但附录A等内容未现场闭环展示"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划、执行、评价、纠正和年度总结，改进跟踪略弱"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、测量不确定度、EQA替代评估，较贴合检验科"
+    }
+  }
+}

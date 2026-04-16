@@ -1,0 +1,45 @@
+{
+  "_note": "Claude judge on H-group papers for P0-1 ICC analysis (2026-04-14 + 2026-04-15)",
+  "_method": "Claude sub-agents via Agent tool, identical CNAS judge prompt as gpt_cnas_judge.py",
+  "scores": [
+    {
+      "group": "H2_keep_examples",
+      "task": "A1",
+      "rep": 3,
+      "file": "H2_keep_examples-A1-3.md",
+      "dims": {
+        "条款满足度": {"score": 5, "reason": "6.2.1-6.2.5全部SHALL要求逐条覆盖，附录C自查表明确映射"},
+        "可操作性":   {"score": 5, "reason": "岗位、时限、表单编号齐全，评分阈值与频次量化明确"},
+        "内部一致性": {"score": 4, "reason": "F13/F14编号在6.4.4与表单清单间存在混用，略有矛盾"},
+        "PDCA闭环":  {"score": 5, "reason": "计划-执行-四层次评估-不合格复评-年度总结-管理评审链条完整"},
+        "专业深度":   {"score": 3, "reason": "含形态学/分子/POCT加密评估与盲样，但缺Westgard、Sigma、HIL等细节"}
+      }
+    },
+    {
+      "group": "H4_sop_only",
+      "task": "A1",
+      "rep": 2,
+      "file": "H4_sop_only-A1-2.md",
+      "dims": {
+        "条款满足度": {"score": 5, "reason": "6.2.1-6.2.5全部条款有具体落地措施并附自查表"},
+        "可操作性":   {"score": 5, "reason": "岗位、时限、表单编号齐全，学时与合格线量化"},
+        "内部一致性": {"score": 4, "reason": "表单编号与章节对应清晰，REC-009/010未在正文出现"},
+        "PDCA闭环":  {"score": 4, "reason": "含计划执行检查与不合格处理，改进反馈稍简略"},
+        "专业深度":   {"score": 4, "reason": "覆盖产前筛查、新筛、PCR上岗证、POCT，缺Westgard/Sigma等"}
+      }
+    },
+    {
+      "group": "H4_sop_only",
+      "task": "A3",
+      "rep": 1,
+      "file": "H4_sop_only-A3-1.md",
+      "dims": {
+        "条款满足度": {"score": 5, "reason": "7.2.1–7.2.7全条款逐项落地，附覆盖自查表对应章节"},
+        "可操作性":   {"score": 5, "reason": "岗位、量化时限、容器顺序、表单编号齐备，可直接执行"},
+        "内部一致性": {"score": 4, "reason": "ANA-REC-008未在正文引用，略有悬空；其余闭环"},
+        "PDCA闭环":  {"score": 3, "reason": "有P-D-C及不合格处置，但缺趋势分析与系统性改进反馈"},
+        "专业深度":   {"score": 4, "reason": "涵盖抽血顺序、冷链、UN3373、血培养细节；缺HIL指数量化与溶血分级"}
+      }
+    }
+  ]
+}

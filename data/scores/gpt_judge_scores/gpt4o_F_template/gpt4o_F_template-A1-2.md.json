@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_F_template",
+  "task": "A1",
+  "rep": 2,
+  "file": "gpt4o_F_template-A1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "基本覆盖6.2要求，授权与记录较完整"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "存在待补充项，时限频次部分不明确"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "表单齐全，但相关文件编号多处悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有计划实施评价改进，纠正再评较完整"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "有PCR等场景，但缺少检验专业细化标准"
+    }
+  }
+}

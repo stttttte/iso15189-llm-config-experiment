@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C1",
+  "rep": 2,
+  "file": "H3_skeleton-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖主要条款，但MU与EQA逻辑缺陷明显"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任人、时限、记录较清楚，部分要求偏原则"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "存在术语混用及EQA/PT频率前后矛盾"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有整改、验证、关闭条件，改进链条较完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、MU、PT/EQA，检验专业性较强"
+    }
+  }
+}

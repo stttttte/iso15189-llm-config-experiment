@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H3_skeleton",
+  "task": "C1",
+  "rep": 2,
+  "file": "gpt4o_H3_skeleton-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "识别关键缺口较全，条款映射仍偏概述"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，但缺时限表单编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构总体闭环，个别接口边界表述略泛"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "涵盖问题识别、整改、追溯、再评审链条"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、LJ图、PT及患者追溯要点"
+    }
+  }
+}

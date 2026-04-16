@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "B1",
+  "rep": 2,
+  "file": "H3_skeleton-B1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，少见7.1与8.6细化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数量化时限明确，但责任岗位不够到条"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "表单引用较完整，少数编号命名规则略悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划、记录、整改与验证，改进评估略粗"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、不确定度、TEa、危急值等细节"
+    }
+  }
+}

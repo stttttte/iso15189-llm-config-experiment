@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "C1",
+  "rep": 3,
+  "file": "H2_keep_examples-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "能识别缺失，但7.3.4等关键SHALL未落实。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改措施较具体，含频次、记录和处置步骤。"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "已指出矛盾与悬空表单，但职责闭环不足。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含整改时限、验证方式和管理评审输入。"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、MU、PT、L-J图等专业要点。"
+    }
+  }
+}

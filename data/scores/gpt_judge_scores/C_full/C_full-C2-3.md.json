@@ -1,0 +1,29 @@
+{
+  "group": "C_full",
+  "task": "C2",
+  "rep": 3,
+  "file": "C_full-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "识别缺项较准，但多依赖引用，落地证据不足"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "整改要求较明确，但原SOP执行细节缺失较多"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "结构清晰，但引用brand等文件与15189关联偏弱"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有问题、整改、复查要求，但效果验证不足"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、HIL、性能验证，专业性较强"
+    }
+  }
+}

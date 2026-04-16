@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "B2",
+  "rep": 3,
+  "file": "H4_sop_only-B2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3全条款，部分要求仍偏核查点化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "抽样、对象、频次较明确，岗位分工仍略粗"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多数引用闭环，但表单编号和字段存在不一致"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含整改、验证、时限，持续改进机制略简"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、MU、EQA、PCR分区等专业细节"
+    }
+  }
+}

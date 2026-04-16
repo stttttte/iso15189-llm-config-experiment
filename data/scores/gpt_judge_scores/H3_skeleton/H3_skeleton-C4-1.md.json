@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C4",
+  "rep": 1,
+  "file": "H3_skeleton-C4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "IQC、MU、EQA基本覆盖，仍有条款映射偏泛"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责、频次、表单较明确，部分处置时限仍不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "术语和引用基本统一，个别外部文件状态未明"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "有计划执行、月审查、失控纠正及回溯改进链"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、Sigma、TEa、MU、EP09等专业细节"
+    }
+  }
+}

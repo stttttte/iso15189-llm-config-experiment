@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A3",
+  "rep": 3,
+  "file": "G_template_rules-A3-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "7.2全流程较完整，5.4服务协议落实偏弱"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、条件、记录表单均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，个别记录如DOC-REC-001未列"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有监测统计和不合格处理，持续改进机制略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "采集、运输、HIL、稳定性等专业细节充分"
+    }
+  }
+}

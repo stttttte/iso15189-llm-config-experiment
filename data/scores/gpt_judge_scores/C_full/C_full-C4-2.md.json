@@ -1,0 +1,29 @@
+{
+  "group": "C_full",
+  "task": "C4",
+  "rep": 2,
+  "file": "C_full-C4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖IQC/PT/MU主要求，但职责分工不足"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "规则流程较清楚，但多处未定岗位责任"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多数引用闭环，但表单新增未完成落地"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含监测、失控、回溯和整改，改进链基本完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、MU、EQA/PT等，较贴近检验实际"
+    }
+  }
+}

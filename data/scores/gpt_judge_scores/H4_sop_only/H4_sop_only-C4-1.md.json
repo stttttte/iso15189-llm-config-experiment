@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C4",
+  "rep": 1,
+  "file": "H4_sop_only-C4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖主要条款，MU与EQA已补充，仍缺定性项目衔接细化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "频次、时限、表单较明确，但部分处置仍偏原则化"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "引用文件和表单基本闭环，条款映射个别不够准确"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有执行、审查、CAPA链条，但效果验证量化不足"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、Sigma、MU、Bull法等，检验科特征明显"
+    }
+  }
+}

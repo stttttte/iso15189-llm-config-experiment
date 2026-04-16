@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B3",
+  "rep": 2,
+  "file": "G_template_rules-B3-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖重点条款，但4、5章及多项SHALL未展开"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多有责任岗位时限验证，少数整改缺表单编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "职责分工基本清楚，少量程序文件引用未闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有核查整改验证安排，部分效果评价仍偏原则"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及MU、LJ图、delta check等，专业性较强"
+    }
+  }
+}

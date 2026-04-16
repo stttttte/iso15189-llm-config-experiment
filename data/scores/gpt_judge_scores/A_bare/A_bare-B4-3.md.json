@@ -1,0 +1,29 @@
+{
+  "group": "A_bare",
+  "task": "B4",
+  "rep": 3,
+  "file": "A_bare-B4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖主要输入项，缺变更、资源充分性等"
+    },
+    "可操作性": {
+      "score": 2,
+      "reason": "多为结果汇总，缺责任人时限和输出表单"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "总体逻辑一致，但无关联程序和记录编号"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有问题、措施和部分跟踪，缺效果评价机制"
+    },
+    "专业深度": {
+      "score": 2,
+      "reason": "有PT、TAT、盲样，缺MU、Westgard等细节"
+    }
+  }
+}

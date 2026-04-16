@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B1",
+  "rep": 1,
+  "file": "G_template_rules-B1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖面广，但多处将指南性要求写成固定值"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "检查方法较具体，但责任人、输出表单未明确"
+    },
+    "内部一致性": {
+      "score": 2,
+      "reason": "编号重复，8.4/8.5表述混乱，投诉条款重复"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有检查与整改要求，但缺少内审策划和改进闭环"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含MU、Westgard、EQA等，具医学实验室特征"
+    }
+  }
+}

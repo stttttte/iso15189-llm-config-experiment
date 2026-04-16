@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C2",
+  "rep": 3,
+  "file": "H4_sop_only-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "主要SHALL已落到整改措施，仍偏审查稿"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "责任、频次、时限、记录表单较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，个别文件版本关系未明"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含整改计划、复核抽查、验证与放行要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖HIL、Westgard、Sigma、EP28等细节"
+    }
+  }
+}

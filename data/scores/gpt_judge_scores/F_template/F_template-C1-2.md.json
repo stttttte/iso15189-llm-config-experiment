@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "C1",
+  "rep": 2,
+  "file": "F_template-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "识别7.3缺项较准，但未覆盖更多相关SHALL"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "审查发现具体，但缺评分准则和处置时限"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构基本清晰，引用ANA-004衔接说明不足"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有发现与整改建议，但缺验证与跟踪机制"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、不确定度、PT/EQA，专业性较强"
+    }
+  }
+}

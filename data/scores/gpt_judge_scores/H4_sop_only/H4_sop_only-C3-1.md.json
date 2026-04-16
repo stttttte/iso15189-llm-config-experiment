@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C3",
+  "rep": 1,
+  "file": "H4_sop_only-C3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别主要缺口，但多处仅到建议层面"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有时限和文件编号，责任与验收标准不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "能发现引用问题，但矩阵条款归属有偏差"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "含整改与复核安排，效果验证机制未展开"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、FMEA、BSL-2等，仍偏体系层"
+    }
+  }
+}

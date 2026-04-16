@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C2",
+  "rep": 3,
+  "file": "H3_skeleton-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "能对照关键条款识别缺口并提整改"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数整改含时限、记录和责任要求"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "引用文件较全，记录编号基本闭环"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含问题、整改、验证时点及再核查要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "覆盖HIL、Westgard、EP28等专业要点"
+    }
+  }
+}

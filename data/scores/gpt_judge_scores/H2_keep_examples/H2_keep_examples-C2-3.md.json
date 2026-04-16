@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "C2",
+  "rep": 3,
+  "file": "H2_keep_examples-C2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键缺口充分，但属审查报告非落实文件"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改要求多有时限频次表单，基本可执行"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多数引用闭环，部分编号来源未见定义"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、验证、培训内审，改进链较完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、HIL、EP规范、参考区间验证等"
+    }
+  }
+}

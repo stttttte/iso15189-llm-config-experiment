@@ -1,0 +1,29 @@
+{
+  "group": "C_full",
+  "task": "B2",
+  "rep": 1,
+  "file": "C_full-B2-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "基本覆盖7.3 SHALL，少见审核抽样准则"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "审核方法较具体，但责任人与时限不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，少数程序编号名称略悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划执行检查改进，整改验证要求较明确"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、LJ图、MU、HIL、PCR等专业性"
+    }
+  }
+}

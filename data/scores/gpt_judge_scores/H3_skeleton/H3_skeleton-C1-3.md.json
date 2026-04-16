@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C1",
+  "rep": 3,
+  "file": "H3_skeleton-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "能对关键SHALL逐条识别，但范围覆盖偏窄"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "整改措施含频次、表单、岗位和验证方式"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "引用文件表单较完整，少量标准引用存疑"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含问题、整改、验证时点及关闭安排，闭环完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、MU、PT/EQA、TEa等专业细节"
+    }
+  }
+}

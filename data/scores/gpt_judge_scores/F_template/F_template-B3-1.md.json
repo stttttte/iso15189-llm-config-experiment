@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "B3",
+  "rep": 1,
+  "file": "F_template-B3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键缺口较准，但全章覆盖证据不足"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "有责任人时限验证方式，表单编号不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "文件接口基本清晰，部分现有文件引用未闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含整改、试运行、内审验证，改进固化略弱"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及delta check、危急值、LIS等，专业性较强"
+    }
+  }
+}

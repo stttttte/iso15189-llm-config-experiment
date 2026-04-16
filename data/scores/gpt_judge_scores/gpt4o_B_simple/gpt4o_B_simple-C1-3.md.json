@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_B_simple",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_B_simple-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别关键条款较准，但偏审查意见非落实文件"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，但缺责任岗位与时限要求"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构基本清晰，条款引用与分级总体一致"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "已覆盖问题识别、整改、验证，但缺持续反馈机制"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、L-J图、MU、EQA/PT等专业要点"
+    }
+  }
+}

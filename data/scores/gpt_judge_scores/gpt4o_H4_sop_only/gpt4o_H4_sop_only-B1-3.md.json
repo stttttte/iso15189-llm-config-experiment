@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H4_sop_only",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_H4_sop_only-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但部分SHALL停留检查点"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有方法与记录栏，但责任岗位和时限不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构基本闭环，整改表单引用略悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含发现、整改、跟踪，但效果评价偏原则"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "体现检验流程，但缺少专业组关键细节"
+    }
+  }
+}

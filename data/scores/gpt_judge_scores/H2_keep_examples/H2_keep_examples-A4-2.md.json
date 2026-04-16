@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "A4",
+  "rep": 2,
+  "file": "H2_keep_examples-A4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 5,
+      "reason": "8.9输入输出要求基本全部实质落实"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "岗位、时限较清晰，表单编号不全"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "总体闭环，8.4与8.9条号表述易混淆"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "有计划、跟踪、验证及逾期升级处理"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、TAT等，仍偏管理层面"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "B4",
+  "rep": 3,
+  "file": "H2_keep_examples-B4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "基本覆盖8.9输入，缺管理评审输出衔接"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "数据充分，但责任人、时限、表单编号不足"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构较清晰，少数专项清单和缺口文件悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "多数问题有处置与验证，未闭环项仍有1项"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含EQA、MU、参考区间等，分子细节仍偏少"
+    }
+  }
+}

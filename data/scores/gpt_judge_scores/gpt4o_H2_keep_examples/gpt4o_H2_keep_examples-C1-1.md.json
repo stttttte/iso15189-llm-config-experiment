@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H2_keep_examples",
+  "task": "C1",
+  "rep": 1,
+  "file": "gpt4o_H2_keep_examples-C1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "指出多项缺口，但条款映射未完全量化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "问题、分级、整改较明确，可直接据此修订"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构较清晰，前后判断基本一致"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有发现和整改建议，缺验证与跟踪要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、MU、EQA、风险等专业细节"
+    }
+  }
+}

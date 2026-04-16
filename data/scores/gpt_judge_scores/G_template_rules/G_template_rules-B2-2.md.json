@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B2",
+  "rep": 2,
+  "file": "G_template_rules-B2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3各子条款，部分要求判定标准偏经验化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数检查点有方法和标准，但缺表单编号与岗位细化"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "职责基本清晰，但引用记录表单及程序文件未列明"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划、实施、检查及整改要求，持续改进机制略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、Sigma、MU、LoD/LoQ、HIL等专业细节"
+    }
+  }
+}

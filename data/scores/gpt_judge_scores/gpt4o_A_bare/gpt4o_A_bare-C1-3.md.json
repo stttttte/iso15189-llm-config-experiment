@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_A_bare",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_A_bare-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "能识别关键缺口，但条款映射不系统"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，缺岗位时限表单号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "整体逻辑顺，但分级与依据略有跳跃"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "已覆盖纠正改进思路，但验证闭环略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、EQA、结果追溯等要点"
+    }
+  }
+}

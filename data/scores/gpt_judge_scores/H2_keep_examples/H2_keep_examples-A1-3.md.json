@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "A1",
+  "rep": 3,
+  "file": "H2_keep_examples-A1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "6.2各款基本落地，授权准则衔接略弱"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、表单编号明确，可直接执行"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "F14一表两用冲突，F15正文未列入档案"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "需求计划、实施、评估、复评改进链完整"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "体现POCT、分子等场景，但专业细节不足"
+    }
+  }
+}

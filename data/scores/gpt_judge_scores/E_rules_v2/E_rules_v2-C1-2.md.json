@@ -1,0 +1,29 @@
+{
+  "group": "E_rules_v2",
+  "task": "C1",
+  "rep": 2,
+  "file": "E_rules_v2-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别关键SHALL缺口，但未系统映射条款。"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "整改要求较具体，但缺责任人时限表单。"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "章节定位基本清晰，前后结论总体一致。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、优先级及复审要求，闭环较完整。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、Ped/Pfr、TEa、Sigma等细节。"
+    }
+  }
+}

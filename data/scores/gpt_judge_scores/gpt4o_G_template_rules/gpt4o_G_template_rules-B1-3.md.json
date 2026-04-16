@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_G_template_rules",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_G_template_rules-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖面广，但多为检查点汇总，缺少细化SHALL核查"
+    },
+    "可操作性": {
+      "score": 2,
+      "reason": "缺责任岗位、抽样量、时限及对应输出表单编号"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "结构基本顺，但多处待补充，引用文件清单未闭环"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有内审结论与整改要求，但整改验证闭环不够具体"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、测量不确定度、PCR等，较贴近检验科"
+    }
+  }
+}

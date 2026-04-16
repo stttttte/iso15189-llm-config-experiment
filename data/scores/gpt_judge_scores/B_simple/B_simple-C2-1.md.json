@@ -1,0 +1,29 @@
+{
+  "group": "B_simple",
+  "task": "C2",
+  "rep": 1,
+  "file": "B_simple-C2-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别关键SHALL缺口，但覆盖面仍不全。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改要求较具体，但责任人表单编号不足。"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "结构基本清楚，但多处交叉引用悬空。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含缺陷、整改、复提要求，改进链较完整。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及MU、溯源、Westgard、HIL等专业要点。"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "A4",
+  "rep": 2,
+  "file": "H3_skeleton-A4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "输入输出较全，缺会议参加方要求"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "时限职责明确，表单和验证路径基本清晰"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "引用QUA-REC-041、跟踪表未见受控清单"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含跟踪关闭与验证，改进升级路径较完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含MU、EQA、LIS灾备等，专业性较强"
+    }
+  }
+}

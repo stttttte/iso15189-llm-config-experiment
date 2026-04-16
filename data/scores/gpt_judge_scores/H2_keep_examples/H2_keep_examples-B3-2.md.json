@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "B3",
+  "rep": 2,
+  "file": "H2_keep_examples-B3-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别缺口，但多条款仅映射未证实落实"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "有责任人时限输出，但多为编写层面措施"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "编号与任务基本闭环，少量条款号表述欠准"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有整改计划和复查，效果验证证据不足"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含LJ图、EQA、危急值、生物安全等细节"
+    }
+  }
+}

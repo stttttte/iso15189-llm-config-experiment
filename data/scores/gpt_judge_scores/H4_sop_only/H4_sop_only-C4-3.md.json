@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C4",
+  "rep": 3,
+  "file": "H4_sop_only-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖IQC/EQA/MU主条款，定性项目缺失"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "岗位、频次较明确，部分处置标准仍偏粗"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "引用基本闭环，ANA-REC-008仍为草稿"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有审查、CAPA与追溯，效果验证略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、Sigma、MU、EQA等专业细节"
+    }
+  }
+}

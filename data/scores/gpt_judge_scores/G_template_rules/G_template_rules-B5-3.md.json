@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B5",
+  "rep": 3,
+  "file": "G_template_rules-B5-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "整改、验证较完整，但未体现8.7变更管理要素"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "责任、时限、步骤、表单编号均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "表单闭环较好，但验证责任人与批准关系略弱"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含纠正、系统改进、分期验证及未达标再整改"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "结合生化、Westgard等场景，专业性较强"
+    }
+  }
+}

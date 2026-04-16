@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H2_keep_examples",
+  "task": "A1",
+  "rep": 3,
+  "file": "gpt4o_H2_keep_examples-A1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "6.2主要要求已覆盖，授权衔接略弱"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数有时限职责表单，部分标准待补充"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "有待补充文件与制度，引用未完全闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有计划实施检查改进，效果验证稍泛化"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "涉及分子微生物POCT，但专业细节不足"
+    }
+  }
+}

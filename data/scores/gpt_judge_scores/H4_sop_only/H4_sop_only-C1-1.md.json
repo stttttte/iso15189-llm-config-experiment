@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "C1",
+  "rep": 1,
+  "file": "H4_sop_only-C1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "指出缺陷较准，但混入不属本程序条款"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改措施较具体，含时限、岗位、记录"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "结构基本完整，但条款引用有越界混用"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有整改、复核、抽查安排，闭环较完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、MU、PT等，专业性较强"
+    }
+  }
+}

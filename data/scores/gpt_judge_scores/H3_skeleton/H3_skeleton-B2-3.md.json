@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "B2",
+  "rep": 3,
+  "file": "H3_skeleton-B2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "7.3子条款覆盖全，少数要求判定标准偏自定"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "检查项具体，但缺岗位责任与记录表单衔接不足"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "部分记录编号未在配套记录列示，存在悬空引用"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划、执行、追溯、整改时限及验证要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、MU、EQA、可比性及HIL干扰等细节"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_G_template_rules",
+  "task": "B1",
+  "rep": 2,
+  "file": "gpt4o_G_template_rules-B1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但多为检查点罗列"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有方法和栏目，缺责任岗位、时限、表单号"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "提及联动表单与SOP，本表未列清单编号"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含追溯、汇总、结论、整改联动，改进机制略泛"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含PCR、危急值、MU、IQC/EQA等检验特点"
+    }
+  }
+}

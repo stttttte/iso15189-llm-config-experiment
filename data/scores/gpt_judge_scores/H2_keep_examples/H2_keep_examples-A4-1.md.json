@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "A4",
+  "rep": 1,
+  "file": "H2_keep_examples-A4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "8.9主要输入输出已覆盖，缺决议有效性评价细化"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、记录编号较全，可直接执行"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "程序和记录引用较闭环，部分表单未见编号来源"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "计划、实施、跟踪、下次评审验证形成闭环"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、TAT、危急值等，仍缺分子等细节"
+    }
+  }
+}

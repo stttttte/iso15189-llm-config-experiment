@@ -1,0 +1,29 @@
+{
+  "group": "C_full",
+  "task": "B2",
+  "rep": 2,
+  "file": "C_full-B2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3各子条款，基本落实审核点"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有审核方法，但缺责任岗位及时限"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "条款对照较完整，少量引用文件悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含检查改进要求，但整改时限不明确"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、LJ图、PT/ILC等专业内容"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C4",
+  "rep": 3,
+  "file": "H3_skeleton-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖IQC、MU、EQA等关键条款，部分要求仍偏原则化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责、频次、记录较明确，排查与回溯范围仍略笼统"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "章节闭环较好，个别引用文件注明“如已建”不够严谨"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有计划、执行、记录和纠正，效果验证与持续改进略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、σ度量、MU、EP09、PT等检验专业细节"
+    }
+  }
+}

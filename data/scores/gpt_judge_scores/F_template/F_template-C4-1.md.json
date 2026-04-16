@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "C4",
+  "rep": 1,
+  "file": "F_template-C4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "仅覆盖格式修订，15189实质要求落实不足"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "部分频次量化明确，但职责表单未落地"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "编号衔接改善，但新增章节多为悬空引用"
+    },
+    "PDCA闭环": {
+      "score": 2,
+      "reason": "有执行与部分监测，改进反馈链未完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、LJ图、MU等专业内容"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "C1",
+  "rep": 3,
+  "file": "G_template_rules-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "识别关键SHALL缺口，覆盖较全但非全量"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改措施较具体，含时限岗位表单编号"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "发现交叉矛盾，但表单引用仍有悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含检查整改验证要求，改进链条基本完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、MU、EQA偏倚等专业细节"
+    }
+  }
+}

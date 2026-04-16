@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A4",
+  "rep": 1,
+  "file": "G_template_rules-A4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "8.9输入输出覆盖较全，缺管理评审方法细化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责时限明确，但表单编号和判定准则不足"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "章节号与8.9映射清楚，部分引用文件未列编号"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "计划、实施、跟踪、下次评审反馈链条完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、TAT、危急值等，仍缺更深技术指标"
+    }
+  }
+}

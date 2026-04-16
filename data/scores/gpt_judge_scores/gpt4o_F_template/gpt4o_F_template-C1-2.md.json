@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_F_template",
+  "task": "C1",
+  "rep": 2,
+  "file": "gpt4o_F_template-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖主要要求，但条款判断有偏差"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改点较具体，仍缺时限表单编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构较清晰，少量分级口径不一"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、分级、整改建议，改进链较完整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "体现检验质控实务，专业细节较充分"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "B_simple",
+  "task": "C1",
+  "rep": 3,
+  "file": "B_simple-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别主要缺口较准，但未系统映射SHALL。"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有时限分级，但责任岗位和输出不够细。"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "条款引用较清晰，前后逻辑基本一致。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、验证要求，但改进评价略粗。"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、Ped/Pfr、CUSUM等专业内容。"
+    }
+  }
+}

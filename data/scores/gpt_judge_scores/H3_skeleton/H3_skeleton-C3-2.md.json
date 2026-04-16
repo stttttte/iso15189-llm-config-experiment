@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "C3",
+  "rep": 2,
+  "file": "H3_skeleton-C3-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别缺口较全，但多为整改建议非现行落实"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "部分有时限记录，缺责任岗位与执行输出闭环"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "已识别交叉引用问题，整体逻辑较清晰"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有整改计划与时限，但缺效果验证机制细化"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含EP文件、MU、Delta Check、HIL等专业细节"
+    }
+  }
+}

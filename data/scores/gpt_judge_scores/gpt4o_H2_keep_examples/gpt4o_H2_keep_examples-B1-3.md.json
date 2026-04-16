@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H2_keep_examples",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_H2_keep_examples-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖面广，但多为提问式，缺少落实准则"
+    },
+    "可操作性": {
+      "score": 2,
+      "reason": "无责任岗位、时限、表单号，执行指向不足"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "结构基本完整，但多处引用文件未列明"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "含检查与整改要求，但改进验证链条偏弱"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "涉及MU、IQC、EQA等，专业细节仍不足"
+    }
+  }
+}

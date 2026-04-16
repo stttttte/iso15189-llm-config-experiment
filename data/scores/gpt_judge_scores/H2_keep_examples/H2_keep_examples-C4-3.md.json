@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "C4",
+  "rep": 3,
+  "file": "H2_keep_examples-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖IQC、EQA/PT、MU等关键要求，仍有细节待主文件验证"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任、频次、记录较明确，部分步骤时限仍偏原则化"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数交叉引用闭环，MET-002尚未编制存潜在悬空"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含整改、培训、抽查、不满意处置及纠正流程，闭环完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、MU、TEa、EQA/PT等检验专业细节"
+    }
+  }
+}

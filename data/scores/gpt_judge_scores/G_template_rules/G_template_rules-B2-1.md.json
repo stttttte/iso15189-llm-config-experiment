@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B2",
+  "rep": 1,
+  "file": "G_template_rules-B2-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3主要要求，少见风险管理等衔接"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "抽查量、时限较明确，但责任岗位不全"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多处提及程序表单，但未列文件编号"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有检查、失控处理和追踪，改进机制略粗"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、Sigma、MU、EQA、可比性等细节"
+    }
+  }
+}

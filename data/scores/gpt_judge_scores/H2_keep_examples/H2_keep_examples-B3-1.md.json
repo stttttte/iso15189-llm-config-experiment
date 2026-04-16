@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "B3",
+  "rep": 1,
+  "file": "H2_keep_examples-B3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 2,
+      "reason": "以覆盖矩阵为主，未证实条款实质落实"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有时限和责任人，但表单输出缺失"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "编号基本连贯，但多处引用未闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有整改、试运行、复查，改进链较完整"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "含样本留存等细节，但专业控制点不足"
+    }
+  }
+}

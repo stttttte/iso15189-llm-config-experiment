@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "A1",
+  "rep": 3,
+  "file": "H3_skeleton-A1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖6.2主要要求，监督能力维持稍弱"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、频次、表单编号均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "表单闭环较好，PER-SOP-002/003职责略重叠"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划、实施、评估、不合格处置与授权调整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含病理阅片、PCR、POCT等，检验细节仍可深化"
+    }
+  }
+}

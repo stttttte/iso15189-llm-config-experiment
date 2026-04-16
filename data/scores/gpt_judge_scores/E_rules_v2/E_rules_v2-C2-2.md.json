@@ -1,0 +1,29 @@
+{
+  "group": "E_rules_v2",
+  "task": "C2",
+  "rep": 2,
+  "file": "E_rules_v2-C2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别关键SHALL缺口，但条款覆盖不全。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改要求较具体，但缺责任人与表单编号。"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "总体逻辑顺，但有六维度与五维度不一致。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含缺陷、整改、复核、再提交流程，改进较完整。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及溯源、Westgard、HIL及生化场景细节。"
+    }
+  }
+}

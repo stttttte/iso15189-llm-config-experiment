@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "B3",
+  "rep": 1,
+  "file": "H3_skeleton-B3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "识别缺口较准，但多为计划性承诺"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任、时限、输出较清楚，细节略粗"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "程序编号基本闭环，部分引用仍悬空"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有整改、试运行、内审，改进验证偏弱"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含delta check、EQA、LIS等专业点"
+    }
+  }
+}

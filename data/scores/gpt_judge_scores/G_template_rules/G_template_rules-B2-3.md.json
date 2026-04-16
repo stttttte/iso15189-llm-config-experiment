@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B2",
+  "rep": 3,
+  "file": "G_template_rules-B2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3主要要求，部分判定标准过度固化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "抽查路径清晰，但责任岗位与表单编号缺失"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "多处引用清单记录，但未列具体文件编号"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含方案、执行、评估、纠正与效果验证闭环"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Sigma、Westgard、HIL、MU等专业细节"
+    }
+  }
+}

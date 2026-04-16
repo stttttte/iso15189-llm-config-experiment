@@ -1,0 +1,29 @@
+{
+  "group": "F_template",
+  "task": "C4",
+  "rep": 3,
+  "file": "F_template-C4-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "术语与EQA/PT已修正，但缺全条款落实证据"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "有责任人、时限、表单，术语替换执行法仍偏笼统"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "与ANA-004等基本衔接，部分关联文件仅要求同步更新"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含评价、调查、纠正和评审，预防改进机制略弱"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "体现EQA/PT、Westgard、测量不确定度等检验要素"
+    }
+  }
+}

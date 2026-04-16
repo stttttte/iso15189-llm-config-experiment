@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "A1",
+  "rep": 1,
+  "file": "H3_skeleton-A1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖6.2主要要求，监督人员资格欠明确"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、频次、时限、表单编号较完整明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "总体闭环良好，PER-SOP-002/003边界稍重叠"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含需求计划、实施、评估、纠正与授权调整"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "体现分子、HIV、HLA、POCT等专业场景"
+    }
+  }
+}

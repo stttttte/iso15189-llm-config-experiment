@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "B3",
+  "rep": 3,
+  "file": "H3_skeleton-B3-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖面较全，但多为规划，证据不足"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任、时限较清楚，部分输出仍偏笼统"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "文件编号有交叉不一致，接口描述不足"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有计划、试运行、内审与模拟评审安排"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含delta check、危急值、冷链等专业要点"
+    }
+  }
+}

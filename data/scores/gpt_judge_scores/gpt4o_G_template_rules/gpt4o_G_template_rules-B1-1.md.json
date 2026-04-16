@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_G_template_rules",
+  "task": "B1",
+  "rep": 1,
+  "file": "gpt4o_G_template_rules-B1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖5-8章主要条款，但多为提问式检查点"
+    },
+    "可操作性": {
+      "score": 2,
+      "reason": "缺责任岗位、时限、表单编号，执行性偏弱"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "整体结构清楚，但引用文件多处待补充悬空"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有检查、汇总和不符合处理，改进验证不够具体"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "含MU、EQA、危急值等，但缺检验专业细节"
+    }
+  }
+}

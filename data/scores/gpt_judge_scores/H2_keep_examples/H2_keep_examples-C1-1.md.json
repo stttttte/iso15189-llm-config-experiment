@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "C1",
+  "rep": 1,
+  "file": "H2_keep_examples-C1-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "识别关键SHALL缺口，整改要求较具体"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多含频次表单职责，部分处置时限仍偏泛"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "发现编号矛盾与术语混用，审查逻辑基本闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、验证与重发要求，改进链较完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、MU、EQA/PT、冷链等专业细节"
+    }
+  }
+}

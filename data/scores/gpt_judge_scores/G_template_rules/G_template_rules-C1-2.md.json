@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "C1",
+  "rep": 2,
+  "file": "G_template_rules-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "能识别7.3关键缺口，条款审查较到位"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "整改要求含频次、时限、方法，执行性强"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构清晰闭环较好，未见明显职责冲突"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、验证要求，改进链基本完整"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、MU、EQA、Sigma等专业要点"
+    }
+  }
+}

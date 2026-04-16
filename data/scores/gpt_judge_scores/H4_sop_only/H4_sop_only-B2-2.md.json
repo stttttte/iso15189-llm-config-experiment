@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "B2",
+  "rep": 2,
+  "file": "H4_sop_only-B2-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3全条款，部分SHALL转化仍偏检查化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数有时限、抽样量和记录，个别责任岗位不够细"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "记录编号较完整，但多处MET/QUA表单未见清单闭环"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "计划执行检查改进链条完整，含整改与验证要求"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、MU、LDT、可比性、EQA替代等专业细节"
+    }
+  }
+}

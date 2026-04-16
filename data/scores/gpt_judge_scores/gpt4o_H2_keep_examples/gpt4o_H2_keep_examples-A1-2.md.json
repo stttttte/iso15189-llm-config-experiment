@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H2_keep_examples",
+  "task": "A1",
+  "rep": 2,
+  "file": "gpt4o_H2_keep_examples-A1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "6.2主要要求已覆盖，授权衔接仍偏弱"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责、时限较清楚，部分学时与标准待补充"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "存在待建文件、待补充项及术语修订痕迹"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有计划、实施、评估与整改，改进机制略泛"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "体现检验场景，但缺少专业项目化细节"
+    }
+  }
+}

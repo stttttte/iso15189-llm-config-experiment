@@ -1,0 +1,34 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Sidi Liu
+
+This license applies to all DATA and DOCUMENTS in this repository, including:
+- Generated ISO 15189 QMS documents (data/generated/, outputs/)
+- LLM judge scores (data/scores/, gpt_judge_scores/, *_judge*.json)
+- Auto-scorer outputs (all_scores_*.json)
+- Expert blind review materials (blind_review/)
+- Statistical analysis outputs (2x2_symmetric_*.json, final_*_ranking.json, dual_judge_comparison.json, icc_results.json)
+- Configuration templates and rules (configs/, rules.md)
+- Paper outlines and supplementary documentation (docs/, 论文写作大纲*.md)
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to:
+  - Share: copy and redistribute the material in any medium or format
+  - Adapt: remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+  - Attribution: You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made.
+
+Recommended attribution:
+  "Data from 'ISO 15189 LLM Config Experiment' (2026) by Sidi Liu.
+   Licensed under CC BY 4.0.
+   Available at: https://github.com/stttttte/iso15189-llm-config-experiment"
+
+No additional restrictions — You may not apply legal terms or technological
+measures that legally restrict others from doing anything the license permits.
+
+---
+
+NOTE: For source code (.py, .sh), the MIT License applies (see LICENSE).

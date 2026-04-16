@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A1",
+  "rep": 3,
+  "file": "G_template_rules-A1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "6.2核心要求基本落实，授权细节仍依赖外部程序"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、频次、时限、表单编号较完整明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "表单基本闭环，PER-REC-009引用处有不一致"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "具计划、实施、评估、纠偏及管理评审反馈"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涵盖Westgard、PCR、POCT等，细化仍可更深"
+    }
+  }
+}

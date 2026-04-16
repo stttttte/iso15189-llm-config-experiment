@@ -1,0 +1,29 @@
+{
+  "group": "C_full",
+  "task": "A1",
+  "rep": 2,
+  "file": "C_full-A1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "培训、评估、授权、档案基本覆盖，岗位能力要求不足"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "职责、时限、表单较明确，部分标准如允许范围未定义"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "PER-003重复管授权，record-management.md引用悬空"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "有计划、实施、评估、复评及改进触发机制"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "体现盲样、EQA等检验特点，但缺少专业组细化要求"
+    }
+  }
+}

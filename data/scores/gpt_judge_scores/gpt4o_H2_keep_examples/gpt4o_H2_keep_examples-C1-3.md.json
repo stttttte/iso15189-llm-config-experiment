@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_H2_keep_examples",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_H2_keep_examples-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "识别关键缺项较全，符合性判断较到位"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，但缺时限岗位表单编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "前后逻辑基本一致，少量边界表述可再收紧"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "涵盖失控、追溯、改进，但跟踪验证略简"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涉及Westgard、LJ图、MU、EQA等专业要点"
+    }
+  }
+}

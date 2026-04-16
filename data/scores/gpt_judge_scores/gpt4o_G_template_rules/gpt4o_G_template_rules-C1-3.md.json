@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_G_template_rules",
+  "task": "C1",
+  "rep": 3,
+  "file": "gpt4o_G_template_rules-C1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "能识别关键缺口，但未逐条核对SHALL。"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议较具体，但缺责任岗位时限。"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构清晰分级明确，少量依据表述偏泛。"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含问题、整改、优先级与复审，闭环较完整。"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、EQA、MU等检验专业要点。"
+    }
+  }
+}

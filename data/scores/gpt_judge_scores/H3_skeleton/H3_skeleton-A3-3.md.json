@@ -1,0 +1,29 @@
+{
+  "group": "H3_skeleton",
+  "task": "A3",
+  "rep": 3,
+  "file": "H3_skeleton-A3-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.2各环节，用户沟通与授权细节略弱"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "岗位、时限、温度、表单编号均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "引用较完整，但ANA-REC-003正文未见使用"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有记录与趋势分析，改进触发和验证不足"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含冷链、HIL阈值、cfDNA、NIPT等专业细节"
+    }
+  }
+}

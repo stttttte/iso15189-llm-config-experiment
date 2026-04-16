@@ -1,0 +1,29 @@
+{
+  "group": "H4_sop_only",
+  "task": "B1",
+  "rep": 3,
+  "file": "H4_sop_only-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但部分SHALL仅检点化"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "时限量化较充分，但责任岗位未逐项明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "编号引用大体闭环，个别记录与总表编号体系并存"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有抽样、判定、整改验证，改进反馈机制略弱"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "体现Westgard、MU、危急值、LIS等专业细节"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "C3",
+  "rep": 1,
+  "file": "G_template_rules-C3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖矩阵较全，但多项关键条款仅识别缺口"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "整改建议含时限、编号、表单，审查执行性较强"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "能识别错引和循环引用，闭环性较好"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有审查、分级、整改，但缺整改验证安排细节"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Delta Check、质控、校准、生物安全等专业点"
+    }
+  }
+}

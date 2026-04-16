@@ -1,0 +1,29 @@
+{
+  "group": "H2_keep_examples",
+  "task": "B2",
+  "rep": 3,
+  "file": "H2_keep_examples-B2-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖7.3较全，但部分要求超出标准或缺少落实依据"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多数要点量化明确，但责任岗位、输出表单未细化"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "审核依据与版本表述不一致，关联程序/表单未闭环列出"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含检查、处置和影响评估，但改进验证机制不足"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "涵盖Westgard、Sigma、MU、HIL干扰、POCT可比性等细节"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B1",
+  "rep": 2,
+  "file": "G_template_rules-B1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但部分SHALL被量化替代"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "审核方法、时限、抽样量较明确，便于执行"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "整体逻辑清晰，少见表单编号和引用闭环"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划检查改进要求，但整改跟踪模板未体现"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、MU、delta check、EQA等专业细节"
+    }
+  }
+}

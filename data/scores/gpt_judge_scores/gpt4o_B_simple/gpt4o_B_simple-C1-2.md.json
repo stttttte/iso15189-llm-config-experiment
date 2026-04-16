@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_B_simple",
+  "task": "C1",
+  "rep": 2,
+  "file": "gpt4o_B_simple-C1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 3,
+      "reason": "覆盖主要评审点，但缺少量化判定依据"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "问题定位和整改方向较明确，可直接用于修订"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "结构完整，分级逻辑清楚，前后基本一致"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有问题、建议、结论，但缺整改验证要求"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "涉及Westgard、EQA/PT、失控追溯等专业要点"
+    }
+  }
+}

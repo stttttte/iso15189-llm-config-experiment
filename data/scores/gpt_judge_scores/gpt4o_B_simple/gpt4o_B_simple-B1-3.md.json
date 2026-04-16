@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_B_simple",
+  "task": "B1",
+  "rep": 3,
+  "file": "gpt4o_B_simple-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但多为核查点罗列"
+    },
+    "可操作性": {
+      "score": 2,
+      "reason": "缺责任岗位、时限、抽样要求和输出编号"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "相关文件与记录列示较全，闭环基本完整"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "含整改验证条目，但表内缺计划与改进路径"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "有delta check等细节，但缺专业组关键技术点"
+    }
+  }
+}

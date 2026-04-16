@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "A3",
+  "rep": 1,
+  "file": "G_template_rules-A3-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "7.2覆盖较全，5.4服务协议落实偏弱"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "职责、时限、阈值、表单编号均较明确"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "多数引用闭环，DOC-REC-001未列入记录表"
+    },
+    "PDCA闭环": {
+      "score": 3,
+      "reason": "有执行与监控，缺系统纠正改进触发机制"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含HIL、冷链、稳定性等，分专业细节仍可深化"
+    }
+  }
+}

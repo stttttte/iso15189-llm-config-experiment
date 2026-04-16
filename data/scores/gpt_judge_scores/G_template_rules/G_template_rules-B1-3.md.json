@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B1",
+  "rep": 3,
+  "file": "G_template_rules-B1-3.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，部分SHALL细化不足"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "多含方法频次时限，但表单责任人缺失"
+    },
+    "内部一致性": {
+      "score": 3,
+      "reason": "引用较顺，未列配套程序和表单编号"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划检查整改跟踪，改进验证部分略泛"
+    },
+    "专业深度": {
+      "score": 5,
+      "reason": "含Westgard、Sigma、MU、delta check等细节"
+    }
+  }
+}

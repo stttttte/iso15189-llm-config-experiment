@@ -1,0 +1,29 @@
+{
+  "group": "gpt4o_B_simple",
+  "task": "B1",
+  "rep": 2,
+  "file": "gpt4o_B_simple-B1-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖5-8章较全，但多为检查点，缺少SHALL判定准则"
+    },
+    "可操作性": {
+      "score": 3,
+      "reason": "有方法和栏目，但责任人、抽样量、时限未量化"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "相关程序和记录基本闭环，表单编号仍多为建议稿"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "含计划、实施、整改跟踪，但改进验证机制不够细"
+    },
+    "专业深度": {
+      "score": 3,
+      "reason": "有MU、delta check等术语，缺少专业组关键细节"
+    }
+  }
+}

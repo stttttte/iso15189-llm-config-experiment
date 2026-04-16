@@ -1,0 +1,29 @@
+{
+  "group": "G_template_rules",
+  "task": "B4",
+  "rep": 2,
+  "file": "G_template_rules-B4-2.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖评审输入主要要求，缺资源等输入"
+    },
+    "可操作性": {
+      "score": 4,
+      "reason": "责任人时限较明确，部分输出与准则欠细"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "职责链基本清楚，个别数据口径略有疑点"
+    },
+    "PDCA闭环": {
+      "score": 4,
+      "reason": "有目标、执行、分析改进，效果验证未完全闭合"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "体现EQA、校准、移液偏差等专业内容较好"
+    }
+  }
+}

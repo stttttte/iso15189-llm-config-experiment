@@ -1,0 +1,72 @@
+# ============================================================
+# Secrets — NEVER commit
+# ============================================================
+.env
+.env.*
+*.key
+*.pem
+secrets/
+credentials.json
+api_keys.txt
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ============================================================
+# macOS / editor
+# ============================================================
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# ============================================================
+# Intermediate / scratch outputs (kept local, not released)
+# ============================================================
+logs/
+/tmp/
+*.tmp
+*.bak
+sensitivity_scan_fixed.json
+experiment3_fixed.json
+review_scores_fixed.json
+
+# ============================================================
+# Expert blind-review — key.json must stay PRIVATE
+# (Reproducers get the 10 papers + rating rubric but not the group mapping,
+# preserving the blind-review integrity of the dataset.)
+# ============================================================
+blind_review/key.json
+blind_review/icc_results.json
+
+# ============================================================
+# Deprecated / superseded paper drafts
+# (Only the latest 论文写作大纲v14.md is released)
+# ============================================================
+论文写作大纲v10_review.md
+论文写作大纲v11.md
+论文写作大纲v12.md
+论文写作大纲v13.md
+paper_outline.md
+
+# ============================================================
+# Large binaries / model artifacts — not applicable, but safe-guard
+# ============================================================
+*.pt
+*.bin
+*.h5
+*.pkl

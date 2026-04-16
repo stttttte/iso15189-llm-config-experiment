@@ -1,0 +1,29 @@
+{
+  "group": "E_rules_v2",
+  "task": "C4",
+  "rep": 1,
+  "file": "E_rules_v2-C4-1.md",
+  "model": "gpt-5.4",
+  "scores": {
+    "条款满足度": {
+      "score": 4,
+      "reason": "覆盖IQC主要要求，缺放行准则细化"
+    },
+    "可操作性": {
+      "score": 5,
+      "reason": "岗位、时限、记录表单基本明确齐全"
+    },
+    "内部一致性": {
+      "score": 4,
+      "reason": "交叉引用较完整，少量表单编号未见关联程序"
+    },
+    "PDCA闭环": {
+      "score": 5,
+      "reason": "含计划执行监测纠正验证关闭全链条"
+    },
+    "专业深度": {
+      "score": 4,
+      "reason": "含Westgard、LJ图、偏倚分析，仍偏通用"
+    }
+  }
+}

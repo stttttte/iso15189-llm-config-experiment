@@ -78,6 +78,12 @@ iso15189-llm-config-experiment/
 │       ├── icc_results.json                # Single-rater ICC (legacy)
 │       └── icc_results_3raters.json        # 3-rater ICC analysis
 │
+├── figures/                          # Publication figures (PNG 300 DPI + SVG)
+│   ├── fig1_config_composition.*     # 9 configurations × 4 components
+│   ├── fig2_2x2_symmetric.*          # 2×2 cross-model validation heatmap
+│   ├── fig3_expert_vs_llm.*          # Expert panel vs LLM judge scatter
+│   └── fig4_token_vs_quality.*       # Token size vs quality dual-perspective
+│
 └── paper/
     └── outline_v16_zh.md             # Paper outline (Chinese)
 ```

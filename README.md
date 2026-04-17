@@ -12,17 +12,17 @@ This repository accompanies a study on LLM-assisted generation of ISO 15189:2022
 
 - **486 generated QMS documents** — Claude Opus 4.6 (405) + GPT-5.4 (81), across 9 configuration groups × 15 task types × 3 repetitions
 - **864 LLM-judge evaluations** — Claude & GPT cross-model scoring on 5 CNAS-reviewer dimensions
-- **10 expert blind-review ratings** — by a CNAS-qualified senior technologist
+- **30 expert blind-review ratings** — 10 papers × 3 ISO 15189-qualified raters (1 CNAS senior technologist + 2 certified internal auditors, same laboratory)
 - **All analysis code** — auto-scorer, LLM-judge pipelines, 2×2 symmetric analysis, ICC computation
 - **Reproducibility artifacts** — full task messages, prompts, configs, rule definitions
 
 ## Key Findings
 
-1. **LLM judges disagree with domain experts**: ICC(3,1) expert vs Claude = 0.613 (p=0.02); expert vs GPT = 0.195 (ns)
-2. **Both LLM judges systematically overrate** by 0.55–0.93 points (on a 0–5 scale)
+1. **LLM judges disagree with domain experts** (n=3 raters × 10 papers): ICC(3,1) expert panel vs Claude = 0.548 (p=0.04); vs GPT = 0.217 (ns). Inter-rater ICC(2,k) = 0.982 (excellent consensus among 3 experts)
+2. **Both LLM judges systematically overrate** by 0.52–0.90 points (on a 0–5 scale)
 3. **"Optimal configuration" depends on the evaluator**:
    - LLM-judge view: H4_sop_only (6K tokens) is optimal
-   - Expert view: G_template_rules (38K) ≈ F_template (35K) are optimal; H4 ranks second-to-last
+   - Expert view: F_template (35K) ≈ H2 ≈ G_template_rules (38K) are optimal (mean 4.06–4.24); H4 ranks second-to-last (3.20)
 4. **4-factor orthogonal ablation (LLM layer)**: rules (+0.511***) and skeleton (+0.213) matter; detailed content and examples contribute nothing or are mildly harmful
 5. **Token-bulk trap is model-dependent**: C_full (71K) performs acceptably under Claude generation but collapses under GPT-5.4 generation (cross-evaluation 1.40–1.84 vs. 3.22–4.56)
 6. **Claude self-preference bias** = +0.464 (8/9 groups positive); **GPT cross-model bias** = −0.472 (8/9 groups negative)
@@ -71,12 +71,15 @@ iso15189-llm-config-experiment/
 │   │   ├── ablation_h2h3_results.json
 │   │   └── dual_judge_comparison.json
 │   └── expert_blind_review/
-│       ├── papers/                   # paper_01–10 (anonymized)
-│       ├── rating_sheet_filled.md    # Expert's filled scores
-│       └── rating_sheet_template.md  # Blank template (for new experts)
+│       ├── papers/                         # paper_01–10 (anonymized)
+│       ├── rating_sheet_rater1_filled.md   # Rater 1 (CNAS senior tech) scores
+│       ├── rating_sheet_rater2_filled.md   # Rater 2 (internal auditor) scores
+│       ├── rating_sheet_rater3_filled.md   # Rater 3 (internal auditor) scores
+│       ├── icc_results.json                # Single-rater ICC (legacy)
+│       └── icc_results_3raters.json        # 3-rater ICC analysis
 │
 └── paper/
-    └── outline_v14_zh.md             # Paper outline (Chinese)
+    └── outline_v16_zh.md             # Paper outline (Chinese)
 ```
 
 ## Quick Start
@@ -90,7 +93,8 @@ cd iso15189-llm-config-experiment
 pip install -r requirements.txt
 
 # 3. Reproduce key analyses (no API calls needed)
-python3 code/compute_icc.py                  # Expert vs LLM ICC
+python3 code/compute_icc_3raters.py          # 3-rater expert panel vs LLM ICC (primary)
+python3 code/compute_icc.py                  # Single-rater ICC (legacy)
 python3 -c "
 from pathlib import Path
 import json
@@ -137,7 +141,8 @@ In short: use freely with attribution.
 
 - **No Protected Health Information (PHI)**: All 486 generated documents use placeholder names (e.g., "李某", "张医生") and generic institution types (e.g., "妇幼保健院") with no identifiable individuals or facilities.
 - **No API keys committed**: all LLM-API scripts read keys via environment variables.
-- **Expert blind review**: The key mapping (which paper came from which configuration group) is stored in `blind_review/key.json` and is **intentionally excluded** from this release to preserve blind-review integrity for future third-party validation studies.
+- **Expert blind review**: The key mapping (which paper came from which configuration group) is stored in `blind_review/key.json` and is **intentionally excluded** from this release to preserve blind-review integrity for future third-party validation studies. The 3 raters' filled scoring sheets (rater1/2/3) are released to enable third-party re-analysis.
+- **Rater informed consent**: Raters 2 and 3 provided informed consent prior to scoring. Their names and ID numbers are stripped from the released files; only role labels (e.g., "Rater 2, internal auditor") are retained.
 
 ## Acknowledgments
 
@@ -155,16 +160,16 @@ In short: use freely with attribution.
 ### 核心内容
 
 - **486 篇生成的 QMS 中文文件**：Claude Opus 4.6（405 篇）+ GPT-5.4（81 篇），覆盖 9 组配置 × 15 任务类型 × 3 重复
-- **864 次 LLM 判官评分**：Claude 与 GPT 跨模型评估，5 维度 CNAS 评审员视角
-- **10 篇专家盲评**：具 CNAS 资格的检验科主任技师完成
+- **864 次 LLM 评审评分**：Claude 与 GPT 跨模型评估，5 维度 CNAS 评审员视角
+- **30 次专家盲评**：10 篇 × 3 位 ISO 15189 资格专家（1 位 CNAS 主任技师 + 2 位同单位合格内审员），专家间 ICC(2,k)=0.982
 - **完整分析代码**：自动评分器、LLM 判官流水线、2×2 对称分析、ICC 计算
 - **可复现材料**：任务 prompt、配置模板、规则定义等
 
 ### 核心发现
 
-1. LLM 判官与领域专家评估存在系统性分歧（ICC(3,1) 专家 vs Claude = 0.613; vs GPT = 0.195）
+1. LLM 评审与领域专家评估存在系统性分歧（n=3 rater，ICC(3,1) 专家均值 vs Claude = 0.548, p=0.04; vs GPT = 0.217, ns）
 2. 两个 LLM 判官系统性高估 0.55–0.93 分
-3. 配置的"最优性"取决于评估者：LLM 视角 H4 (6K) 最优；专家视角 G/F (35–38K) 最优，**H4 在专家视角倒数第二**
+3. 配置的"最优性"取决于评估者：LLM 视角 H4 (6K) 最优；专家视角 F/G/H2 (35–61K) 最优（专家均值 4.06–4.24），**H4 在专家视角倒数第二**（3.20）
 4. 4 因子正交消融（LLM 层）：规则层和骨架层有效；详细内容无贡献；示例轻微有害
 5. token 体量陷阱的模型依赖性：C_full (71K) 在 Claude 下勉强可用，在 GPT 下完全崩盘
 6. Claude 自评偏见 +0.464；GPT 反向偏见 −0.472

@@ -42,6 +42,10 @@ Against this background, the present study was designed to use 486 generated doc
 
 Nine controlled configurations were designed by orthogonally combining four dimensions: rules, skeleton, detailed content, and examples (Figure 1). Among them, A_bare (0 K) and B_simple (0.4 K) served as baselines; C_full (71 K) represented the full-context input strategy; E_rules (3.1 K) contained only the rules layer; F_template (35 K) contained the complete template without rules; G_template_rules (38 K) combined rules and template; H2_keep_examples (61 K) retained examples in addition to G; H3_skeleton (13 K) preserved the module skeleton while removing detailed content; and H4_sop_only (6 K) preserved only the single SOP skeleton most relevant to the task.
 
+![Figure 1](figures/fig1_config_composition.png)
+
+**Figure 1.** Nine configurations tested for LLM-assisted ISO 15189 QMS generation. Left: inclusion of each configuration along the four dimensions of rules, skeleton, detailed content, and examples (✓ included, half-circle partial, — absent); right: the system-prompt size of each configuration (K tokens).
+
 The rules layer was based on rules.md (3.1 K) and revised through domain-expert review: three incorrect terminology mappings were removed (instrument → equipment, calibrator product → calibrator, inter-laboratory comparison → proficiency testing); three target terms were corrected (specimen → sample, test item → measurand, linear range → reportable range); and 10 verified mappings together with 7 categories of vague-expression prohibitions were retained. The skeleton layer was extracted from the template library by the strip_to_skeleton algorithm, which preserved section headings, the introductory paragraph of each section, and form numbering lists, while removing verbatim clause excerpts, detailed table content, examples, detailed step lists, and code blocks.
 
 ### 2.2 Generation models and tasks
@@ -78,6 +82,10 @@ The main effect of the rules layer was +0.511 (p < 0.001) and that of the skelet
 
 Figure 2 presents the 2 × 2 symmetric matrix (n = 9 configurations × 4 quadrants). C_full exhibited a marked drop in performance under GPT generation (GPT-gen × Claude-judge mean 1.40; GPT-gen × GPT-judge mean 1.84), whereas the same C_full under Claude generation produced cross-evaluated scores of 3.22–4.56. This indicates that the apparent usability of the 71 K full-context configuration under Claude Opus is model-specific rather than a general result. GPT-5.4 under the 71 K configuration exhibited failure modes including instruction forgetting, structural breakdown, and clause confusion.
 
+![Figure 2](figures/fig2_2x2_symmetric.png)
+
+**Figure 2.** Heatmap of the 2 × 2 cross-model symmetric design. Mean score (across tasks A1/B1/C1, 0–5 scale) for nine configurations (rows) × four generator–judge combinations (columns). C_full collapses markedly in the two GPT-generated columns (1.40 and 1.84, black-bordered cells), in sharp contrast with the two Claude-generated columns (4.56 and 3.22).
+
 ### 3.4 Self-preference bias of LLM judges
 
 Computed as bias = (own-own) − (cross-own), the mean bias of the Claude judge was +0.464 (positive in 8 of 9 groups; the maximum, +1.33, occurred at C_full), and that of the GPT judge was −0.472 (negative in 8 of 9 groups, i.e., GPT preferred Claude-generated text). The two biases formed a symmetric, opposite-signed pattern of comparable magnitude, indicating that the bias originates at the judge end as a systematic phenomenon rather than from any genuine quality difference at the generation end. Skeleton-type configurations (E, H3, H4) showed the smallest bias (< 0.15).
@@ -90,11 +98,19 @@ Inter-rater agreement among the three experts was excellent: ICC(2,k) = 0.982 (9
 
 The expert mean compared with the Claude judge gave ICC(3,1) = 0.548 (p = 0.04), Pearson r = 0.573, Spearman ρ = 0.509, mean difference −0.905; the expert mean compared with the GPT judge gave ICC(3,1) = 0.217 (p = 0.26), Pearson r = 0.259, mean difference −0.525 (Figure 3). Both LLM judges systematically overestimated by 0.52–0.90 points; Claude versus expert ranking agreement was at a moderate level, whereas GPT versus expert agreement was poor.
 
+![Figure 3](figures/fig3_expert_vs_llm.png)
+
+**Figure 3.** Systematic overestimation of LLM judges relative to a three-rater expert panel (n = 10 papers × 3 raters). Horizontal axis: mean rating of the three experts. Vertical axis: LLM-judge rating. Left: vs Claude Opus 4.6 [ICC(3,1) = 0.548; Pearson r = 0.573; mean diff = −0.90]. Right: vs GPT-5.4 [ICC(3,1) = 0.217; Pearson r = 0.259; mean diff = −0.52]. Dashed line: 1:1 perfect agreement; configurations colour-coded.
+
 The expert mean by configuration ranked as follows: F_template 4.24 (n = 1) first, H2_keep_examples 4.07 (n = 1) second, G_template_rules 4.06 (n = 2) third, C_full 3.45 (n = 2) fourth, H4_sop_only 3.20 (n = 2) fifth, E_rules 3.19 (n = 1) sixth, A_bare 3.04 (n = 1) seventh. The first-ranked configuration at the LLM-judge tier (H4_sop_only, 6 K) ranked second-to-last under expert evaluation (only 0.16 above A_bare). Overestimation by the LLM judges was largest for C_full and H4 (Δ = −1.27 and −1.05, respectively), suggesting that although these two configurations exhibit structural completeness and terminological compliance, their insufficient depth in clinical practice is detectable to experts.
 
 ### 3.6 Token size versus quality: a dual-perspective relationship
 
 Figure 4 shows the relationship between token size and quality scores from two perspectives. The Claude-judge curve increases monotonically with token size, remaining at 4.90 even at C_full; the GPT-judge curve peaks near H4 (6 K) and then descends, collapsing at C_full; the expert curve peaks at the F/G template region (35–38 K) at 4.24 but reaches only 3.20 at H4 (6 K). The three curves diverge most prominently in the 6–13 K interval: the LLM judges already consider this region near peak, whereas experts judge it as still substantially below the optimum. This result indicates that token-efficiency-oriented configuration optimization and clinical-usability-oriented configuration optimization correspond to two different objective functions in the QMS generation scenario.
+
+![Figure 4](figures/fig4_token_vs_quality.png)
+
+**Figure 4.** Token size versus quality score — LLM judges peak at 6–13 K while experts prefer 35–61 K. Horizontal axis: system-prompt size (symlog scale). Vertical axis: quality score (0–5). Solid green line (squares): three-rater expert mean. Solid red line (circles): Claude Opus 4.6 judge. Solid blue line (triangles): GPT-5.4 judge. Orange-shaded band marks the token-efficient optimum (H4 / H3); green-shaded band marks the expert-judged clinical-usability optimum (F / G).
 
 ---
 
@@ -158,18 +174,6 @@ The optimal configuration for LLM-assisted ISO 15189 QMS document generation dep
 ## Acknowledgements
 
 The author thanks the two colleagues who participated in expert blind review (Raters 2 and 3) for providing an independent expert perspective on a fully informed-consent basis.
-
----
-
-## Figure Legends
-
-**Figure 1.** Nine configurations tested for LLM-assisted ISO 15189 QMS generation. Left: inclusion of each configuration along the four dimensions of rules, skeleton, detailed content, and examples (✓ included, half-circle partial, — absent); right: the system-prompt size of each configuration (K tokens).
-
-**Figure 2.** Heatmap of the 2 × 2 cross-model symmetric design. Mean score (across tasks A1/B1/C1, 0–5 scale) for nine configurations (rows) × four generator–judge combinations (columns). C_full collapses markedly in the two GPT-generated columns (1.40 and 1.84, black-bordered cells), in sharp contrast with the two Claude-generated columns (4.56 and 3.22).
-
-**Figure 3.** Systematic overestimation of LLM judges relative to a three-rater expert panel (n = 10 papers × 3 raters). Horizontal axis: mean rating of the three experts. Vertical axis: LLM-judge rating. Left: vs Claude Opus 4.6 [ICC(3,1) = 0.548; Pearson r = 0.573; mean diff = −0.90]. Right: vs GPT-5.4 [ICC(3,1) = 0.217; Pearson r = 0.259; mean diff = −0.52]. Dashed line: 1:1 perfect agreement; configurations colour-coded.
-
-**Figure 4.** Token size versus quality score — LLM judges peak at 6–13 K while experts prefer 35–61 K. Horizontal axis: system-prompt size (symlog scale). Vertical axis: quality score (0–5). Solid green line (squares): three-rater expert mean. Solid red line (circles): Claude Opus 4.6 judge. Solid blue line (triangles): GPT-5.4 judge. Orange-shaded band marks the token-efficient optimum (H4 / H3); green-shaded band marks the expert-judged clinical-usability optimum (F / G).
 
 ---
 

@@ -54,7 +54,12 @@ The main experiment used Claude Opus 4.6 (Anthropic) × 9 configurations × 15 t
 
 ### 2.3 Three-tier evaluation framework
 
-**Tier 1**: A Python automated compliance scorer rated all 486 documents along five indicators—format, clauses, terminology, violations, and vagueness.
+**Tier 1**: A Python automated compliance scorer (auto_scorer.py, openly released) rated all 486 documents on five dimensions (0–5 integer scale).
+- **Format**: required section headings matched per task class (Class A procedure documents: 8 sections; Class B checklists/reports: 6 sections; Class C audit reports: 7 sections; synonyms accepted), combined with numbering-depth and empty-section checks; ≥3 missing sections scored 1, 1 missing section scored 3.
+- **Clause coverage**: regular-expression matching of ISO 15189:2022 chapter 4–8 clause identifiers (e.g., 5.4.1), filtered by a ±40-character context window to suppress spurious matches; ≥10 unique clauses with at least one CNAS-CL02 reference scored 5, no reference scored 1.
+- **Terminology compliance**: a 14-term mapping table aligned with ISO 15189:2022 / CNAS-CL02:2023 (e.g., 分析前过程 → 检验前过程, 标本 → 样品, 不确定度 → 测量不确定度), with context-exclusion rules to avoid false positives (e.g., 不确定度 inside 测量不确定度 is not flagged).
+- **Vague expressions**: detection of expressions such as 及时, 相关人员, 定期, dual-filtered by a compound-word whitelist and a 30-character trailing window for frequency quantifiers (e.g., "weekly" or "annually" suppresses the flag).
+- **Composite score**: a weighted aggregate (auto_weighted) of the five dimensions; the exact weights are defined in the WEIGHTS dictionary of auto_scorer.py.
 
 **Tier 2a**: Claude Opus 4.6, acting as a CNAS chief assessor, scored each document on five dimensions (clause coverage, operability, internal consistency, PDCA closure, and professional depth) on a 0–5 scale; 378 documents were rated.
 

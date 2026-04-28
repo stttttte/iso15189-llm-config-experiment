@@ -2,7 +2,7 @@
 
 **Author**: Sidi Liu¹
 
-**Affiliation**: ¹ Department of Clinical Laboratory, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China
+**Affiliation**: ¹ Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China
 
 **Corresponding author**: Sidi Liu, lllsssddd@icloud.com, ORCID: 0009-0006-1695-5372
 

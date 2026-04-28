@@ -9,7 +9,7 @@
 ## 英文版（投稿使用）
 
 **Sidi Liu**
-**Department of Clinical Laboratory, West China Hospital Xiamen, Sichuan University**
+**Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University**
 **No. 188 Houpu West Road, Jimei District, Xiamen, Fujian 361024, China**
 
 27 April 2026
@@ -54,7 +54,7 @@ Thank you for considering this submission. I look forward to the Editorial Board
 Sincerely,
 
 **Sidi Liu** (ORCID: 0009-0006-1695-5372)
-Department of Clinical Laboratory, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian, China
+Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian, China
 Email: lllsssddd@icloud.com
 
 ---

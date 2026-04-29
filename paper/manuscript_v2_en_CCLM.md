@@ -26,7 +26,7 @@
 
 ## 1. Introduction
 
-ISO 15189:2022 *Medical laboratories — Requirements for quality and competence* is the international standard for medical laboratory accreditation, and adoption by Chinese medical laboratories has continued to expand under the China National Accreditation Service for Conformity Assessment (CNAS) framework. CNAS-CL02:2023, the corresponding implementation document, was released in parallel. Such standards prescribe what laboratories *should do* but not *how to do it*, requiring each laboratory to construct, on its own, a complete **quality management system (QMS) documentation** covering the quality manual, procedure documents, and standard operating instructions. Based on the corresponding author's experience as an ISO 15189 assessor, such a system in a typical tertiary-level hospital clinical laboratory contains on the order of 100–300 controlled documents and spans structural organisation, clause mapping, form numbering, and responsibility assignment; manual drafting by the quality team typically takes several months, followed by several rounds of internal audit before the system can be finalised. Laboratories pursuing CNAS accreditation generally engage technical experts or trainers to guide them through this process.
+ISO 15189:2022 *Medical laboratories — Requirements for quality and competence* is the international standard for medical laboratory accreditation, and adoption by Chinese medical laboratories has continued to expand under the China National Accreditation Service for Conformity Assessment (CNAS) framework [14]. CNAS-CL02:2023, the corresponding implementation document, was released in parallel. Such standards prescribe what laboratories *should do* but not *how to do it*, requiring each laboratory to construct, on its own, a complete **quality management system (QMS) documentation** covering the quality manual, procedure documents, and standard operating instructions. Based on the corresponding author's experience as an ISO 15189 assessor, such a system in a typical tertiary-level hospital clinical laboratory contains on the order of 100–300 controlled documents and spans structural organisation, clause mapping, form numbering, and responsibility assignment; manual drafting by the quality team typically takes several months, followed by several rounds of internal audit before the system can be finalised. Laboratories pursuing CNAS accreditation generally engage technical experts or trainers to guide them through this process.
 
 The advancement of large language models (LLMs) has opened the possibility of automating this process. New-generation models such as Claude Opus 4.6 and GPT-5.4 have demonstrated competence in long-document generation, structured output, and domain terminology use [1, 2]. However, one question that has not been systematically studied is what kind of system prompt should be supplied to an LLM in order to produce a compliant and usable QMS document. Two extreme strategies are observed in practice: the "full-context hypothesis," which loads all potentially relevant material (the ISO standard text, CNAS criteria, the existing document library, and examples) into the system prompt, with token counts often reaching 50–100 K; and the "minimal hypothesis," which provides only rule constraints and section skeletons and relies on the model's internalized knowledge to generate content, with token counts of only a few thousand. Empirical evidence for either strategy remains limited because existing surveys of LLM behaviour and prompting [4, 12] have focused on general-purpose tasks and have not systematically compared specialized document scenarios such as QMS.
 
@@ -224,9 +224,11 @@ The author thanks the two colleagues who participated in expert blind review (Ra
 
 13. Shrout PE, Fleiss JL. Intraclass correlations: uses in assessing rater reliability. Psychol Bull 1979;86:420–8.
 
+14. Yang S, Zhou Y, Wang C, Luo M. The 'Double Helix' model of quality monitoring: risk mapping of quality management system during initial ISO 15189 implementation in a medical laboratory. PLoS One 2026;21:e0342129.
+
 ---
 
 **Word count (main text including references)**: ~5400 words
 **Tables**: 1 (Table 6 — configuration recommendations stratified by scenario)
 **Figures**: 4
-**References**: 13
+**References**: 14

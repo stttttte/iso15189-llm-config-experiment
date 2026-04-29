@@ -26,7 +26,7 @@
 
 ## 1. Introduction
 
-ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实验室认证的国际标准，在中国合格评定国家认可委员会（CNAS）框架下，国内医学实验室的采用持续扩大。CNAS-CL02:2023 作为对应的实施文本同步推出。该类标准明确规定实验室"应做什么"但不规定"如何做"，因此实验室须自行构建覆盖质量手册、程序文件与作业指导书的完整**质量管理体系（quality management system, QMS）文件**。根据通讯作者作为 ISO 15189 评审员的经验，此类体系在典型三级甲等医院检验科中通常包含约 100–300 份受控文件，涉及结构组织、条款映射、表单编号与职责分配的系统工程；依靠质量小组手工编写通常需时数月，体系建立后还需经过多轮内审方可定型。寻求 CNAS 认可的实验室通常会聘请技术专家或培训师协助完成此过程。
+ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实验室认证的国际标准，在中国合格评定国家认可委员会（CNAS）框架下，国内医学实验室的采用持续扩大 [14]。CNAS-CL02:2023 作为对应的实施文本同步推出。该类标准明确规定实验室"应做什么"但不规定"如何做"，因此实验室须自行构建覆盖质量手册、程序文件与作业指导书的完整**质量管理体系（quality management system, QMS）文件**。根据通讯作者作为 ISO 15189 评审员的经验，此类体系在典型三级甲等医院检验科中通常包含约 100–300 份受控文件，涉及结构组织、条款映射、表单编号与职责分配的系统工程；依靠质量小组手工编写通常需时数月，体系建立后还需经过多轮内审方可定型。寻求 CNAS 认可的实验室通常会聘请技术专家或培训师协助完成此过程。
 
 大语言模型（LLM）的发展为这一过程提供了自动化的可能性。Claude Opus 4.6 与 GPT-5.4 等新一代模型在长文档生成、结构化输出和专业术语使用方面已显示出相应能力 [1,2]。然而，一个尚未被系统研究的问题是：应当向 LLM 提供何种 system prompt，才能使其产出合规且可用的 QMS 文件。实践中存在两种极端策略：其一为"全量假设"，即将所有相关资料（ISO 原文、CNAS 准则、既有文件库、示例）一并载入 system prompt，token 数通常达 50–100 K 级别；其二为"极简假设"，即仅提供规则约束与章节骨架，依赖模型内化知识生成内容，token 数仅数千。两种假设的实证证据均有限，因为现有 LLM 行为与 prompting 综述 [4,12] 多关注通用任务，缺乏针对 QMS 这类专业文档场景的系统比较。
 
@@ -228,9 +228,11 @@ LLM 辅助 ISO 15189 QMS 文件生成的最优配置取决于评估视角。LLM 
 
 13. Shrout PE, Fleiss JL. Intraclass correlations: uses in assessing rater reliability. Psychol Bull 1979;86:420–8.
 
+14. Yang S, Zhou Y, Wang C, Luo M. The 'Double Helix' model of quality monitoring: risk mapping of quality management system during initial ISO 15189 implementation in a medical laboratory. PLoS One 2026;21:e0342129.
+
 ---
 
 **Word count (正文含参考文献)**：约 6200 字  
 **Tables**：6（含推荐配置表 Table 6）  
 **Figures**：4  
-**References**：13
+**References**：14

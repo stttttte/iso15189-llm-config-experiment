@@ -87,7 +87,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实
 
 ### 2.4 统计方法
 
-组间成对比较采用双侧 Mann-Whitney U 检验（scipy.stats.mannwhitneyu），针对 per-paper GPT 评审评分（每组 n=45，对应 15 任务 × 3 重复）；四因子消融的多重比较采用 Bonferroni 校正。4 个配置成分效应以靶向配置对的均值差量化，遵循正交替换设计：规则 = E_rules_v2 vs A_bare；骨架 = H4_sop_only vs E_rules_v2；详细内容 = G_template_rules vs H3_skeleton；示例 = H2_keep_examples vs G_template_rules。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
+组间成对比较采用双侧 Mann-Whitney U 检验（scipy.stats.mannwhitneyu），针对 per-paper GPT 评审评分（每组 n=45，对应 15 任务 × 3 重复）；四因子消融的多重比较采用 Bonferroni 校正。4 个配置成分效应在正交替换设计下采用靶向配置对计算：规则 = E_rules_v2 vs A_bare；骨架 = H4_sop_only vs E_rules_v2；详细内容 = G_template_rules vs H3_skeleton；示例 = H2_keep_examples vs G_template_rules。每个效应 Δ 定义为**简单算术均值差**：Δ = mean(组 B) − mean(组 A)，其中各组均值为该配置下 45 条 per-paper GPT 评审评分的非加权算术平均；未加入任何协变量、随机效应、加权或收缩。同样的每组 45 个样本同时用作对应 Mann-Whitney U 检验的输入。本研究未采用 L9 正交表主效应估计、最小二乘均值（least-squares means）或混合效应（mixed-effects）模型。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
 
 ---
 

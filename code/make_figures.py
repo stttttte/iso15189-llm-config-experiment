@@ -53,15 +53,16 @@ def save(fig, name):
 # -----------------------------------------------------------------------------
 GROUPS = [
     # (code_name, token_K, has_rules, has_skeleton, has_detail, has_example)
+    # token_K values are cl100k_base tokens / 1000 (Anthropic-tokenizer ≈ ±10%)
     ("A_bare",           0.0, 0, 0, 0, 0),
-    ("B_simple",         0.4, 0.5, 0, 0, 0),
-    ("E_rules",          3.1, 1, 0, 0, 0),
-    ("H4_sop_only",      6.0, 1, 0.5, 0, 0),
-    ("H3_skeleton",     13.0, 1, 1, 0, 0),
-    ("F_template",      35.0, 0, 1, 1, 0),
-    ("G_template_rules", 38.0, 1, 1, 1, 0),
-    ("H2_keep_examples", 61.0, 1, 1, 1, 1),
-    ("C_full",          71.0, 0.5, 1, 1, 1),
+    ("B_simple",         0.3, 0.5, 0, 0, 0),
+    ("E_rules",          1.2, 1, 0, 0, 0),
+    ("H4_sop_only",      2.0, 1, 0.5, 0, 0),
+    ("H3_skeleton",      5.0, 1, 1, 0, 0),
+    ("F_template",      15.0, 0, 1, 1, 0),
+    ("G_template_rules", 16.0, 1, 1, 1, 0),
+    ("H2_keep_examples", 25.0, 1, 1, 1, 1),
+    ("C_full",          56.0, 0.5, 1, 1, 1),
 ]
 
 GROUP_COLORS = {
@@ -330,7 +331,7 @@ def figure4():
     # Merge with token sizes
     token_map = {g[0]: g[1] for g in GROUPS}
     # Handle E_rules_v2 vs E_rules aliasing in icc data
-    token_map["E_rules_v2"] = 3.1
+    token_map["E_rules_v2"] = 1.2
     by_group["tokens"] = by_group["group"].map(token_map)
     by_group = by_group.sort_values("tokens")
 
@@ -355,28 +356,28 @@ def figure4():
                     xytext=(4, -14), textcoords="offset points",
                     fontsize=8, color="#2a6a3e", alpha=0.85)
 
-    ax.set_xscale("symlog", linthresh=1)
-    ax.set_xticks([0, 1, 3, 10, 30, 70])
-    ax.set_xticklabels(["0", "1K", "3K", "10K", "30K", "70K"])
-    ax.set_xlim(-0.5, 100)
+    ax.set_xscale("symlog", linthresh=0.5)
+    ax.set_xticks([0, 0.5, 1, 2, 5, 15, 25, 56])
+    ax.set_xticklabels(["0", "0.5K", "1K", "2K", "5K", "15K", "25K", "56K"])
+    ax.set_xlim(-0.2, 80)
     ax.set_ylim(2.5, 5.2)
-    ax.set_xlabel("System-prompt size (tokens, symlog scale)")
+    ax.set_xlabel("System-prompt size (tokens, symlog scale; cl100k_base)")
     ax.set_ylabel("Mean quality score (0–5)")
     ax.grid(alpha=0.3, linewidth=0.5)
     ax.set_axisbelow(True)
 
     # Highlight token-efficiency vs clinical-usability tradeoff
-    ax.axvspan(3, 13, alpha=0.08, color="#dd8452",
+    ax.axvspan(1, 5, alpha=0.08, color="#dd8452",
                label="_", zorder=0)
-    ax.axvspan(30, 65, alpha=0.08, color="#55a868",
+    ax.axvspan(13, 27, alpha=0.08, color="#55a868",
                label="_", zorder=0)
-    ax.text(6, 5.05, "Efficient zone\n(H4 / H3)", ha="center",
+    ax.text(2.5, 5.05, "Efficient zone\n(H4 / H3)", ha="center",
             fontsize=9, style="italic", color="#a05a2c")
-    ax.text(43, 5.05, "Expert-optimal zone\n(F / G)", ha="center",
+    ax.text(19, 5.05, "Expert-optimal zone\n(F / G)", ha="center",
             fontsize=9, style="italic", color="#2a6a3e")
 
     ax.legend(loc="lower right", fontsize=9)
-    ax.set_title("Token size vs quality: LLM judges peak at 6–13K; experts prefer 35–61K",
+    ax.set_title("Token size vs quality: LLM judges peak at 2–5K; experts prefer 15–25K",
                  loc="left", fontweight="bold")
 
     fig.tight_layout()

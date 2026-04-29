@@ -85,7 +85,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实
 
 ### 2.4 统计方法
 
-组间比较采用 Kruskal-Wallis 检验与 Mann-Whitney U 检验，多重比较采用 Bonferroni 校正。四因子效应量采用双因子方差分析。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
+组间成对比较采用双侧 Mann-Whitney U 检验（scipy.stats.mannwhitneyu），针对 per-paper GPT 评审评分（每组 n=45，对应 15 任务 × 3 重复）；四因子消融的多重比较采用 Bonferroni 校正。4 个配置成分效应以靶向配置对的均值差量化，遵循正交替换设计：规则 = E_rules_v2 vs A_bare；骨架 = H4_sop_only vs E_rules_v2；详细内容 = G_template_rules vs H3_skeleton；示例 = H2_keep_examples vs G_template_rules。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
 
 ---
 

@@ -81,7 +81,7 @@ The main experiment used Claude Opus 4.6 (Anthropic) × 9 configurations × 15 t
 
 ### 2.4 Statistical analysis
 
-Between-group comparisons used the Kruskal–Wallis test and the Mann–Whitney U test, with Bonferroni correction applied for multiple comparisons. Four-factor effect sizes were estimated by two-way analysis of variance. Inter-rater agreement was assessed by Pearson correlation, Spearman correlation, and the ICC(2,1) (absolute agreement) and ICC(3,1) (consistency in ranking) defined by Shrout and Fleiss [13]. ICC computation used the pingouin 0.5 Python library. Self-preference bias was quantified by cross-model differencing as bias = (mean own-own) − (mean cross-own).
+Pairwise between-group comparisons used the two-sided Mann–Whitney U test (scipy.stats.mannwhitneyu) on per-paper GPT-judge scores (n = 45 per group: 15 tasks × 3 replicates), with Bonferroni correction applied for multiple comparisons within the four-factor ablation. The four configuration-component effects were quantified as mean differences between targeted configuration contrasts under an orthogonal substitution scheme: rules = E_rules_v2 vs A_bare; skeleton = H4_sop_only vs E_rules_v2; detailed content = G_template_rules vs H3_skeleton; examples = H2_keep_examples vs G_template_rules. Inter-rater agreement was assessed by Pearson correlation, Spearman correlation, and the ICC(2,1) (absolute agreement) and ICC(3,1) (consistency in ranking) defined by Shrout and Fleiss [13]. ICC computation used the pingouin 0.5 Python library. Self-preference bias was quantified by cross-model differencing as bias = (mean own-own) − (mean cross-own).
 
 ---
 

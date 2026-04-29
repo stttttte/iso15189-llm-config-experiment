@@ -16,7 +16,7 @@
 
 **Objectives**：本研究旨在系统比较不同配置策略下大语言模型（large language model, LLM）生成 ISO 15189:2022 医学实验室质量管理体系（quality management system, QMS）文件的合规性，识别最优配置区间，并通过多层次评估揭示现有评估方法的系统性偏差。
 
-**Methods**：采用非对称双模型设计，共生成 486 份 QMS 文件：Claude Opus 4.6 × 9 组配置 × 15 任务 × 3 重复（405 份）；GPT-5.4 × 9 组 × 3 任务（A1/B1/C1）× 3 重复（81 份，用于跨模型验证）。9 组配置按规则、骨架、详细内容、示例 4 个维度正交组合，token 规模从 0 覆盖至 71 K。评估采用三层框架：(1) Python 自动合规评分器；(2) Claude 与 GPT-5.4 双 LLM 评审（共 864 次评分，含 2×2 对称跨模型验证）；(3) 3 位 ISO 15189 资格专家对 10 份分层随机抽样的盲化文件独立评分。一致性采用 Pearson 相关系数、Spearman 相关系数以及组内相关系数 [ICC(2,1) 与 ICC(3,1)] 评价。
+**Methods**：采用非对称双模型设计，共生成 486 份 QMS 文件：Claude Opus 4.6 × 9 组配置 × 15 任务 × 3 重复（405 份）；GPT-5.4 × 9 组 × 3 任务（A1/B1/C1）× 3 重复（81 份，用于跨模型验证）。9 组配置按规则、骨架、详细内容、示例 4 个维度正交组合，token 规模从 0 覆盖至 71 K。评估采用三层框架：(1) Python 自动合规评分器；(2) Claude 与 GPT-5.4 双 LLM 评审（共 864 次评分 = 378 条 Claude 评审 + 486 条 GPT 评审，含 2×2 对称跨模型验证）；(3) 3 位 ISO 15189 资格专家对 10 份分层随机抽样的盲化文件独立评分。一致性采用 Pearson 相关系数、Spearman 相关系数以及组内相关系数 [ICC(2,1) 与 ICC(3,1)] 评价。
 
 **Results**：(1) 四因子正交消融显示，规则层（Δ=+0.511，p<0.001）与骨架层（Δ=+0.213，p=0.055）在 LLM 评估层显著有效；详细内容（Δ=−0.031，p=0.79）与示例（Δ=−0.053，p=0.46）无贡献或轻微有害。(2) 全量配置 C_full（71 K）在 Claude 生成下的跨评分为 3.22–4.56，在 GPT-5.4 生成下降至 1.40–1.84，提示 Claude Opus 的长上下文能力在此场景中具有模型特异性。(3) Claude 评审存在约 +0.46 的自评偏差，GPT 评审呈约 −0.47 的反向偏差。(4) 3 位专家之间 ICC(2,k)=0.982，而专家均值与 Claude 评审的 ICC(3,1)=0.548（p=0.04）、与 GPT 评审的 ICC(3,1)=0.217（p=0.26）；两种 LLM 评审均系统性高估 0.52–0.90 分。(5) LLM 评估层的最优配置 H4_sop_only（6 K 骨架）在专家视角下排名倒数第二（3.20 分，n=2），而模板类配置 F_template（35 K）、H2_keep_examples（61 K）与 G_template_rules（38 K）在专家视角下最优（4.06–4.24 分）。
 
@@ -59,7 +59,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实
 
 **层 2a**：以 Claude Opus 4.6 作为评审员，按"CNAS 主任评审员"角色 prompt（模板见 gpt_cnas_judge.py 的 JUDGE_PROMPT_TEMPLATE，与 Tier 2b 完全一致）对每份文件按 5 维度 0–5 分评分（量规见下表）。模型参数：temperature=1.0，max_tokens=4 096，单文件单次评分。共生成 378 条 Claude-judge 评分：270 条覆盖 6 个核心配置组（A/B/C/E/F/G）× 15 任务 × 3 重复（Claude-gen，per-paper raw 完整公开）；81 条覆盖 9 配置 × A1/B1/C1 × 3 重复（GPT-gen，仅聚合均值保留，见 §4.5 局限性 x）；27 条覆盖 H 组（H2/H3/H4）× A1/B1/C1 × 3 重复（Claude-gen，仅聚合保留）。
 
-**层 2b**：以 GPT-5.4（OpenAI，通过 AIHubMix API 代理调用）作为评审员，使用与 Tier 2a 完全相同的 prompt、量规与 0–5 分评分尺度。模型参数：temperature=1.0，max_tokens=4 096。覆盖全部 486 份生成文件（405 Claude-gen + 81 GPT-gen），每份 1 次评分，per-paper raw JSON 全部保留并公开。Tier 2a 与 2b 共同构成 2×2 对称设计（Claude-gen × Claude-judge、Claude-gen × GPT-judge、GPT-gen × Claude-judge、GPT-gen × GPT-judge），用于正交分解自评偏差。
+**层 2b**：以 GPT-5.4（OpenAI，通过 AIHubMix API 代理调用）作为评审员，使用与 Tier 2a 完全相同的 prompt、量规与 0–5 分评分尺度。模型参数：temperature=1.0，max_tokens=4 096。覆盖全部 486 份生成文件（405 Claude-gen + 81 GPT-gen），每份 1 次评分，per-paper raw JSON 全部保留并公开。Tier 2a 与 2b 合计共 **864 条 LLM 评审评分**（= 378 条 Claude 评审 + 486 条 GPT 评审）；非对称源于 Claude 评审未覆盖 H 组完整 15 任务及完整 GPT-gen 集（详见 §4.5 局限性 x）。两层共同构成 2×2 对称设计（Claude-gen × Claude-judge、Claude-gen × GPT-judge、GPT-gen × Claude-judge、GPT-gen × GPT-judge），用于正交分解自评偏差。
 
 **5 维度评分量规**（Tier 2a/2b 与 Tier 3 共用）：
 

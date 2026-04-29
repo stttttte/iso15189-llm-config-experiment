@@ -18,7 +18,7 @@
 
 **Methods**：采用非对称双模型设计，共生成 486 份 QMS 文件：Claude Opus 4.6 × 9 组配置 × 15 任务 × 3 重复（405 份）；GPT-5.4 × 9 组 × 3 任务（A1/B1/C1）× 3 重复（81 份，用于跨模型验证）。9 组配置按规则、骨架、详细内容、示例 4 个维度正交组合，token 规模从 0 覆盖至 71 K。评估采用三层框架：(1) Python 自动合规评分器；(2) Claude 与 GPT-5.4 双 LLM 评审（共 864 次评分 = 378 条 Claude 评审 + 486 条 GPT 评审，含 2×2 对称跨模型验证）；(3) 3 位 ISO 15189 资格专家对 10 份分层随机抽样的盲化文件独立评分。一致性采用 Pearson 相关系数、Spearman 相关系数以及组内相关系数 [ICC(2,1) 与 ICC(3,1)] 评价。
 
-**Results**：(1) 四因子正交消融显示，规则层（Δ=+0.511，p<0.001）与骨架层（Δ=+0.213，p=0.055）在 LLM 评估层显著有效；详细内容（Δ=−0.031，p=0.79）与示例（Δ=−0.053，p=0.46）无贡献或轻微有害。(2) 全量配置 C_full（71 K）在 Claude 生成下的跨评分为 3.22–4.56，在 GPT-5.4 生成下降至 1.40–1.84，提示 Claude Opus 的长上下文能力在此场景中具有模型特异性。(3) Claude 评审存在约 +0.46 的自评偏差，GPT 评审呈约 −0.47 的反向偏差。(4) 3 位专家之间 ICC(2,k)=0.982，而专家均值与 Claude 评审的 ICC(3,1)=0.548（p=0.04）、与 GPT 评审的 ICC(3,1)=0.217（p=0.26）；两种 LLM 评审均系统性高估 0.52–0.90 分。(5) LLM 评估层的最优配置 H4_sop_only（6 K 骨架）在专家视角下排名倒数第二（3.20 分，n=2），而模板类配置 F_template（35 K）、H2_keep_examples（61 K）与 G_template_rules（38 K）在专家视角下最优（4.06–4.24 分）。
+**Results**：(1) 四因子正交消融（Benjamini-Hochberg FDR 校正）显示，LLM 评估层下仅规则层达到显著（Δ=+0.511；BH-adjusted p<0.001）；骨架层（Δ=+0.213；BH-adjusted p=0.11）、详细内容（Δ=−0.031；BH-adjusted p=0.79）与示例（Δ=−0.053；BH-adjusted p=0.61）均未达显著。(2) 全量配置 C_full（71 K）在 Claude 生成下的跨评分为 3.22–4.56，在 GPT-5.4 生成下降至 1.40–1.84，提示 Claude Opus 的长上下文能力在此场景中具有模型特异性。(3) Claude 评审存在约 +0.46 的自评偏差，GPT 评审呈约 −0.47 的反向偏差。(4) 3 位专家之间 ICC(2,k)=0.982，而专家均值与 Claude 评审的 ICC(3,1)=0.548（p=0.04）、与 GPT 评审的 ICC(3,1)=0.217（p=0.26）；两种 LLM 评审均系统性高估 0.52–0.90 分。(5) LLM 评估层的最优配置 H4_sop_only（6 K 骨架）在专家视角下排名倒数第二（3.20 分，n=2），而模板类配置 F_template（35 K）、H2_keep_examples（61 K）与 G_template_rules（38 K）在专家视角下最优（4.06–4.24 分）。
 
 **Conclusions**：LLM 辅助 QMS 文件生成的"最优配置"取决于评估视角。追求 token 效率与成本控制的场景建议采用 H4_sop_only（6 K）或 E_rules（3 K）；正式送审与 CNAS 认可申请场景建议采用 G_template_rules（38 K）或 F_template（35 K）。C_full（71 K）在现阶段 GPT 类模型长上下文能力不稳定的情况下应避免使用。LLM 评审可作为初筛工具，但不可替代专家终审；Claude 评审与专家排序呈中等一致性，可作为粗筛代理，GPT 评审则不适合此用途。
 
@@ -83,7 +83,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实
 
 ### 2.4 统计方法
 
-组间成对比较采用双侧 Mann-Whitney U 检验（scipy.stats.mannwhitneyu），针对 per-paper GPT 评审评分（每组 n=45，对应 15 任务 × 3 重复）；四因子消融的多重比较采用 Bonferroni 校正。4 个配置成分效应在正交替换设计下采用靶向配置对计算：规则 = E_rules_v2 vs A_bare；骨架 = H4_sop_only vs E_rules_v2；详细内容 = G_template_rules vs H3_skeleton；示例 = H2_keep_examples vs G_template_rules。每个效应 Δ 定义为**简单算术均值差**：Δ = mean(组 B) − mean(组 A)，其中各组均值为该配置下 45 条 per-paper GPT 评审评分的非加权算术平均；未加入任何协变量、随机效应、加权或收缩。同样的每组 45 个样本同时用作对应 Mann-Whitney U 检验的输入。本研究未采用 L9 正交表主效应估计、最小二乘均值（least-squares means）或混合效应（mixed-effects）模型。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
+组间成对比较采用双侧 Mann-Whitney U 检验（scipy.stats.mannwhitneyu），针对 per-paper GPT 评审评分（每组 n=45，对应 15 任务 × 3 重复）。四因子消融的多重比较校正采用 Benjamini-Hochberg 错误发现率（FDR）方法（statsmodels.stats.multitest.multipletests，method='fdr_bh'，α=0.05）；考虑到 4 对比的探索性 ablation 性质，选择 BH 而非更严格的 Bonferroni。4 个配置成分效应在正交替换设计下采用靶向配置对计算：规则 = E_rules_v2 vs A_bare；骨架 = H4_sop_only vs E_rules_v2；详细内容 = G_template_rules vs H3_skeleton；示例 = H2_keep_examples vs G_template_rules。每个效应 Δ 定义为**简单算术均值差**：Δ = mean(组 B) − mean(组 A)，其中各组均值为该配置下 45 条 per-paper GPT 评审评分的非加权算术平均；未加入任何协变量、随机效应、加权或收缩。同样的每组 45 个样本同时用作对应 Mann-Whitney U 检验的输入。本研究未采用 L9 正交表主效应估计、最小二乘均值（least-squares means）或混合效应（mixed-effects）模型。评分者间一致性采用 Pearson 相关系数、Spearman 相关系数以及 Shrout 与 Fleiss [13] 定义的 ICC(2,1)（绝对一致）与 ICC(3,1)（排序一致）评价。ICC 计算采用 pingouin 0.5 Python 库。自评偏差采用跨模型差分定量，即 bias = (own-own 均值) − (cross-own 均值)。
 
 ---
 
@@ -95,7 +95,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》作为医学实
 
 ### 3.2 四因子正交消融
 
-规则层主效应为 +0.511（p<0.001），骨架层主效应为 +0.213（p=0.055），在 LLM 层均有显著或接近显著的正向贡献。详细内容无贡献（G vs H3：Δ=−0.031，p=0.79），示例呈方向性有害（H2 vs G：Δ=−0.053，p=0.46）。H4 与 H3 差异不显著（Δ=−0.009，p=0.80），提示任务特定 SOP 骨架（6 K）与完整模块骨架（13 K）效果等效。此消融结果仅在 LLM 层成立，专家层分析见 3.5 节。
+4 个消融效应同时报告 raw 与 Benjamini-Hochberg 校正后 p 值。规则层是 4 因子中唯一在校正后仍达到显著的主效应（Δ=+0.511；raw p<0.001；BH-adjusted p<0.001）。骨架层（Δ=+0.213；raw p=0.055；BH-adjusted p=0.11）方向为正，但经多重比较校正后未达到 0.05 阈值；本研究将其作为提示性证据，需进一步验证。详细内容（G vs H3：Δ=−0.031；raw p=0.79；BH-adjusted p=0.79）与示例（H2 vs G：Δ=−0.053；raw p=0.46；BH-adjusted p=0.61）无统计学贡献。H4 与 H3 差异不显著（Δ=−0.009，raw p=0.80；该对比为描述性，不属于 4 因子 BH 集合，故报告未校正值），提示任务特定 SOP 骨架（6 K）与完整模块骨架（13 K）效果等效。此消融结果仅在 LLM 层成立，专家层分析见 3.5 节。
 
 ### 3.3 2×2 跨模型对称验证
 
@@ -125,7 +125,7 @@ Figure 4 以双视角呈现 token 规模与质量评分的关系。Claude 评审
 
 ### 4.1 配置精简化在 LLM 层成立但在专家层不成立
 
-LLM 评审层的四因子消融得出一个简洁结论：规则与骨架必需，详细内容与示例无贡献甚至有害。此结论与 lost-in-the-middle 理论 [3] 及 prompt 精简化实践 [12] 一致。然而专家层分析推翻了这一简化：详细内容（F 与 G 的完整模板）显著提升临床可用性（F 4.24 vs H4 3.20，差距达 1.04），原因在于 LLM 的内化知识不足以覆盖临床实操的所有子场景，包括急诊样本处理、患者自采送检、运送人员资格认证与拒收标准等。此类信息必须通过 system prompt 显式提供。
+LLM 评审层的四因子消融得出一个简洁结论：规则层必需（BH-adjusted p<0.001），骨架层方向为正但经多重比较校正后未达显著（BH-adjusted p=0.11），详细内容与示例无贡献。此结论与 lost-in-the-middle 理论 [3] 及 prompt 精简化实践 [12] 一致。然而专家层分析推翻了这一简化：详细内容（F 与 G 的完整模板）显著提升临床可用性（F 4.24 vs H4 3.20，差距达 1.04），原因在于 LLM 的内化知识不足以覆盖临床实操的所有子场景，包括急诊样本处理、患者自采送检、运送人员资格认证与拒收标准等。此类信息必须通过 system prompt 显式提供。
 
 ### 4.2 全量输入陷阱的模型依赖性
 

@@ -3,13 +3,13 @@ GPT CNAS Judge — 用 GPT 以 CNAS 主任评审员视角评估 LLM 生成的 IS
 
 用法：
   # 单任务：
-  python3 gpt_cnas_judge.py --task A1 --model gpt-4o
+  python3 gpt_cnas_judge.py --task A1 --model gpt-5.4
   # 全量 15 任务：
-  python3 gpt_cnas_judge.py --all --model gpt-4o
+  python3 gpt_cnas_judge.py --all --model gpt-5.4
   # 仅某组：
-  python3 gpt_cnas_judge.py --all --group G_template_rules --model gpt-4o
+  python3 gpt_cnas_judge.py --all --group G_template_rules --model gpt-5.4
   # 并发（加速）：
-  python3 gpt_cnas_judge.py --all --model gpt-4o --concurrency 5
+  python3 gpt_cnas_judge.py --all --model gpt-5.4 --concurrency 5
 
 环境变量：
   GPT_API_KEY        必填
@@ -270,7 +270,7 @@ def main():
     ap.add_argument("--group", help="仅评估单个组")
     ap.add_argument("--rep", type=int, help="仅评估单个重复（1/2/3）")
     ap.add_argument("--all", action="store_true", help="全量 15 任务 × 6 组 × 3 重复")
-    ap.add_argument("--model", default="gpt-4o", help="模型名称（默认 gpt-4o）")
+    ap.add_argument("--model", default="gpt-5.4", help="模型名称（默认 gpt-5.4）")
     ap.add_argument("--concurrency", type=int, default=5, help="并发数（默认 5）")
     ap.add_argument("--force", action="store_true", help="强制重跑已有评分")
     ap.add_argument("--summarize", action="store_true", help="仅汇总现有结果")

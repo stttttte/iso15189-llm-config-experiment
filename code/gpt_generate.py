@@ -1,8 +1,8 @@
 """
-P0-2 多模型验证：用 GPT-4o 生成文件，验证"H4 最优"结论是否模型无关。
+P0-2 多模型验证：用 GPT-5.4 生成文件，验证"H4 最优"结论是否模型无关。
 
 用法：
-  python3 gpt_generate.py --tasks A1,B1,C1 --model gpt-4o --concurrency 3
+  python3 gpt_generate.py --tasks A1,B1,C1 --model gpt-5.4 --concurrency 3
 
   # 仅跑单任务：
   python3 gpt_generate.py --tasks A1 --groups G_template_rules,H4_sop_only
@@ -75,7 +75,7 @@ GROUP_CONFIGS = {
     "H4_sop_only": lambda task: load_config_file(CONFIGS_DIR / f"H4_{task}.txt"),
 }
 
-# GPT-4o 生成组输出到独立目录（前缀 gpt4o_）
+# GPT-5.4 生成组输出到独立目录（前缀 gpt4o_ 是 legacy 命名遗留，实际 model = GPT-5.4，见论文 §2.2）
 # 文件名格式：gpt4o_{group}-{task}-{rep}.md
 
 

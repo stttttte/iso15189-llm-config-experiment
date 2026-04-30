@@ -520,7 +520,7 @@ def _single_llm_call(prompt: str) -> dict | None:
 
 
 def llm_judge_score(filepath: Path, n_rounds: int = LLM_JUDGE_ROUNDS) -> dict:
-    """使用 GPT-4o 作为评审员对文件进行主观维度评分（多次调用取中位数）"""
+    """使用 GPT-5.4 作为评审员对文件进行主观维度评分（多次调用取中位数）"""
     import statistics
     import time as _time
 

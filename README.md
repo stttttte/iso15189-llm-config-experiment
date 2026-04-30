@@ -58,7 +58,7 @@ iso15189-llm-config-experiment/
 ├── data/
 │   ├── generated/                    # 486 generated QMS documents (Chinese)
 │   │   ├── A_bare/ ... H4_sop_only/
-│   │   └── gpt4o_*/
+│   │   └── gpt4o_*/                # legacy prefix from earlier scripting; actual runtime model = GPT-5.4 (see manuscript §2.2)
 │   ├── scores/
 │   │   ├── all_scores_*.json         # Auto-scorer outputs
 │   │   ├── cnas_judge_final_15tasks.json

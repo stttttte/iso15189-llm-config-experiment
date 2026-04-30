@@ -64,7 +64,7 @@ Python 自动合规评分器（`auto_scorer.py`，已开源；详见 Data availa
 
 **术语合规**：本维度内部聚合两类互补检查。(i) *术语映射*：基于 ISO 15189:2022 / CNAS-CL02:2023 校验的 14 条术语对照表（如"分析前过程"→"检验前过程"、"标本"→"样品"、"不确定度"→"测量不确定度"），并配合上下文排除规则避免合理用法误判（例如"测量不确定度"中的"不确定度"不计违规）。(ii) *模糊表述检测*：检测低质量 QMS 文稿中常见的模糊词，如"及时"、"相关人员"、"定期"，经复合词白名单与后续 30 字符内频率量化（如出现"每周"、"每年"则不计）双重过滤。
 
-**综合分**：三个测量维度按 `auto_scorer.py` 中 `WEIGHTS` 字典定义的固定权重合成为加权综合分（`auto_weighted`）。该字典原本设计为 7 维方案（格式、条款、术语、逻辑、可操作性、安全合规性、人工修改量）；除已实现的三个维度外，其余四项在当前评分器中未实现，默认填充为中性分 3.0，因此在 9 组配置间产生恒定偏移，不影响配置间的相对排序。
+**综合分**：三个测量维度按 `auto_scorer.py` 中 `WEIGHTS` 字典定义的固定权重合成为加权综合分（`auto_weighted`）：格式 = 0.18，条款覆盖 = 0.22，术语 = 0.13（合计 0.53）。该字典另含四项来自原 7 维设计方案的条目——逻辑一致性 = 0.18、可操作性 = 0.10、安全合规性 = 0.09、人工修改量 = 0.10（合计 0.47），但在当前评分器中未实现；这四个维度对每份文件均填入中性默认值 3.0，对每个 `auto_weighted` 值均贡献恒定偏移 0.47 × 3.0 = 1.41。全部权重合计为 1.00，因此 `auto_weighted` 的理论范围为 [1.41, 4.06]。由于此恒定偏移对每份文件均一致，在所有配置间比较中相互抵消，不影响 §3 报告的相对排序。
 
 #### 2.3.2 Tier 2 — LLM-as-judge
 
@@ -72,7 +72,7 @@ Python 自动合规评分器（`auto_scorer.py`，已开源；详见 Data availa
 
 **Tier 2a（Claude-as-judge）**：Claude Opus 4.6 以"CNAS 主任评审员"角色 prompt（即 `gpt_cnas_judge.py` 中定义的 `JUDGE_PROMPT_TEMPLATE`，与 Tier 2b 完全一致）对每份文件按五维度量规（Table 2）以 0–5 分评分。生成参数：temperature = 1.0、max_tokens = 4,096；每份文件经单次 API 调用得到 1 次评分。共生成 378 条 Claude-judge 评分，分布如下：270 条覆盖 6 个核心配置（A_bare、B_simple、C_full、E_rules、F_template、G_template_rules）× 15 任务 × 3 重复的 Claude-生成文件（每篇 raw JSON 完整公开）；81 条覆盖全部 9 配置 × A1/B1/C1 × 3 重复的 GPT-生成文件（仅以聚合均值归档，详见 §4.5 局限性 x）；27 条覆盖 H 组配置（H2_keep_examples、H3_skeleton、H4_sop_only）× A1/B1/C1 × 3 重复的 Claude-生成文件（同样仅以聚合均值归档）。
 
-**Tier 2b（GPT-as-judge）**：GPT-5.4，按 §2.2 所述通过 AIHubMix 端点接入，使用与 Tier 2a 完全相同的 prompt、量规与 0–5 分评分尺度，生成参数同样为 temperature = 1.0、max_tokens = 4,096。全部 486 份生成文件均被评分（405 Claude-生成 + 81 GPT-生成），每份 1 次评分；per-paper raw JSON 完整保留并公开。
+**Tier 2b（GPT-as-judge）**：GPT-5.4，按 §2.2 所述通过 AIHubMix 端点接入，使用与 Tier 2a 完全相同的 prompt、量规与 0–5 分评分尺度，生成参数同样为 temperature = 1.0、max_tokens = 4,096。全部 486 份生成文件均被评分（405 Claude-生成 + 81 GPT-生成），每份 1 次评分；per-paper raw JSON 完整保留并公开。已验证 max_tokens 上限未导致评审输出截断：486 份 GPT-judge per-paper JSON 全部成功解析（0 解析错误），且两位评审员的 per-dimension `reason` 字段最长为 43 字符，仍处于 prompt 所设的40 字软上限内，远低于 4,096 token 的输出预算。
 
 合计 Tier 2a 与 2b 共得 864 条 LLM 评审评分（378 条 Claude-judge + 486 条 GPT-judge）。非对称的评分数反映 Claude 评审未覆盖 H 组完整 15 任务子集及完整 GPT-生成集（详见 §4.5 局限性 x）；关键的是，所有 4 个 2 × 2 象限均有评分填充（部分仅以聚合均值形式，详见 §4.5 局限性 x），保证自评偏差分解可在 cell 均值层面进行。
 

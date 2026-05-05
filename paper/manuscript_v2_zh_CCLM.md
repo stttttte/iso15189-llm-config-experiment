@@ -20,7 +20,7 @@
 
 **Results**：(1) 四成分替换对比消融（Benjamini-Hochberg FDR 校正；bootstrap 95% CI，B = 10,000）显示，LLM 评估层下仅规则成分达到显著（Δ=+0.511，95% CI [+0.28, +0.75]；BH-adjusted p<0.001）；骨架成分（Δ=+0.213，95% CI [+0.05, +0.39]；BH-adjusted p=0.11）、详细内容（Δ=−0.031，95% CI [−0.19, +0.12]；BH-adjusted p=0.79）与示例（Δ=−0.053，95% CI [−0.21, +0.11]；BH-adjusted p=0.61）均未达显著。(2) 全量配置 C_full（56 K）在 Claude 生成下的跨评分为 3.22–4.56，在 GPT-5.4 生成下降至 1.40–1.84，提示 Claude Opus 的长上下文能力在此场景中具有模型特异性。(3) 两位 LLM 评审均把 Claude 生成输出评得比 GPT 生成高约 0.30 分（Panickssery 经典偏差估计：Claude 评审 +0.29，GPT 评审 −0.30），此模式与"同家族经典自偏好"不兼容，可由生成模型间的真实质量差异或两位判官共享的风格偏好同时解释。(4) 3 位专家之间 ICC(2,k)=0.982，而专家均值与 Claude 评审的 ICC(3,1)=0.548（p=0.04）、与 GPT 评审的 ICC(3,1)=0.217（p=0.26）；两种 LLM 评审均系统性高估 0.52–0.90 分。(5) LLM 评估层的最优配置 H4_sop_only（~2,000 tokens）在专家视角下跌至第 5/7 名（3.20 分，n=2；仅高于空 prompt 基线 A_bare 0.16 分），而模板类配置 F_template（~15,000 tokens）、H2_keep_examples（~25,000 tokens）与 G_template_rules（~16,000 tokens）专家排名最优（4.06–4.24 分）。
 
-**Conclusions**：LLM 辅助 QMS 文件生成的"最优配置"取决于评估视角。追求 token 效率与成本控制的场景可采用 H4_sop_only（~2,000 tokens）或 E_rules_v2（~1,200 tokens）作为非终稿、探索性草稿，使用前必须经专家审阅方可用于临床部署；正式送审与 CNAS 认可申请场景应采用 G_template_rules（~16,000 tokens）或 F_template（~15,000 tokens）。C_full（~56,000 tokens）在现阶段 GPT 类模型长上下文能力不稳定的情况下应避免使用。LLM 评审可作为初筛工具，但不可替代专家终审；Claude 评审与专家排序呈中等一致性，可作为粗筛代理，GPT 评审则不适合此用途。
+**Conclusions**：LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置取决于评估层。极简 prompt 配置（H4_sop_only 或 E_rules_v2；~1,000–2,000 tokens）适合用于将经后续专家审阅的探索性草稿；模板锚定配置（G_template_rules 或 F_template；~15,000–16,000 tokens）对于拟提交 CNAS 或同等 ISO 15189 认可的文件则属必需。C_full（~56,000 tokens）应避免使用，尤其是在 GPT-5.4 生成下。LLM-as-judge 方法可作为首道筛选工具：Claude 评审 [ICC(3,1) = 0.548] 可作为审慎代理；GPT-5.4 评审 [ICC(3,1) = 0.217] 不适合此用途。对于拟提交认可、纳入正式 QMS 体系或投入实际操作的任何文件，专家终审仍属必需。
 
 ---
 
@@ -260,7 +260,9 @@ Figure 4 以三位评估者的视角呈现 compliance 分数与 system-prompt to
 
 ## 5. Conclusions
 
-LLM 辅助 ISO 15189 QMS 文件生成的最优配置取决于评估视角。LLM 评估层下 H4_sop_only（~2,000 tokens）综合最优；专家视角下 F_template（~15,000 tokens）、H2_keep_examples（~25,000 tokens）与 G_template_rules（~16,000 tokens）并列最优（均值 4.06–4.24 分），而 H4 跌至第 5/7 名（仅高于空 prompt 基线 0.16 分）。追求 token 效率与成本控制的场景可采用 H4 或 E_rules_v2（1–2 K）作为探索性草稿，使用前需经专家审阅；正式送审与 CNAS 认可申请场景应采用 G 或 F（15–16 K）；C_full（~56,000 tokens）应避免使用。LLM 评审可作为初筛代理（Claude 评审效果优于 GPT），但关键文件必须经专家终审。
+LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置取决于评估层。在 LLM 评审层，H4_sop_only（~2,000 tokens）综合分最高；然而在专家评估下，专家评分前三的配置为模板锚定的 F_template（~15,000 tokens）、H2_keep_examples（~25,000 tokens）与 G_template_rules（~16,000 tokens）（均值 = 4.06–4.24 分，0–5 Likert 量纲），而 H4_sop_only 跌至 7 配置中的第 5 名，仅高于空 prompt 基线 A_bare 0.16 分。因此，极简 prompt 配置（H4_sop_only 或 E_rules_v2；~1,000–2,000 tokens）适合用于将经后续专家审阅的探索性草稿；而模板锚定配置（G_template_rules 或 F_template；~15,000–16,000 tokens）对于拟提交 CNAS 或同等 ISO 15189 认可的文件则属必需。C_full（~56,000 tokens）在本研究情境下应避免使用，尤其是在生成模型为 GPT-5.4 时——参见 §3.3 记录的长上下文失败模式。LLM-as-judge 方法可作为首道筛选工具：Claude 评审与专家排序的中等一致性 [ICC(3,1) = 0.548] 使其可作为审慎的代理；GPT-5.4 评审 [ICC(3,1) = 0.217] 不适合此用途。对于拟提交认可、纳入正式 QMS 体系或投入实际操作的任何文件，专家终审仍属必需。
+
+据我们所知，本研究是首个跨两个前沿 LLM 与三层次评估框架对 ISO 15189 合规 QMS 文件生成中 prompt 内容效应进行系统性比较的研究；研究发现为实验室认可工作流中的 prompt 设计指南提供了实证基础。
 
 ---
 

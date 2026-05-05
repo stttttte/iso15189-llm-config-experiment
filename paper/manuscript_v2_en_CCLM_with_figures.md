@@ -44,7 +44,7 @@ Nine controlled configurations were designed by systematic substitution along fo
 
 ![Figure 1](figures/fig1_config_composition.png)
 
-**Figure 1.** Nine configurations tested for LLM-assisted ISO 15189 QMS generation. Left: inclusion of each configuration along the four dimensions of rules, skeleton, detailed content, and examples (✓ included, half-circle partial, — absent); right: the system-prompt size of each configuration (K tokens).
+**Figure 1.** The nine prompt configurations evaluated in the study. Left panel: inclusion of each configuration across the four prompt-content dimensions (rules, document skeleton, detailed content, worked examples); ✓ = full inclusion, ◐ = partial inclusion, — = absent. Right panel: total system-prompt size of each configuration, expressed in thousands of tokens (cl100k_base tokenizer).
 
 The rules component was based on rules.md (1.2 K) and revised through domain-expert review: three incorrect terminology mappings were removed (instrument → equipment, calibrator product → calibrator, inter-laboratory comparison → proficiency testing); three target terms were corrected (specimen → sample, test item → measurand, linear range → reportable range); and 10 verified mappings together with 7 categories of vague-expression prohibitions were retained. The skeleton component was extracted from the template library by the strip_to_skeleton algorithm, which preserved section headings, the introductory paragraph of each section, and form numbering lists, while removing verbatim clause excerpts, detailed table content, examples, detailed step lists, and fenced code blocks (markdown ```...``` constructs containing process diagrams, JSON snippets, or pseudocode).
 
@@ -169,7 +169,7 @@ Figure 2 presents the 2 × 2 symmetric matrix (n = 9 configurations × 4 quadran
 
 ![Figure 2](figures/fig2_2x2_symmetric.png)
 
-**Figure 2.** Heatmap of the 2 × 2 cross-model symmetric design. Mean score (across tasks A1/B1/C1, 0–5 scale) for nine configurations (rows) × four generator–judge combinations (columns). C_full collapses markedly in the two GPT-generated columns (1.40 and 1.84, black-bordered cells), in sharp contrast with the two Claude-generated columns (4.56 and 3.22).
+**Figure 2.** Heatmap of the 2 × 2 cross-model symmetric design. Cells show the mean compliance score (0–5 Likert scale) across the three representative tasks (A1, B1, C1) for each of the nine configurations (rows) crossed with the four generator–judge combinations (columns). C_full exhibits a marked drop in the two GPT-generated columns (1.40 and 1.84, indicated by black-bordered cells), in sharp contrast with the two Claude-generated columns (Claude-judge × Claude-generated = 4.56; GPT-judge × Claude-generated = 3.22).
 
 ### 3.4 Self-preference bias of LLM judges
 
@@ -187,7 +187,7 @@ Agreement between the expert mean and the two LLM judges was substantially lower
 
 ![Figure 3](figures/fig3_expert_vs_llm.png)
 
-**Figure 3.** Systematic overestimation of LLM judges relative to a three-rater expert panel (n = 10 papers × 3 raters). Horizontal axis: mean rating of the three experts. Vertical axis: LLM-judge rating. Left: vs Claude Opus 4.6 [ICC(3,1) = 0.548; Pearson r = 0.573; mean diff = −0.90]. Right: vs GPT-5.4 [ICC(3,1) = 0.217; Pearson r = 0.259; mean diff = −0.52]. Dashed line: 1:1 perfect agreement; configurations colour-coded.
+**Figure 3.** Systematic overestimation of compliance scores by the LLM judges relative to the three-rater expert panel (n = 10 documents × 3 raters). Horizontal axis: mean rating of the three experts. Vertical axis: LLM-judge rating. Left: Claude Opus 4.6 as judge [ICC(3,1) = 0.548; Pearson r = 0.573; mean difference (expert − Claude) = −0.905]. Right: GPT-5.4 as judge [ICC(3,1) = 0.217; Pearson r = 0.259; mean difference (expert − GPT) = −0.525]. Dashed line: 1:1 perfect agreement. Markers are colour-coded by configuration (legend inset).
 
 When ranked by the expert mean across the seven sampled configurations (10 documents in total; per-stratum n = 1 or 2), the configurations ordered from highest to lowest were: F_template 4.24 (n = 1), H2_keep_examples 4.07 (n = 1), G_template_rules 4.06 (n = 2), C_full 3.45 (n = 2), H4_sop_only 3.20 (n = 2), E_rules_v2 3.19 (n = 1), and A_bare 3.04 (n = 1). The configuration ranked first at the LLM-judge tier — H4_sop_only (~2,000 tokens) — fell to fifth of seven (the third position from the bottom) under expert evaluation, only 0.16 points above the no-prompt baseline A_bare. The largest LLM-judge overestimation was observed for C_full and H4_sop_only (mean difference = expert − LLM-judges mean = −1.00 and −1.05, respectively), suggesting that although these two configurations achieve structural completeness and terminological compliance — the dimensions most readily captured by automated and LLM-based scoring — they lack the clinical-practice depth that is detectable only by expert reviewers. The three top-ranked configurations under expert evaluation (F_template, H2_keep_examples, G_template_rules) were all template-anchored configurations containing detailed content, indicating that the apparent token efficiency of skeleton-only configurations at the LLM-judge tier does not translate into expert-validated compliance. Given the small per-stratum sample (n = 1 or 2), these expert rankings should be treated as exploratory and warrant replication with a larger expert sample.
 
@@ -197,7 +197,7 @@ Figure 4 plots compliance scores against system-prompt token size for the three 
 
 ![Figure 4](figures/fig4_token_vs_quality.png)
 
-**Figure 4.** Compliance score (0–5 Likert) versus system-prompt token size, plotted for the n = 10 expert-blinded subset (seven configurations; per-stratum n = 1 or 2). Horizontal axis: token count on a symlog scale (cl100k_base). All three curves use the same matched samples: solid green line (squares), three-rater expert mean; solid red line (circles), Claude Opus 4.6 judge × Claude-generated outputs; solid blue line (triangles), GPT-5.4 judge × Claude-generated outputs. Orange-shaded band: token-efficient optimum identified by the LLM-judge tier (H4_sop_only / H3_skeleton). Green-shaded band: expert-judged clinical-usability optimum (F_template / G_template_rules). Error bars omitted because per-stratum n = 1–2; a Bland–Altman-style scatter is shown in Figure 3.
+**Figure 4.** Compliance score (0–5 Likert) versus system-prompt token size, computed on the n = 10 expert-blinded subset (seven configurations; per-stratum n = 1 or 2). Horizontal axis: token count on a symmetric-logarithmic scale (cl100k_base tokenizer). All three curves are based on the same matched samples: solid green line with squares, three-rater expert mean; solid red line with circles, Claude Opus 4.6 judge applied to Claude-generated outputs; solid blue line with triangles, GPT-5.4 judge applied to Claude-generated outputs. Orange-shaded band: the token-efficient optimum identified by the LLM-judge tier (H4_sop_only / H3_skeleton). Green-shaded band: the clinical-usability optimum identified by expert evaluation (F_template / G_template_rules). Error bars are omitted because per-stratum n = 1 or 2; the corresponding LLM-versus-expert calibration scatter is shown in Figure 3.
 
 ---
 
@@ -286,21 +286,21 @@ To our knowledge, this is the first systematic comparison of prompt-content effe
 
 **Research funding**: The study received no external research funding.
 
-**Author contributions**: Sidi Liu independently designed the study, conducted the experiments, analyzed the data, drafted the manuscript, and finalized the text, and takes full responsibility for the content of the article.
+**Author contributions**: Sidi Liu was solely responsible for the conceptualisation and design of the study, the conduct of all experiments, the data analysis, the drafting and finalisation of the manuscript, and takes full responsibility for the content of the article.
 
 **Competing interests**: The author declares no competing interests.
 
-**Informed consent**: Written informed consent was obtained from Raters 2 and 3 prior to their participation in expert blind review. The consent form described the study purpose, the use of the ratings, the anonymity safeguards, and the right to withdraw at any time.
+**Informed consent**: Written informed consent was obtained from Raters 2 and 3 prior to their participation in the blinded expert review. The consent form described the study purpose, the intended use of the ratings, the data-handling and de-identification procedures, and the right to withdraw at any time.
 
-**Ethical approval**: This study did not involve patient data, biological samples, or human intervention. The QMS documents generated and evaluated used fictitious placeholder names (e.g., "Doctor Li," "Doctor Zhang") and did not contain any identifiable personal information. The inter-rater data fall within methodological research and were collected with informed consent.
+**Ethical approval**: This study did not require formal ethical approval, because it did not involve patient data, biological samples, or human intervention. The QMS documents generated and evaluated used fictitious placeholder names (e.g., "Dr Li", "Dr Zhang") and contained no identifiable personal information. The inter-rater dataset was collected as methodological research from informed-consent volunteers; rater-level identifying data are stored under coded labels (Rater 1 / Rater 2 / Rater 3) in the released dataset.
 
-**Data availability**: The 486 generated documents, 864 LLM-as-Judge ratings, 30 expert blind ratings, and all analysis scripts are publicly available on GitHub (https://github.com/stttttte/iso15189-llm-config-experiment) under a dual MIT (code) and CC BY 4.0 (data) licence.
+**Data availability**: The 486 generated documents, 864 LLM-as-judge ratings, 30 blinded expert ratings, and all analysis code are openly available on GitHub (https://github.com/stttttte/iso15189-llm-config-experiment) under a dual licence: MIT for code and CC BY 4.0 for data. A versioned snapshot has been archived on Zenodo (DOI: [to be assigned at acceptance]).
 
 ---
 
 ## Acknowledgements
 
-The author thanks the two colleagues who participated in expert blind review (Raters 2 and 3) for providing an independent expert perspective on a fully informed-consent basis.
+The author thanks the two colleagues who participated in the blinded expert review (Raters 2 and 3) for providing an independent expert perspective with full informed consent.
 
 ---
 

@@ -2,38 +2,36 @@ cff-version: 1.2.0
 message: "If you use this dataset or code, please cite both the paper (once available) and this repository."
 title: "ISO 15189 LLM Config Experiment: Dataset and Analysis Code"
 abstract: >-
-  Dataset, analysis code, and reproducibility materials for a study
-  on LLM-assisted ISO 15189:2022 medical laboratory quality management
-  system document generation. Includes 486 generated QMS documents
-  (Claude Opus 4.6 and GPT-5.4) across 9 configuration groups and 15
-  task types, 864 LLM-judge evaluations (Claude + GPT), and 10 expert
-  blind-review ratings.
-type: dataset
+  Dataset, analysis code, manuscript variants, and reproducibility materials
+  for a study on LLM-assisted ISO 15189:2022 medical laboratory quality
+  management system (QMS) document generation. Includes 486 generated QMS
+  documents (Claude Opus 4.6 and GPT-5.4) across 9 prompt configurations and
+  15 task types, 864 LLM-judge evaluations (Claude + GPT), and 30 expert
+  blind-review ratings (3 raters x 10 stratified-sampled documents).
+type: software
 authors:
   - family-names: "Liu"
     given-names: "Sidi"
     email: "lllsssddd@icloud.com"
     orcid: "https://orcid.org/0009-0006-1695-5372"
     affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
-version: "0.1.0-preprint"
-date-released: "2026-04-16"
+version: "1.0.0"
+date-released: "2026-05-09"
 repository-code: "https://github.com/stttttte/iso15189-llm-config-experiment"
-license: "MIT AND CC-BY-4.0"
-license-url: "./LICENSE"
+license: MIT
 keywords:
   - "ISO 15189"
   - "LLM-assisted document generation"
   - "medical laboratory QMS"
   - "prompt engineering"
-  - "LLM-as-Judge"
+  - "LLM-as-judge"
   - "cross-model validation"
   - "expert evaluation"
 preferred-citation:
   type: article
   title: >-
-    Systematic Divergence Between LLM Judges and Domain Experts in
-    LLM-Assisted ISO 15189:2022 Medical Laboratory Document Generation:
-    A Multi-Level Validation Study
+    ISO 15189 Compliance of LLM-Generated Medical Laboratory QMS Documents:
+    Claude Opus 4.6 vs. GPT-5.4 Across Prompting Configurations
   status: in-preparation
   year: 2026
   authors:

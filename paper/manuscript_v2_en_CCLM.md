@@ -302,15 +302,15 @@ The author thanks the two colleagues who participated in the blinded expert revi
 
 ## References
 
-1. Anthropic. Claude Opus 4.6 System Card. 2025. Available at: https://www.anthropic.com/claude
+1. Anthropic. Claude Opus 4.6 System Card. San Francisco (CA): Anthropic; 2025. Available at: https://www.anthropic.com/claude. [Accessed 9 May 2026].
 
-2. OpenAI. GPT-5 System Card. 2025. Available at: https://openai.com/
+2. OpenAI. GPT-5 System Card. San Francisco (CA): OpenAI; 2025. Available at: https://openai.com/index/gpt-5-system-card/. [Accessed 9 May 2026].
 
 3. Liu NF, Lin K, Hewitt J, Paranjape A, Bevilacqua M, Petroni F, et al. Lost in the middle: how language models use long contexts. Trans Assoc Comput Linguist 2024;12:157–73.
 
 4. Zhao WX, Zhou K, Li J, Tang T, Wang X, Hou Y, et al. A survey of large language models. arXiv preprint 2023; arXiv:2303.18223.
 
-5. Zheng L, Chiang WL, Sheng Y, Zhuang S, Wu Z, Zhuang Y, et al. Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems. 2023.
+5. Zheng L, Chiang WL, Sheng Y, Zhuang S, Wu Z, Zhuang Y, et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems 36 (NeurIPS 2023) Datasets and Benchmarks Track. 2023.
 
 6. Panickssery A, Bowman SR, Feng S. LLM evaluators recognize and favor their own generations. arXiv preprint 2024; arXiv:2404.13076.
 
@@ -320,7 +320,7 @@ The author thanks the two colleagues who participated in the blinded expert revi
 
 9. Jin D, Pan E, Oufattole N, Weng WH, Fang H, Szolovits P. What disease does this patient have? A large-scale open domain question answering dataset from medical exams. Appl Sci 2021;11:6421.
 
-10. Tan H, Guo Z, Shi Z, Xu L, Liu Z, Li X, et al. ProxyQA: an alternative framework for evaluating long-form text generation with large language models. In: Proceedings of ACL. 2024.
+10. Tan H, Guo Z, Shi Z, Xu L, Liu Z, Li X, et al. ProxyQA: an alternative framework for evaluating long-form text generation with large language models. In: Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024); 2024 Aug 11–16; Bangkok, Thailand. Stroudsburg (PA): Association for Computational Linguistics; 2024.
 
 11. Chiang WL, Zheng L, Sheng Y, Angelopoulos AN, Li T, Li D, et al. Chatbot Arena: an open platform for evaluating LLMs by human preference. arXiv preprint 2024; arXiv:2403.04132.
 

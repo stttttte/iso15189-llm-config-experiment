@@ -278,7 +278,7 @@ To our knowledge, this is the first systematic comparison of prompt-content effe
 
 **Ethical approval**: This study did not require formal ethical approval, because it did not involve patient data, biological samples, or human intervention. The QMS documents generated and evaluated used fictitious placeholder names (e.g., "Dr Li", "Dr Zhang") and contained no identifiable personal information. The inter-rater dataset was collected as methodological research from informed-consent volunteers; rater-level identifying data are stored under coded labels (Rater 1 / Rater 2 / Rater 3) in the released dataset.
 
-**Data availability**: The 486 generated documents, 864 LLM-as-judge ratings, 30 blinded expert ratings, and all analysis code are openly available on GitHub (https://github.com/stttttte/iso15189-llm-config-experiment) under a dual licence: MIT for code and CC BY 4.0 for data. A versioned snapshot has been archived on Zenodo (DOI: [to be assigned at acceptance]).
+**Data availability**: The 486 generated documents, 864 LLM-as-judge ratings, 30 blinded expert ratings, and all analysis code are openly available on GitHub (https://github.com/stttttte/iso15189-llm-config-experiment) under a dual licence: MIT for code and CC BY 4.0 for data. A versioned snapshot has been archived on Zenodo (DOI: [10.5281/zenodo.20091464](https://doi.org/10.5281/zenodo.20091464)).
 
 ---
 

@@ -69,6 +69,7 @@ GROUP_COLORS = {
     "A_bare":           "#888888",
     "B_simple":         "#AAAAAA",
     "E_rules":          "#4c72b0",
+    "E_rules_v2":       "#4c72b0",
     "H4_sop_only":      "#dd8452",
     "H3_skeleton":      "#e8a34e",
     "F_template":       "#937860",
@@ -270,7 +271,7 @@ def figure3():
                     elinewidth=0.7, capsize=2, zorder=2)
 
         for x, y, c, p in zip(xs, ys, colors, papers):
-            ax.scatter(x, y, s=80, color=c, edgecolor="black", linewidth=0.5, zorder=3)
+            ax.scatter(x, y, s=60, color=c, edgecolor="white", linewidth=0.8, zorder=3)
 
         ax.set_xlabel("Expert panel mean (3-rater average)")
         if ax is axes[0]:
@@ -293,12 +294,14 @@ def figure3():
         ax.set_axisbelow(True)
         ax.legend(loc="lower right", fontsize=8)
 
-    # Group legend (shared)
+    # Group legend (shared) — built from the configurations actually present in the
+    # n=10 expert subset, so legend colours map 1:1 to the plotted points
+    present_groups = list(dict.fromkeys(p["group"] for p in papers))
     legend_handles = [
-        plt.Line2D([], [], marker="o", color="w", markerfacecolor=GROUP_COLORS[g[0]],
-                   markeredgecolor="black", markersize=8, label=g[0].replace("_", " "))
-        for g in GROUPS if g[0] in {"A_bare", "C_full", "E_rules", "F_template",
-                                     "G_template_rules", "H2_keep_examples", "H4_sop_only"}
+        plt.Line2D([], [], marker="o", color="w",
+                   markerfacecolor=GROUP_COLORS.get(g, "#666666"),
+                   markeredgecolor="black", markersize=8, label=g.replace("_", " "))
+        for g in present_groups
     ]
     fig.legend(handles=legend_handles, loc="upper center",
                bbox_to_anchor=(0.5, -0.02), ncol=4, frameon=False, fontsize=9)
@@ -335,7 +338,7 @@ def figure4():
     by_group["tokens"] = by_group["group"].map(token_map)
     by_group = by_group.sort_values("tokens")
 
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=(10, 6))
 
     # Expert (left y)
     ax.plot(by_group["tokens"], by_group["expert"],
@@ -349,12 +352,22 @@ def figure4():
             marker="^", markersize=9, linewidth=1.5,
             color="#4c72b0", label="GPT-5.4 judge", alpha=0.85)
 
-    # Annotate each point with group name
+    # Annotate each point with group name (custom offsets to avoid label collisions)
+    label_offsets = {
+        "A_bare":           (0, -16, "center"),
+        "E_rules_v2":       (-7, -15, "right"),
+        "H4_sop_only":      (7, -15, "left"),
+        "F_template":       (0, 9, "center"),
+        "G_template_rules": (0, -18, "center"),
+        "H2_keep_examples": (8, -14, "left"),
+        "C_full":           (6, -14, "left"),
+    }
     for _, r in by_group.iterrows():
+        dx, dy, ha = label_offsets.get(r["group"], (4, -14, "left"))
         ax.annotate(r["group"].replace("_", " "),
                     (r["tokens"], r["expert"]),
-                    xytext=(4, -14), textcoords="offset points",
-                    fontsize=8, color="#2a6a3e", alpha=0.85)
+                    xytext=(dx, dy), textcoords="offset points",
+                    fontsize=8, color="#2a6a3e", alpha=0.9, ha=ha)
 
     ax.set_xscale("symlog", linthresh=0.5)
     ax.set_xticks([0, 0.5, 1, 2, 5, 15, 25, 56])
@@ -371,13 +384,13 @@ def figure4():
                label="_", zorder=0)
     ax.axvspan(13, 27, alpha=0.08, color="#55a868",
                label="_", zorder=0)
-    ax.text(2.5, 5.05, "Efficient zone\n(H4 / H3)", ha="center",
+    ax.text(2.5, 5.05, "Token-efficient zone\n(E / H4)", ha="center",
             fontsize=9, style="italic", color="#a05a2c")
     ax.text(19, 5.05, "Expert-optimal zone\n(F / G)", ha="center",
             fontsize=9, style="italic", color="#2a6a3e")
 
     ax.legend(loc="lower right", fontsize=9)
-    ax.set_title("Token size vs quality: LLM judges peak at 2–5K; experts prefer 15–25K",
+    ax.set_title("Token size vs quality: experts peak at 15–25K; LLM judges diverge",
                  loc="left", fontweight="bold")
 
     fig.tight_layout()

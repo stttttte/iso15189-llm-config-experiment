@@ -52,7 +52,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》[7] 是医学�
 
 ### 2.2 生成模型与任务
 
-主实验采用 Claude Opus 4.6（Anthropic，美国加州 San Francisco），通过 Claude Code Agent 接口（Anthropic 的命令行 agent 框架）以文本生成模式运行：sub-agent 仅返回文本回复，文件生成阶段未发生任何 agentic 工具调用（文件系统、网络访问、代码执行），但 Claude Code 框架自带的工具定义始终存在于 framework 级 system prompt 中（详见 §4.5 局限性 xiii）。模型测试跨越 9 组 prompt 配置、15 项 QMS 编写任务、每元胞 3 次独立重复，共生成 405 份文件。15 项任务按 CNAS 评审场景分层为三类，每类 5 项：A 类（文件编写，例如人员培训与能力评估控制程序）、B 类（体系运行，例如年度内审检查表）、C 类（审核模拟，例如内部质控程序文件审查报告）。完整任务列表与原始 prompt 已公开于 GitHub 仓库 `task_messages/` 与 `configs/` 目录。跨模型验证采用 GPT-5.4（OpenAI，美国加州 San Francisco），通过官方 openai Python SDK（v2.30.0）调用，base URL 配置为 AIHubMix 端点（https://aihubmix.com）；采用此路由是因研究期间作者所在地区无法直接访问 OpenAI API。（输出目录沿用早期脚本迭代时的 `gpt4o_*` 前缀命名，所有调用的实际运行 model 均为 GPT-5.4，由 SDK `model` 参数传入。）GPT-5.4 在相同 9 组配置下评估，每类各取一个代表性任务（A1、B1、C1，定义为各类按索引的第一个任务），3 次重复，共生成 81 份文件。两模型在每个实验元胞内接收完全相同的 system prompt 配置，并使用完全相同的生成参数：temperature = 1.0、max_tokens = 12,000；所有其他生成参数采用模型默认值。较高的采样温度选择是为反映真实交互使用场景；为捕捉由此引入的随机性方差，每元胞设 3 次独立重复。所有 API 调用执行于 2026 年 4 月 2 日至 4 月 14 日之间。
+主实验采用 Claude Opus 4.6（Anthropic，美国加州 San Francisco），通过 Claude Code Agent 接口（Anthropic 的命令行 agent 框架）以文本生成模式运行：sub-agent 仅返回文本回复，文件生成阶段未发生任何 agentic 工具调用（文件系统、网络访问、代码执行），但 Claude Code 框架自带的工具定义始终存在于 framework 级 system prompt 中（详见 §4.5 局限性 xiii）。模型测试跨越 9 组 prompt 配置、15 项 QMS 编写任务、每元胞 3 次独立重复，共生成 405 份文件。15 项任务按 CNAS 评审场景分层为三类，每类 5 项：A 类（文件编写，例如人员培训与能力评估控制程序）、B 类（体系运行，例如年度内审检查表）、C 类（审核模拟，例如内部质控程序文件审查报告）。完整任务列表与原始 prompt 已公开于 GitHub 仓库 `task_messages/` 与 `configs/` 目录。跨模型验证采用 GPT-5.4（OpenAI，美国加州 San Francisco），通过官方 openai Python SDK（v2.30.0）调用，base URL 配置为 AIHubMix 端点（https://aihubmix.com）；采用此路由是因研究期间作者所在地区无法直接访问 OpenAI API。（输出目录沿用早期脚本迭代时的 `gpt4o_*` 前缀命名，所有调用的实际运行 model 均为 GPT-5.4，由 SDK `model` 参数传入。）GPT-5.4 在相同 9 组配置下评估，每类各取一个代表性任务（A1、B1、C1，定义为各类按索引的第一个任务），3 次重复，共生成 81 份文件。两模型在每个实验元胞内接收完全相同的 system prompt 配置，但生成参数并不相同：Claude Opus 4.6 经 Claude Code Agent 运行，该框架不暴露 temperature 与 max_tokens，本研究未显式设定，其取值由框架决定；GPT-5.4 经 API 显式设定 temperature = 0.7、max_completion_tokens = 16,000。两者的采样均为非确定性；为捕捉由此引入的随机性方差，每元胞设 3 次独立重复。生成参数不一致对跨模型比较的影响详见 §4.5 局限性 xv。所有 API 调用执行于 2026 年 4 月 2 日至 4 月 14 日之间。
 
 ### 2.3 三层评估框架
 
@@ -74,9 +74,9 @@ Python 自动合规评分器（`auto_scorer.py`，已开源；详见 Data availa
 
 两位 LLM 评审员部署于 2 × 2 对称跨模型设计——Claude-生成 × Claude-judge、Claude-生成 × GPT-judge、GPT-生成 × Claude-judge、GPT-生成 × GPT-judge——以正交分解自评偏差。
 
-**Tier 2a（Claude-as-judge）**：Claude Opus 4.6 以"CNAS 主任评审员"角色 prompt（即 `gpt_cnas_judge.py` 中定义的 `JUDGE_PROMPT_TEMPLATE`，与 Tier 2b 完全一致）对每份文件按五维度量规（Table 1）以 0–5 分评分。生成参数：temperature = 1.0、max_tokens = 4,096；每份文件经单次 API 调用得到 1 次评分。共生成 378 条 Claude-judge 评分，分布如下：270 条覆盖 6 个核心配置（A_bare、B_simple、C_full、E_rules_v2、F_template、G_template_rules）× 15 任务 × 3 重复的 Claude-生成文件（每篇 raw JSON 完整公开）；81 条覆盖全部 9 配置 × A1/B1/C1 × 3 重复的 GPT-生成文件（仅以聚合均值归档，详见 §4.5 局限性 x）；27 条覆盖 H 组配置（H2_keep_examples、H3_skeleton、H4_sop_only）× A1/B1/C1 × 3 重复的 Claude-生成文件（同样仅以聚合均值归档）。
+**Tier 2a（Claude-as-judge）**：Claude Opus 4.6 以"CNAS 主任评审员"角色 prompt（即 `gpt_cnas_judge.py` 中定义的 `JUDGE_PROMPT_TEMPLATE`，与 Tier 2b 完全一致）对每份文件按五维度量规（Table 1）以 0–5 分评分。评判经 Claude Code 的 Agent 子代理运行，未显式设定 temperature 与 max_tokens；每份文件得到 1 次评分。共生成 378 条 Claude-judge 评分，分布如下：270 条覆盖 6 个核心配置（A_bare、B_simple、C_full、E_rules_v2、F_template、G_template_rules）× 15 任务 × 3 重复的 Claude-生成文件（每篇 raw JSON 完整公开）；81 条覆盖全部 9 配置 × A1/B1/C1 × 3 重复的 GPT-生成文件（仅以聚合均值归档，详见 §4.5 局限性 x）；27 条覆盖 H 组配置（H2_keep_examples、H3_skeleton、H4_sop_only）× A1/B1/C1 × 3 重复的 Claude-生成文件（同样仅以聚合均值归档）。
 
-**Tier 2b（GPT-as-judge）**：GPT-5.4，按 §2.2 所述通过 AIHubMix 端点接入，使用与 Tier 2a 完全相同的 prompt、量规与 0–5 分评分尺度，生成参数同样为 temperature = 1.0、max_tokens = 4,096。全部 486 份生成文件均被评分（405 Claude-生成 + 81 GPT-生成），每份 1 次评分；per-paper raw JSON 完整保留并公开。已验证 max_tokens 上限未导致评审输出截断：486 份 GPT-judge per-paper JSON 全部成功解析（0 解析错误），且两位评审员的 per-dimension `reason` 字段最长为 43 字符，仍处于 prompt 所设的40 字软上限内，远低于 4,096 token 的输出预算。
+**Tier 2b（GPT-as-judge）**：GPT-5.4，按 §2.2 所述通过 AIHubMix 端点接入，使用与 Tier 2a 相同的 prompt、量规与 0–5 分评分尺度；其评判参数为 temperature = 0、max_completion_tokens = 2,000，与 Tier 2a 并不相同（详见 §4.5 局限性 xv）。全部 486 份生成文件均被评分（405 Claude-生成 + 81 GPT-生成），每份 1 次评分；per-paper raw JSON 完整保留并公开。已验证 max_tokens 上限未导致评审输出截断：486 份 GPT-judge per-paper JSON 全部成功解析（0 解析错误），且两位评审员的 per-dimension `reason` 字段最长为 43 字符，仍处于 prompt 所设的40 字软上限内，远低于 2,000 token 的输出预算。
 
 合计 Tier 2a 与 2b 共得 864 条 LLM 评审评分（378 条 Claude-judge + 486 条 GPT-judge）。非对称的评分数反映 Claude 评审未覆盖 H 组完整 15 任务子集及完整 GPT-生成集（详见 §4.5 局限性 x）；关键的是，所有 4 个 2 × 2 象限均有评分填充（部分仅以聚合均值形式，详见 §4.5 局限性 x），保证自评偏差分解可在 cell 均值层面进行。
 
@@ -270,7 +270,7 @@ Figure 4 以三位评估者的视角呈现 compliance 分数与 system-prompt to
 
 **(xiv) AIHubMix 路由未独立审计。** GPT-5.4 通过 AIHubMix 代理调用，该代理宣称对上游 OpenAI API 透明转发。本研究未独立验证其响应与直接 OpenAI 调用的等价性；路由层面的细微差异（请求批处理、header 处理、地域路由）无法完全排除，但 GPT-5.4 model 标识符在调用链路中保持一致。
 
-**(xv) 温度设置。** 所有生成均使用 temperature = 1.0 以反映真实交互使用场景。此设置引入随机性方差（已通过每元胞 3 次重复缓解），但牺牲了严格的字面级可重复性；追求确定性比较的后续研究建议改用 temperature = 0。
+**(xv) 温度设置与两模型参数不一致。** 两模型的生成参数并不相同：GPT-5.4 使用 temperature = 0.7、max_completion_tokens = 16,000，而 Claude 经 Claude Code Agent 运行、未显式设定这两个参数；评判侧同样不对称，GPT-as-judge 使用 temperature = 0、max_completion_tokens = 2,000，Claude-as-judge 则由 Agent 子代理运行、参数未显式设定。因此跨模型比较与自评偏差分解均存在参数不一致的混杂。该混杂的方向是保守的：GPT-5.4 拿到的是更低的温度与更大的输出预算，两者都更有利于指令遵循与合规，而它在 C_full 下仍然大幅下滑。两模型的生成均为非确定性采样（已通过每元胞 3 次重复缓解），未实现严格的字面级可重复性；追求确定性比较的后续研究建议对两模型统一改用 temperature = 0。
 
 ---
 

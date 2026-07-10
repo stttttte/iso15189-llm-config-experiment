@@ -144,7 +144,7 @@
 
 - **主实验（Claude Opus 4.6）**：9 组 × 15 任务 × 3 重复 = **405 篇**
 - **跨模型验证（GPT-5.4）**：9 组 × 3 任务（A1/B1/C1）× 3 重复 = **81 篇**
-- 参数：temperature=1.0, max_tokens=12000, 同一 system prompt
+- 参数：Claude 经 Claude Code Agent 运行、未显式设定 temperature/max_tokens；GPT-5.4 显式 temperature=0.7、max_completion_tokens=16000；同一 system prompt
 
 #### 3.6 多层评估
 

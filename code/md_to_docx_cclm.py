@@ -26,8 +26,8 @@ DST = BASE / "论文正文v2_中文_CCLM.docx"
 
 CN_FONT = "宋体"        # 正文中文
 EN_FONT = "Times New Roman"  # 正文英文/数字
-HEADING_CN_FONT = "黑体"
-HEADING_EN_FONT = "Arial"
+HEADING_CN_FONT = "宋体"
+HEADING_EN_FONT = "Times New Roman"
 
 
 def set_run_font(run, cn_font, en_font, size_pt, bold=False):
@@ -46,7 +46,7 @@ def set_run_font(run, cn_font, en_font, size_pt, bold=False):
 
 
 def add_runs_with_bold(paragraph, text, cn_font=CN_FONT, en_font=EN_FONT,
-                       size_pt=11, base_bold=False):
+                       size_pt=12, base_bold=False):
     """将包含 **bold** 的文本分段加到 paragraph"""
     # 也处理内联代码 `code` → 保留为 normal text (CCLM style removes backticks)
     text = text.replace("`", "")
@@ -100,7 +100,7 @@ def add_table_from_md(doc, rows):
             p = cell.paragraphs[0]
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER if i == 0 else WD_ALIGN_PARAGRAPH.LEFT
             is_header = (i == 0)
-            add_runs_with_bold(p, cell_text, size_pt=10, base_bold=is_header)
+            add_runs_with_bold(p, cell_text, size_pt=9, base_bold=is_header)
             set_cell_borders(cell)
 
     doc.add_paragraph()  # spacing after table
@@ -146,7 +146,7 @@ def main():
     # Base style: default Paragraph font
     style = doc.styles["Normal"]
     style.font.name = EN_FONT
-    style.font.size = Pt(11)
+    style.font.size = Pt(12)
     style.element.get_or_add_rPr()
     # Ensure East Asian font
     rPr = style.element.rPr
@@ -179,8 +179,8 @@ def main():
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             add_runs_with_bold(p, title_text,
                                cn_font=HEADING_CN_FONT, en_font=HEADING_EN_FONT,
-                               size_pt=16, base_bold=True)
-            set_paragraph_spacing(p, before=12, after=12, line_spacing=1.25)
+                               size_pt=12, base_bold=True)
+            set_paragraph_spacing(p, before=12, after=12, line_spacing=1.5)
             i += 1
             continue
 
@@ -191,8 +191,8 @@ def main():
             p.alignment = WD_ALIGN_PARAGRAPH.LEFT
             add_runs_with_bold(p, h,
                                cn_font=HEADING_CN_FONT, en_font=HEADING_EN_FONT,
-                               size_pt=14, base_bold=True)
-            set_paragraph_spacing(p, before=14, after=6, line_spacing=1.25)
+                               size_pt=12, base_bold=True)
+            set_paragraph_spacing(p, before=14, after=6, line_spacing=1.5)
             i += 1
             continue
 
@@ -204,7 +204,7 @@ def main():
             add_runs_with_bold(p, h,
                                cn_font=HEADING_CN_FONT, en_font=HEADING_EN_FONT,
                                size_pt=12, base_bold=True)
-            set_paragraph_spacing(p, before=10, after=4, line_spacing=1.25)
+            set_paragraph_spacing(p, before=10, after=4, line_spacing=1.5)
             i += 1
             continue
 
@@ -215,8 +215,8 @@ def main():
             p.alignment = WD_ALIGN_PARAGRAPH.LEFT
             add_runs_with_bold(p, h,
                                cn_font=HEADING_CN_FONT, en_font=HEADING_EN_FONT,
-                               size_pt=11, base_bold=True)
-            set_paragraph_spacing(p, before=8, after=2, line_spacing=1.25)
+                               size_pt=12, base_bold=True)
+            set_paragraph_spacing(p, before=8, after=2, line_spacing=1.5)
             i += 1
             continue
 
@@ -247,7 +247,7 @@ def main():
         if line.strip().startswith("- "):
             content = line.strip()[2:]
             p = doc.add_paragraph(style="List Bullet")
-            add_runs_with_bold(p, content, size_pt=11)
+            add_runs_with_bold(p, content, size_pt=12)
             set_paragraph_spacing(p, before=2, after=2, line_spacing=1.5)
             i += 1
             continue
@@ -256,7 +256,7 @@ def main():
         p = doc.add_paragraph()
         p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
         p.paragraph_format.first_line_indent = Pt(0)  # CCLM no indent
-        add_runs_with_bold(p, line, size_pt=11)
+        add_runs_with_bold(p, line, size_pt=12)
         set_paragraph_spacing(p, before=4, after=4, line_spacing=1.5)
         i += 1
 

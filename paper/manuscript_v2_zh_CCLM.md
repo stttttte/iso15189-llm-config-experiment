@@ -273,7 +273,7 @@ LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置随评估层级而�
 
 **Ethical approval**：本研究不需要正式的伦理审批，因不涉及患者数据、生物样本或人体干预。所生成与所评估的 QMS 文件使用虚构占位姓名（如“Dr Li”、“Dr Zhang”）且不含任何可识别个人信息。评分员间数据集作为方法学研究自知情同意志愿者处采集；评分员层面的可识别数据在公开数据集中以编码标签（Rater 1 / Rater 2 / Rater 3）存储。
 
-**Data availability**：486 份生成文件、864 条 LLM-as-judge 评分、30 条盲法专家评分以及全部分析代码已在 GitHub 公开（https://github.com/stttttte/iso15189-llm-config-experiment），采用双许可证：代码 MIT，数据 CC BY 4.0。版本化快照已在 Zenodo 归档（DOI：10.5281/zenodo.20091464；https://doi.org/10.5281/zenodo.20091464）。
+**Data availability**：486 份生成文件、864 条 LLM-as-judge 评分、30 条盲法专家评分以及全部分析代码已在 GitHub 公开（https://github.com/stttttte/iso15189-llm-config-experiment），采用双许可证：代码 MIT，数据 CC BY 4.0。版本化快照已在 Zenodo 归档（DOI：10.5281/zenodo.20091463；https://doi.org/10.5281/zenodo.20091463）。
 
 ---
 

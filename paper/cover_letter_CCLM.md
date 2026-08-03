@@ -8,9 +8,9 @@
 
 ## 英文版（投稿使用）
 
-[Date]
+3 August 2026
 
-Dear Editor-in-Chief,
+Dear Professor Plebani,
 
 We are pleased to submit our original research manuscript entitled **"Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation"** for consideration for publication in *Clinical Chemistry and Laboratory Medicine*.
 
@@ -58,7 +58,7 @@ ORCID: 0000-0002-0290-6485
 
 ## 中文辅助注释（不随稿提交，仅自用）
 
-- **[Date]** 填投稿当日；如系统允许指名主编，把 "Dear Editor-in-Chief" 换成现任主编姓名（投稿前在 CCLM 官网核实）
+- 日期已填 2026-08-03；称呼已指名 Plebani（2026-05-21 决定信签发人，官网在列，已核实）
 - 重投段落（第 2 段，引用 CCLM.2026.0735）是本轮新增——若你决定按全新投稿处理、不提前稿，删掉该段即可
 - 三位建议审稿人沿用首投版名单；若系统提示"曾评审过本稿"冲突，可换人
 - 信中 "To our knowledge, this is the first..." 保留是恰当的——cover letter 是向编辑推销新颖性的场合，与正文语气不同

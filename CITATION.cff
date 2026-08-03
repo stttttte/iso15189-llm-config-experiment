@@ -15,8 +15,8 @@ authors:
     email: "lllsssddd@icloud.com"
     orcid: "https://orcid.org/0009-0006-1695-5372"
     affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
-version: "1.0.0"
-date-released: "2026-05-09"
+version: "1.1.0"
+date-released: "2026-08-03"
 repository-code: "https://github.com/stttttte/iso15189-llm-config-experiment"
 license: MIT
 keywords:
@@ -30,9 +30,9 @@ keywords:
 preferred-citation:
   type: article
   title: >-
-    ISO 15189 Compliance of LLM-Generated Medical Laboratory QMS Documents:
-    Claude Opus 4.6 vs. GPT-5.4 Across Prompting Configurations
-  status: in-preparation
+    Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents:
+    Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation
+  status: submitted
   year: 2026
   authors:
     - family-names: "Liu"
@@ -40,3 +40,17 @@ preferred-citation:
       email: "lllsssddd@icloud.com"
       orcid: "https://orcid.org/0009-0006-1695-5372"
       affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
+    - family-names: "Yang"
+      given-names: "Lan"
+      affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
+    - family-names: "Chen"
+      given-names: "Xinying"
+      affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
+    - family-names: "Wu"
+      given-names: "Dan"
+      affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
+    - family-names: "Li"
+      given-names: "Dongdong"
+      email: "jiangxili1219@163.com"
+      orcid: "https://orcid.org/0000-0002-0290-6485"
+      affiliation: "Department of Laboratory Medicine, West China Hospital, Sichuan University; Sichuan Clinical Research Center for Laboratory Medicine, Chengdu 610041, China"

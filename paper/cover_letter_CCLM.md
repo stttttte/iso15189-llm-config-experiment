@@ -1,88 +1,65 @@
-# Cover Letter for CCLM Submission
+# Cover Letter for CCLM Resubmission
 
 > Target journal: *Clinical Chemistry and Laboratory Medicine* (CCLM), De Gruyter Brill
-> Manuscript type: Original Article
+> Manuscript type: Original Article（reject-and-resubmit 重投版）
 > Submission system: Editorial Manager
 
 ---
 
 ## 英文版（投稿使用）
 
-**Sidi Liu**
-**Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University**
-**No. 188 Houpu West Road, Jimei District, Xiamen, Fujian 361024, China**
+[Date]
 
-9 May 2026
+Dear Editor-in-Chief,
 
-Professor Mario Plebani
-Editor-in-Chief
-*Clinical Chemistry and Laboratory Medicine* (CCLM)
-De Gruyter Brill
+We are pleased to submit our original research manuscript entitled **"Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation"** for consideration for publication in *Clinical Chemistry and Laboratory Medicine*.
 
-Dear Professor Plebani and the Editorial Board,
+This manuscript is a revised version of our earlier submission to CCLM (Manuscript No. CCLM.2026.0735), which received a reject-and-resubmit decision. The present version has been extensively revised in response to the reviewers' comments – including corrected methodological reporting, a restructured Limitations section, redesigned figures, and substantially condensed text – and is accompanied by a point-by-point response.
 
-I am pleased to submit the enclosed original-research manuscript entitled **"ISO 15189 Compliance of LLM-Generated Medical Laboratory QMS Documents: Claude Opus 4.6 vs. GPT-5.4 Across Prompting Configurations"** for consideration by *Clinical Chemistry and Laboratory Medicine*.
+Medical laboratories seeking ISO 15189 accreditation must produce on the order of 100–300 controlled quality management system (QMS) documents, a process that typically takes an in-house quality team several months. Large language models (LLMs) are increasingly used to accelerate this drafting, yet laboratories currently have no empirical evidence on how to prompt these models, nor on whether LLM-based scoring can be trusted to evaluate the output. Our study addresses both questions directly.
 
-**Novelty and relevance to CCLM.** ISO 15189:2022 and its Chinese implementation CNAS-CL02:2023 are driving a large-scale rebuild of quality-management-system (QMS) documentation across medical laboratories. Large language models (LLMs) offer a plausible route to accelerate this process, yet no systematic study has examined *which configuration strategy* yields compliant documents, or *how to evaluate such outputs reliably*. This work fills that gap. Across 486 generated documents, 864 LLM evaluations, and 30 blinded ratings by three ISO 15189–qualified experts (inter-rater ICC(2,k) = 0.982), we show that:
+We generated 486 QMS documents across nine prompt configurations using two state-of-the-art LLMs, and evaluated them through a three-tier framework: an automated rule-based scorer, two LLM judges (864 ratings), and blinded review by three qualified ISO 15189 internal auditors. Three findings should be of practical interest to your readership:
 
-1. The "optimal" configuration depends on the evaluator: LLM judges prefer a minimalist ~2,000-token skeleton configuration (*H4_sop_only*), whereas expert raters rank it fifth of seven configurations (only 0.16 points above the no-prompt baseline). Template-based configurations (F_template at ~15,000 tokens, H2_keep_examples at ~25,000 tokens, and G_template_rules at ~16,000 tokens) are preferred by experts for clinical usability (mean 4.06–4.24 on a 0–5 scale).
-2. The 56-K full-context configuration (*C_full*) collapses under GPT-5.4 generation (cross-evaluated 1.40–1.84) while remaining acceptable under Claude Opus 4.6 (3.22–4.56), demonstrating that "more context is better" is a model-specific rather than universal claim.
-3. Both LLM judges systematically overrate relative to the expert panel by 0.52–0.90 points on a 0–5 scale; Claude Opus shows moderate rank agreement with experts [ICC(3,1) = 0.548] while GPT-5.4 does not [ICC(3,1) = 0.217].
+1. **The "best" prompt configuration depends on who evaluates it.** Minimal prompts (~1,000–2,000 tokens) ranked first under LLM-based scoring but fell to fifth under expert review, whereas template-anchored prompts (~15,000–16,000 tokens) achieved the highest expert scores. Token efficiency and accreditation readiness are distinct optimization targets.
 
-Together, these findings provide a systematic empirical comparison of nine configurations for LLM-assisted ISO 15189 QMS document generation and disclose the limits of LLM-as-judge evaluation in a laboratory-medicine setting. The manuscript directly serves CCLM's readership of clinical chemists, laboratory directors, and QMS professionals by giving concrete, scenario-tiered configuration recommendations.
+2. **LLM-as-judge systematically overestimates expert-rated compliance** by 0.52–0.90 points and shows model-dependent preference patterns incompatible with classical self-preference. LLM judges may serve as first-pass screening filters, but cannot substitute for expert review of documents intended for accreditation.
 
-**Compliance with De Gruyter Brill's AI Policy for Authors.** This research uses generative AI both as the object of study (486 documents generated by Claude Opus 4.6 and GPT-5.4) and as a methodological instrument (LLM-as-judge evaluation); I have therefore included a detailed "Acknowledgement of AI tool use" section covering: (i) AI as research objects, (ii) AI as evaluators, (iii) AI-assisted manuscript drafting, (iv) absence of AI-generated images or manipulated data (all figures produced with matplotlib from raw JSON), and (v) sole human accountability. I confirm that no part of the manuscript was uploaded to third-party AI grammar or review services, and all AI-assisted drafting was verified and revised by the author.
+3. **More context is not safer.** A ~56,000-token full-context prompt collapsed under one generation model, with declining instruction-following and confused or fabricated clause citations – cautioning against the intuitive "load everything" strategy.
 
-**Ethics and data availability.** The study involved three laboratory professionals who provided written informed consent to participate as expert raters; it did not involve patient data, biological samples, or any intervention. All 486 generated documents, all 30 expert ratings, per-paper raw scores for 756 of the 864 LLM-judge ratings, and all analysis scripts are publicly available at https://github.com/stttttte/iso15189-llm-config-experiment under MIT (code) and CC BY 4.0 (data) licences, with a versioned snapshot archived on Zenodo (DOI: 10.5281/zenodo.20091464); the remaining cross-judge cells are documented as aggregated means in §4.5 (limitation x).
+To our knowledge, this is the first systematic comparison of prompt configurations for ISO 15189 document drafting with quantification of LLM-judge bias against expert validation. The provisional, scenario-stratified configuration guidance we provide is immediately usable by laboratories adopting LLM-assisted drafting under mandatory human verification.
 
-**Author and declarations.** I am the sole author of this manuscript and take full responsibility for its content. This work has not been published elsewhere, is not under consideration at any other journal, and has no competing interests.
+All generated documents, LLM-judge ratings, expert ratings, and analysis code are openly available on GitHub (https://github.com/stttttte/iso15189-llm-config-experiment) and archived on Zenodo (DOI: 10.5281/zenodo.20091464). The study involved no patient data; written informed consent was obtained from the two participating raters who are co-authors. The authors declare no competing interests and no relationships with any LLM provider. The manuscript is original, has not been published previously, and is not under consideration by any other journal. All authors have read and approved the submission.
 
-**Suggested reviewers.** I respectfully suggest the following specialists with relevant expertise in laboratory QMS, ISO 15189, and/or LLM evaluation (please confirm availability through your editorial process):
+**Suggested reviewers.** We respectfully suggest the following specialists with relevant expertise in laboratory QMS, ISO 15189, and/or LLM evaluation:
 
-1. **Dr. Hikmet Can Çubukçu, MD, Assoc. Prof.** — Rare Diseases Department, General Directorate of Health Services, Turkish Ministry of Health, Ankara, Türkiye; Department of Medical Biochemistry, Sincan Training and Research Hospital, Ankara, Türkiye. Email: hikmetcancubukcu@gmail.com. ORCID: 0000-0001-5321-9354. *Expertise: ISO 15189:2022 (co-author of the EFLM Working Group on Accreditation revision-analysis paper, CCLM 2025) and AI in laboratory medicine (recent CCLM paper on AI in the pre-analytical phase, 2025).*
+1. **Dr. Hikmet Can Çubukçu, MD, Assoc. Prof.** – Rare Diseases Department, General Directorate of Health Services, Turkish Ministry of Health, Ankara, Türkiye. Email: hikmetcancubukcu@gmail.com. ORCID: 0000-0001-5321-9354. *Expertise: ISO 15189:2022 (co-author of the EFLM Working Group on Accreditation revision-analysis paper, CCLM 2025) and AI in laboratory medicine.*
 
-2. **Dr. Tze Ping Loh** — Department of Laboratory Medicine, National University Hospital, 5 Lower Kent Ridge Road, 119074 Singapore. Email: Tze_ping_loh@nuhs.edu.sg. *Expertise: machine learning and AI applications in clinical chemistry; patient-based real-time quality control; lot-to-lot verification; frequent CCLM author and editor of the* Journal of Laboratory and Precision Medicine.
+2. **Dr. Tze Ping Loh** – Department of Laboratory Medicine, National University Hospital, Singapore. Email: Tze_ping_loh@nuhs.edu.sg. *Expertise: machine learning and AI applications in clinical chemistry; patient-based real-time quality control; frequent CCLM author.*
 
-3. **Prof. Marc H. M. Thelen** — Foundation for Quality Assessment in Medical Laboratories (SKML) and Department of Laboratory Medicine, Radboud University Medical Center, Nijmegen, The Netherlands. Email: mthelen@skml.nl. *Expertise: ISO 15189 accreditation and metrological traceability; core member of the EFLM Working Group on Accreditation and ISO/CEN Standards; co-author of the EN ISO 15189:2022 revision-analysis paper (CCLM 2025).*
+3. **Prof. Marc H. M. Thelen** – Foundation for Quality Assessment in Medical Laboratories (SKML) and Department of Laboratory Medicine, Radboud University Medical Center, Nijmegen, The Netherlands. Email: mthelen@skml.nl. *Expertise: ISO 15189 accreditation and metrological traceability; core member of the EFLM Working Group on Accreditation and ISO/CEN Standards.*
 
-I also declare that no reviewer conflicts apply to Editorial Board members of CCLM.
-
-**Preferred non-reviewers.** None.
-
-Thank you for considering this submission. I look forward to the Editorial Board's feedback.
+Thank you for your consideration. We look forward to your response.
 
 Sincerely,
 
-**Sidi Liu** (ORCID: 0009-0006-1695-5372)
-Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian, China
-Email: lllsssddd@icloud.com
+**Dongdong Li**, on behalf of all authors
+
+Department of Laboratory Medicine, West China Hospital, Sichuan University
+
+Sichuan Clinical Research Center for Laboratory Medicine
+
+Chengdu, Sichuan, PR China
+
+Email: jiangxili1219@163.com
+
+ORCID: 0000-0002-0290-6485
 
 ---
 
 ## 中文辅助注释（不随稿提交，仅自用）
 
-### 填写 checklist（投稿前务必填完）
-
-- [ ] 第一行地址信息（单位、部门、地址、邮编）
-- [ ] 日期（CCLM 惯例用 "19 April 2026" 格式）
-- [ ] Professor Mario Plebani 是 CCLM 现任主编（2026-04 核实：若变更，请从 CCLM 官网主编页更新）
-- [ ] [Affiliation] 单位全称 + 英文译名
-- [ ] **Suggested reviewers 3 位**（候选思路）：
-    - 中国 CNAS 评审系统熟悉者（如某医院检验科主任，不宜是你认识太熟的）
-    - LLM 医学应用研究者（可从近两年 JAMIA / Nature Medicine 的 LLM 论文里找通讯作者）
-    - 欧美 ISO 15189 学者（可从 CCLM 近期 QMS 相关论文找）
-- [ ] 勾选 CCLM Editorial Manager 系统里的"AI declaration"复选框（如有）
-- [ ] 上传附件：manuscript PDF + source .docx + figures × 4（PNG 300 DPI）+ supplementary + cover letter + ICMJE 利益冲突表 + 伦理 exemption letter
-
-### Cover letter 字数
-当前约 650 英文词。CCLM 无严格字数上限，一般 500–800 词合适。若需压缩，可删减 Novelty 段的具体数字细节（放摘要就够）。
-
-### 语气要点
-- **自信但不傲慢**：陈述事实（ICC 数字、样本量）不加形容词（avoid "groundbreaking"）
-- **合规主动披露**：De Gruyter 近两年对 AI 论文谨慎，cover letter 里**主动点出合规**会赢得审稿人信任
-- **结构分段清晰**：每段一个主题（Novelty / AI compliance / Ethics / Authorship / Reviewers）
-
-### 投稿后注意
-- CCLM 审稿周期 8–16 周
-- 若接到"major revision"，**修回时不要用 AI 改稿**——用人类编辑服务
-- Response to reviewers 由你亲自写，我可辅助校对（同样遵守披露原则）
+- **[Date]** 填投稿当日；如系统允许指名主编，把 "Dear Editor-in-Chief" 换成现任主编姓名（投稿前在 CCLM 官网核实）
+- 重投段落（第 2 段，引用 CCLM.2026.0735）是本轮新增——若你决定按全新投稿处理、不提前稿，删掉该段即可
+- 三位建议审稿人沿用首投版名单；若系统提示"曾评审过本稿"冲突，可换人
+- 信中 "To our knowledge, this is the first..." 保留是恰当的——cover letter 是向编辑推销新颖性的场合，与正文语气不同
+- 随稿附件清单：manuscript（含图版 docx/PDF）+ figures ×4（PNG 300dpi）+ Supplementary Table S1 + AI disclosure + point-by-point response + 本信

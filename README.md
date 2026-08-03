@@ -1,6 +1,6 @@
 # ISO 15189 LLM Config Experiment
 
-> **Dataset and code for: "Systematic Divergence Between LLM Judges and Domain Experts in LLM-Assisted ISO 15189:2022 Medical Laboratory Document Generation — A Multi-Level Validation Study"**
+> **Dataset and code for: "Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation"**
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](./LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/data-CC_BY_4.0-lightgrey.svg)](./LICENSE-DATA)

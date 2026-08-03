@@ -1,4 +1,4 @@
-# Response to Reviewers — CCLM.2026.0735 (Resubmission)
+# Response to Reviewers: CCLM.2026.0735 (Resubmission)
 
 > 随稿上传件（File Designation: Author's Response to Reviewer/Editor Critique，须排在上传文件第一位）。
 > 引号内为修订稿原文，供审稿人直接核对。
@@ -11,7 +11,7 @@
 
 **Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation**
 
-We are grateful to both reviewers. The two critiques addressed different aspects of the work — what LLM drafting means for accreditation, and how the paper reads — and both have had an important influence on this revision, substantially reshaping the manuscript.
+We are grateful to both reviewers. The two critiques addressed different aspects of the work: what LLM drafting means for accreditation, and how the paper reads. Both have had an important influence on this revision, substantially reshaping the manuscript.
 
 A note on marking the changes. The revision touches nearly every section: the title is new, the main text is about 27% shorter, the Methods have been cut by more than 40%, all four figures have been redrawn, and the Limitations are now plain prose. Underlining what changed would leave almost the whole document underlined, so we have set out below what changed and where. We will gladly supply a marked copy if the editorial office prefers one.
 
@@ -33,9 +33,9 @@ This is consistent with the published consensus that LLMs in healthcare quality 
 
 *"Ultimately, ISO 15189 documentation is the process by which laboratory staff learn processes and risks, take responsibility, and demonstrate competence; an LLM can take over only its routine textual work – expert final review remains indispensable."*
 
-Throughout the revised text, no configuration is described as producing anything more than a reference draft. What decides whether a document can actually be used for accreditation — the laboratory's own quality-control data, its patient data distributions, its proficiency-testing history — has to be entered and interpreted by competent staff, because the model holds none of it. Section 4.4 is now titled "Provisional configuration guidance", and every scenario in Table 4 ends with revision by laboratory staff and expert sign-off.
+Throughout the revised text, no configuration is described as producing anything more than a reference draft. What actually decides whether a document can be used for accreditation is the laboratory's own quality-control data, its patient data distributions and its proficiency-testing history. All of it has to be entered and interpreted by competent staff, because the model holds none of it. Section 4.4 is now titled "Provisional configuration guidance", and every scenario in Table 4 ends with revision by laboratory staff and expert sign-off.
 
-Our numbers support the concern. Both LLM judges rated compliance 0.52–0.90 points above the expert panel. The configuration the judges ranked first fell to fifth under expert review, only 0.16 points above a document produced with no prompt at all. And the documents the judges overrated most were precisely the ones that look right — correct structure, correct terminology — but carry no clinically grounded operational detail (Section 3.5). We are not proposing that LLMs replace laboratory staff. The study set out to find where the safe boundary lies, and the data put that boundary considerably further back than LLM-based evaluation alone would suggest.
+Our numbers support the concern. Both LLM judges rated compliance 0.52–0.90 points above the expert panel. The configuration the judges ranked first fell to fifth under expert review, only 0.16 points above a document produced with no prompt at all. And the documents the judges overrated most were precisely the ones that look right, with correct structure and correct terminology, but carry no clinically grounded operational detail (Section 3.5). We are not proposing that LLMs replace laboratory staff. The study set out to find where the safe boundary lies, and the data put that boundary considerably further back than LLM-based evaluation alone would suggest.
 
 ---
 
@@ -49,7 +49,7 @@ The Conclusions were the clearest case: 444 words rewritten into about 220, as a
 
 **2.2 In the abstract it is not clear what C_full is; the explanation comes later.**
 
-The abstract now names it at first mention — *"the full-context C_full (~56,000 tokens)"* — with the full definition still in Section 2.1.
+The abstract now names it at first mention, as *"the full-context C_full (~56,000 tokens)"*, with the full definition still in Section 2.1.
 
 **2.3 The references at the start of the Introduction are misnumbered: the first is 7, the second 14.**
 
@@ -71,7 +71,7 @@ Done as part of the condensation above. Stratified and per-dimension effect esti
 
 ### Other changes made during the revision
 
-We also checked the manuscript against our released code and corrected the methodological reporting. The generation and judging parameters of both models are now stated exactly (Sections 2.2 and 2.3.2). The Claude judge's coverage — 378 document-level ratings, 77.8% — is explained: the judging ran in batches as the configuration set grew, and for some batches only group-level means were kept. Section 2.4.1 acknowledges that replicates sharing the same tasks are not fully independent, and Section 2.3.1 states where the automated scorer's weights come from.
+We also checked the manuscript against our released code and corrected the methodological reporting. The generation and judging parameters of both models are now stated exactly (Sections 2.2 and 2.3.2). The Claude judge's coverage, 378 document-level ratings or 77.8%, is explained: the judging ran in batches as the configuration set grew, and for some batches only group-level means were kept. Section 2.4.1 acknowledges that replicates sharing the same tasks are not fully independent, and Section 2.3.1 states where the automated scorer's weights come from.
 
 An "Acknowledgment of AI tool use" section has been added to the manuscript, following the De Gruyter Brill AI Policy for Authors: AI as research object, AI as evaluator, AI-assisted drafting, figure integrity, and accountability. The public repository and archive have been updated to match this version (GitHub; Zenodo v1.1.0), and the manuscript now cites the version-independent concept DOI 10.5281/zenodo.20091463.
 

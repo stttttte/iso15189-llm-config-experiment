@@ -1,7 +1,7 @@
 # Response to Reviewers — CCLM.2026.0735 (Resubmission)
 
 > 随稿上传件（File Designation: Author's Response to Reviewer/Editor Critique，须排在上传文件第一位）。
-> 引号内楷体段落均为修订稿原文，可供审稿人直接核对。
+> 引号内为修订稿原文，供审稿人直接核对。
 
 ---
 
@@ -11,69 +11,68 @@
 
 **Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation**
 
-We thank both reviewers for their careful reading and constructive criticism. The manuscript has been revised extensively in response. Because the revision touches nearly every part of the paper – a new title, a condensed and restructured text (main text shortened by approximately 27%, from about 7,500 to about 5,500 words), a compressed abstract, four redesigned figures, a rewritten Limitations section, and corrected methodological reporting – a change-highlighted copy would mark almost the entire document; we therefore provide the detailed point-by-point mapping below and can supply a highlighted copy on request.
+We are grateful to both reviewers. The two critiques pointed in different directions — one at what LLM drafting means for accreditation, the other at how the paper reads — and between them they have changed the manuscript a great deal.
 
-Two changes of record accompany the revision. First, the title has been changed to reflect the study's actual scope. Second, the author list has been expanded from one to five: Lan Yang and Xinying Chen (Raters 2 and 3 of the blinded expert panel) and Dan Wu (data curation) have been added as co-authors, and Dongdong Li joins as supervising and corresponding author; individual roles are specified in the Author Contributions statement, and all authors have read and approved the resubmitted manuscript.
+A note on marking the changes. The revision touches nearly every section: the title is new, the main text is about 27% shorter, the Methods have been cut by more than 40%, all four figures have been redrawn, and the Limitations are now plain prose. Underlining what changed would leave almost the whole document underlined, so we have set out below what changed and where. We will gladly supply a marked copy if the editorial office prefers one.
+
+Two changes of record. The title now names what the study actually did. And the author list has grown from one to five: Lan Yang and Xinying Chen served as Raters 2 and 3 on the blinded panel, Dan Wu handled data curation, and Dongdong Li supervised the work and is corresponding author. Individual roles are given in the Author Contributions statement, and all five authors have read and approved this version.
 
 ---
 
 ### Reviewer 1
 
-**Comment (summarized).** ISO 15189 documentation is not a bureaucratic exercise but tangible evidence that the laboratory operates in a controlled, competent, and verifiable manner. Drafting procedures is an integral part of staff training, responsibility and accountability, competence development, and risk awareness. If AI replaces personnel in this task, the laboratory loses active participation, process understanding, and quality culture; ISO 15189 requires competent professionals, not merely well-written documents. Proposing such tools for drafting procedures would ultimately reduce the value of accreditation itself.
+The reviewer argues that ISO 15189 documentation is the tangible evidence that a laboratory operates in a controlled and competent way; that writing procedures is itself part of staff training, accountability, competence development and risk awareness; and that handing this work to AI would hollow out the accreditation process it is meant to support.
 
-**Response.** We agree with every element of this assessment, and we have revised the manuscript so that this position is now explicit and structural rather than incidental. We would also note that our findings speak directly to this concern: they quantify how far polished-looking LLM output stands from genuine compliance, and show that only expert review detects the gap.
+We agree, and we have rewritten the manuscript so that this is its position rather than a caveat inside it. We would add that our results make the same case from the data side: they show how far a well-formatted LLM draft can sit from actual compliance, and that only the human experts saw the difference.
 
-Specifically:
+Section 4.5 now states the constraint in the reviewer's own terms:
 
-1. **Human supervision is now framed as a binding constraint, in the reviewer's own terms (Section 4.5).** The revised manuscript states: *"The drafting of QMS documents is not merely a clerical output; it is also the process through which laboratory staff build their sense of responsibility and risk awareness. If this work is delegated entirely to an LLM, staff gradually lose writing practice and struggle to develop a deep understanding of the ISO 15189 process as a whole. We therefore regard human supervision as a constraint on the use of LLMs in this setting. ISO 15189:2022 requires competent personnel and a complete examination process, not merely well-formatted documents."* This aligns with the published consensus that LLMs in healthcare quality management should be confined to clerical tasks under mandatory human verification (reference [14]).
+*"The drafting of QMS documents is not merely a clerical output; it is also the process through which laboratory staff build their sense of responsibility and risk awareness. If this work is delegated entirely to an LLM, staff gradually lose writing practice and struggle to develop a deep understanding of the ISO 15189 process as a whole. We therefore regard human supervision as a constraint on the use of LLMs in this setting. ISO 15189:2022 requires competent personnel and a complete examination process, not merely well-formatted documents."*
 
-2. **The Conclusions have been rewritten around this position.** They now close: *"Ultimately, ISO 15189 documentation is the process by which laboratory staff learn processes and risks, take responsibility, and demonstrate competence; an LLM can take over only its routine textual work – expert final review remains indispensable."*
+This is consistent with the published consensus that LLMs in healthcare quality management belong in clerical tasks performed under mandatory human verification (reference [14]). The Conclusions now end on the same point:
 
-3. **Every configuration is now described as producing only a reference draft.** The Conclusions state that no configuration's output can be submitted directly, and that the content that actually determines accreditation readiness – the laboratory's own quality-control data, patient data distributions, and proficiency-testing history – must be entered and interpreted by competent personnel, because an LLM does not hold these data. Section 4.4 was retitled "Provisional configuration guidance," and every scenario in Table 4 requires revision by laboratory staff and expert final review.
+*"Ultimately, ISO 15189 documentation is the process by which laboratory staff learn processes and risks, take responsibility, and demonstrate competence; an LLM can take over only its routine textual work – expert final review remains indispensable."*
 
-4. **Our data quantify the risk the reviewer describes.** Both LLM judges overestimated expert-rated compliance by 0.52–0.90 points; the configuration ranked first by LLM judges fell to fifth under expert review, only 0.16 points above the no-prompt baseline; and the documents most overestimated were precisely those that comply in structure and terminology but lack clinically grounded operational detail (Section 3.5). We do not propose replacing personnel; the study's purpose is to locate the boundary of safe use, and the data show that boundary is far more restrictive than LLM-based evaluation alone would suggest.
+Throughout the revised text, no configuration is described as producing anything more than a reference draft. What decides whether a document can actually be used for accreditation — the laboratory's own quality-control data, its patient data distributions, its proficiency-testing history — has to be entered and interpreted by competent staff, because the model holds none of it. Section 4.4 is now titled "Provisional configuration guidance", and every scenario in Table 4 ends with revision by laboratory staff and expert sign-off.
+
+Our numbers support the concern. Both LLM judges rated compliance 0.52–0.90 points above the expert panel. The configuration the judges ranked first fell to fifth under expert review, only 0.16 points above a document produced with no prompt at all. And the documents the judges overrated most were precisely the ones that look right — correct structure, correct terminology — but carry no clinically grounded operational detail (Section 3.5). We are not proposing that LLMs replace laboratory staff. The study set out to find where the safe boundary lies, and the data put that boundary considerably further back than LLM-based evaluation alone would suggest.
 
 ---
 
 ### Reviewer 2
 
-**Comment 2.1.** The paper is overly complex and difficult to read; the text feels "inhuman" in its delivery, dense and flat, with interpretive sentences scattered among technical details. Shorten the text to focus on essentials and emphasize key points.
+**2.1 The paper is too dense to read; interpretive sentences are scattered among technical details; shorten it and emphasize the key points.**
 
-**Response.** We have condensed and rewritten the text throughout:
+This was fair, and it drove the largest part of the revision. The main text is about 27% shorter than the version reviewed (roughly 7,500 to 5,500 words), with the Methods cut by more than 40%. Implementation detail moved to the Supplementary Material rather than being deleted, and every methodological statement is still made in the main text.
 
-- The main text was shortened by approximately 27% (from about 7,500 to about 5,500 words), with the Methods section reduced by more than 40%; implementation detail was moved to the Supplementary Material rather than deleted, and every methodological statement retained in the main text.
-- The Conclusions were rewritten from 444 to approximately 220 words as a single connected argument (finding → practical implications → closing position), with interpretive topic sentences carrying the thread (e.g., *"Nor is more context safer"*; *"Evaluation, too, cannot be delegated"*).
-- The Limitations section was rewritten from an enumerated list into six plain prose paragraphs.
-- The scoring rubric, previously a main-text table, was moved to Supplementary Table S2, keeping the display items within the journal limit while the remaining four tables carry the results.
-- Redundant cross-references and parenthetical statistics were pruned; all remaining statistics follow one uniform bracket format [estimate, 95% CI (…); adjusted p].
-- A small self-preference table was merged into a single sentence of text, and the per-dimension and per-task-class effect decompositions were consolidated into Table 2 rather than scattered through prose.
+The Conclusions were the clearest case: 444 words rewritten into about 220, as a single argument running from the finding to its practical consequences to the closing position, with topic sentences carrying the thread (*"Nor is more context safer"*; *"Evaluation, too, cannot be delegated"*). The Limitations, previously an enumerated list, are now six paragraphs of prose. Redundant cross-references were pruned, and the remaining statistics all follow one bracket format. A small table on self-preference bias became a single sentence, and the per-dimension and per-task-class effects were consolidated into Table 2 instead of appearing scattered through the prose. The scoring rubric, previously a main-text table, moved to Supplementary Table S2; the four remaining tables carry the results, which also keeps the display items within the journal limit.
 
-**Comment 2.2.** In the abstract, it is not immediately clear what C_full is; the explanation appears later in the text.
+**2.2 In the abstract it is not clear what C_full is; the explanation comes later.**
 
-**Response.** Corrected. The abstract now glosses the configuration at first mention – *"the full-context C_full (~56,000 tokens)"* – with the full definition retained in Section 2.1.
+The abstract now names it at first mention — *"the full-context C_full (~56,000 tokens)"* — with the full definition still in Section 2.1.
 
-**Comment 2.3.** References at the beginning of the Introduction are misnumbered (first reference is number 7, the second number 14).
+**2.3 The references at the start of the Introduction are misnumbered: the first is 7, the second 14.**
 
-**Response.** Corrected. The reference list was renumbered completely; the Introduction now opens with references [1] and [2], and the final list contains 14 sequentially numbered references in order of first citation.
+Our mistake. The reference list has been renumbered from scratch. The Introduction now opens with [1] and [2], and the list contains 14 references numbered in order of first citation.
 
-**Comment 2.4.** Figure 1 should be clarified: C_full, despite being longer, seems to contain less material.
+**2.4 Figure 1 needs clarifying: C_full is longer yet seems to contain less material.**
 
-**Response.** Figure 1 was redesigned to remove exactly this ambiguity. It now shows a component-presence matrix (included ✓ / partial ◑ / absent —) alongside a separate bar encoding of total system-prompt size, and the caption states explicitly that the two encodings are not proportional: the component marks index the presence of distilled, structured prompt content, whereas bar length reflects the total volume of loaded text. C_full reaches the largest token count by loading the full raw reference corpus, yet its rules mark is only partial, because explicit rules are embedded in that raw text rather than supplied as a distilled rule set.
+The reviewer identified a genuine ambiguity in the original design, and the figure has been rebuilt around it. Component presence (included / partial / absent) and total prompt size are now shown as two separate encodings, and the caption says plainly that they are not proportional: the component marks index distilled, structured prompt content, whereas bar length reflects the total volume of loaded text. C_full reaches the largest token count by loading the full raw reference corpus, yet its rules mark is only partial, because in that configuration the rules sit buried in raw text rather than being supplied as a distilled rule set.
 
-**Comment 2.5.** Figure 3 has 7 colors in the legend, 9 dots in the left panel, 10 dots in the right panel; some colors are duplicated and some are missing.
+**2.5 Figure 3: seven colors in the legend, nine dots in the left panel, ten in the right; some colors duplicated, some missing.**
 
-**Response.** The original scatter plot has been replaced by a Bland–Altman agreement analysis (new Figure 3). Each panel now shows exactly the n = 10 expert-reviewed documents, colored by a consistent four-category configuration-family scheme (with an open circle for the no-prompt baseline) that matches the legend exactly. All four figures were redesigned with a single colorblind-safe palette applied consistently across the manuscript.
+The scatter plot has been replaced by a Bland–Altman analysis. Each panel now shows exactly the ten expert-reviewed documents, colored by four configuration families, with an open circle for the no-prompt baseline; the legend matches the marks used, and nothing is duplicated or missing. All four figures were redrawn with one colorblind-safe palette applied consistently.
 
-**Comment 2.6.** Avoid deep vertical technical detail unless functional; gather numerical data into tables rather than scattering them in parentheses.
+**2.6 Avoid deep technical detail unless it serves the reader; gather numbers into tables rather than scattering them in parentheses.**
 
-**Response.** Done as part of the condensation described under 2.1: stratified and per-dimension effect estimates now sit in Table 2; document counts, parameters, and rating tallies are stated once in Methods rather than repeated; and parenthetical numbers in the Discussion were removed except where a specific claim depends on them.
+Done as part of the condensation above. Stratified and per-dimension effect estimates now sit in Table 2; document counts, model parameters and rating tallies are stated once in the Methods rather than repeated; and parenthetical numbers in the Discussion were removed except where a claim depends on them.
 
 ---
 
-### Additional changes made during revision
+### Other changes made during the revision
 
-- Methodological reporting was corrected against the released code: the generation and judging parameters of both models are now stated exactly (Section 2.2 and Section 2.3.2), the Claude-judge coverage (378 document-level ratings, 77.8%) is explained (batch execution; some batches retained only group-level means), the non-independence of replicates sharing tasks is acknowledged in Section 2.4.1, and the provenance of the automated-scorer weights is stated in Section 2.3.1.
-- An "Acknowledgment of AI tool use" section (De Gruyter Brill AI Policy for Authors) is embedded in the manuscript, covering AI as research objects, AI as evaluators, AI-assisted drafting, figure integrity, and accountability.
-- The public repository and archive were updated to match the resubmission (GitHub, Zenodo v1.1.0; the manuscript now cites the version-independent concept DOI 10.5281/zenodo.20091463).
+We also checked the manuscript against our released code and corrected the methodological reporting. The generation and judging parameters of both models are now stated exactly (Sections 2.2 and 2.3.2). The Claude judge's coverage — 378 document-level ratings, 77.8% — is explained: the judging ran in batches as the configuration set grew, and for some batches only group-level means were kept. Section 2.4.1 acknowledges that replicates sharing the same tasks are not fully independent, and Section 2.3.1 states where the automated scorer's weights come from.
 
-We thank the reviewers again; the manuscript is substantially clearer and more honest about its limits as a result of their comments.
+An "Acknowledgment of AI tool use" section has been added to the manuscript, following the De Gruyter Brill AI Policy for Authors: AI as research object, AI as evaluator, AI-assisted drafting, figure integrity, and accountability. The public repository and archive have been updated to match this version (GitHub; Zenodo v1.1.0), and the manuscript now cites the version-independent concept DOI 10.5281/zenodo.20091463.
+
+Both reviewers have left the manuscript clearer and more honest about its limits, and we thank them for the time they gave it.

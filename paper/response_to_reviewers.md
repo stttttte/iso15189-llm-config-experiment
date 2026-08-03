@@ -1,11 +1,4 @@
-# Response to Reviewers: CCLM.2026.0735 (Resubmission)
-
-> 随稿上传件（File Designation: Author's Response to Reviewer/Editor Critique，须排在上传文件第一位）。
-> 引号内为修订稿原文，供审稿人直接核对。
-
----
-
-## Response to Reviewers
+# Response to Reviewers
 
 **Manuscript CCLM.2026.0735 – resubmission**
 
@@ -76,3 +69,10 @@ We also checked the manuscript against our released code and corrected the metho
 An "Acknowledgment of AI tool use" section has been added to the manuscript, following the De Gruyter Brill AI Policy for Authors: AI as research object, AI as evaluator, AI-assisted drafting, figure integrity, and accountability. The public repository and archive have been updated to match this version (GitHub; Zenodo v1.1.0), and the manuscript now cites the version-independent concept DOI 10.5281/zenodo.20091463.
 
 Both reviewers have left the manuscript clearer and more honest about its limits, and we thank them for the time they gave it.
+
+<!--internal-->
+
+## 自用备注（不随稿提交）
+
+- File Designation: Author's Response to Reviewer/Editor Critique，须排在上传文件第一位
+- 斜体段落为修订稿原文，供审稿人直接核对

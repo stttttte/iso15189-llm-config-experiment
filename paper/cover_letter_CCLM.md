@@ -1,12 +1,8 @@
-# Cover Letter for CCLM Resubmission
-
 > Target journal: *Clinical Chemistry and Laboratory Medicine* (CCLM), De Gruyter Brill
 > Manuscript type: Original Article（reject-and-resubmit 重投版）
 > Submission system: Editorial Manager
 
 ---
-
-## 英文版（投稿使用）
 
 3 August 2026
 
@@ -55,6 +51,8 @@ Email: jiangxili1219@163.com
 ORCID: 0000-0002-0290-6485
 
 ---
+
+<!--internal-->
 
 ## 中文辅助注释（不随稿提交，仅自用）
 

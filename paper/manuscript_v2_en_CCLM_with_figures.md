@@ -184,7 +184,7 @@ The ranking of the seven configurations is given in Table 3, and is almost the r
 | E_rules_v2 | 3.19 | 4.00 | 4.00 | 1 |
 | A_bare | 3.04 | 4.00 | 3.80 | 1 |
 
-The top three are all template-anchored (F_template, H2_keep_examples, G_template_rules), whereas H4_sop_only – ranked first at the LLM-judge tier – fell to fifth, only 0.16 points above the no-prompt baseline A_bare. The most overestimated were C_full and H4_sop_only (about 1 point above the experts): both comply in structure and terminology but lack the clinically grounded operational detail that only experts detect. The token-efficient advantage of skeleton configurations at the LLM-judge tier is therefore not borne out under expert evaluation. With only 1–2 documents per configuration, this ranking is preliminary.
+The top three are all template-anchored (F_template, H2_keep_examples, G_template_rules; expert means 4.06–4.24), whereas H4_sop_only – ranked first at the LLM-judge tier – fell to fifth, only 0.16 points above the no-prompt baseline A_bare. The most overestimated were C_full and H4_sop_only (about 1 point above the experts): both comply in structure and terminology but lack the clinically grounded operational detail that only experts detect. The token-efficient advantage of skeleton configurations at the LLM-judge tier is therefore not borne out under expert evaluation. With only 1–2 documents per configuration, this ranking is preliminary.
 
 ![Figure 3](figures/fig3_expert_vs_llm.png)
 
@@ -341,7 +341,7 @@ The optimal prompt configuration for LLM-assisted ISO 15189 QMS document generat
 
 ---
 
-**Word count (main text including references)**: ~7900 words
+**Word count (main text, excluding title page, abstract, tables, figures, and references)**: ~5,500 words
 **Tables**: 4
 **Figures**: 4
 **References**: 14

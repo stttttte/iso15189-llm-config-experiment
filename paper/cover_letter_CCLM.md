@@ -62,4 +62,4 @@ ORCID: 0000-0002-0290-6485
 - 重投段落（第 2 段，引用 CCLM.2026.0735）是本轮新增——若你决定按全新投稿处理、不提前稿，删掉该段即可
 - 三位建议审稿人沿用首投版名单；若系统提示"曾评审过本稿"冲突，可换人
 - 信中 "To our knowledge, this is the first..." 保留是恰当的——cover letter 是向编辑推销新颖性的场合，与正文语气不同
-- 随稿附件清单：manuscript（含图版 docx/PDF）+ figures ×4（PNG 300dpi）+ Supplementary Table S1 + AI disclosure + point-by-point response + 本信
+- 随稿附件清单：manuscript（含图版 docx/PDF）+ figures ×4（PNG 300dpi）+ Supplementary Material（S1 任务清单 + S2 评分量规）+ AI disclosure + point-by-point response + 本信

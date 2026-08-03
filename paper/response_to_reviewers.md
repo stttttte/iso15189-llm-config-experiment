@@ -29,7 +29,7 @@ Specifically:
 
 2. **The Conclusions have been rewritten around this position.** They now close: *"Ultimately, ISO 15189 documentation is the process by which laboratory staff learn processes and risks, take responsibility, and demonstrate competence; an LLM can take over only its routine textual work – expert final review remains indispensable."*
 
-3. **Every configuration is now described as producing only a reference draft.** The Conclusions state that no configuration's output can be submitted directly, and that the content that actually determines accreditation readiness – the laboratory's own quality-control data, patient data distributions, and proficiency-testing history – must be entered and interpreted by competent personnel, because an LLM does not hold these data. Section 4.4 was retitled "Provisional configuration guidance," and every scenario in Table 5 requires revision by laboratory staff and expert final review.
+3. **Every configuration is now described as producing only a reference draft.** The Conclusions state that no configuration's output can be submitted directly, and that the content that actually determines accreditation readiness – the laboratory's own quality-control data, patient data distributions, and proficiency-testing history – must be entered and interpreted by competent personnel, because an LLM does not hold these data. Section 4.4 was retitled "Provisional configuration guidance," and every scenario in Table 4 requires revision by laboratory staff and expert final review.
 
 4. **Our data quantify the risk the reviewer describes.** Both LLM judges overestimated expert-rated compliance by 0.52–0.90 points; the configuration ranked first by LLM judges fell to fifth under expert review, only 0.16 points above the no-prompt baseline; and the documents most overestimated were precisely those that comply in structure and terminology but lack clinically grounded operational detail (Section 3.5). We do not propose replacing personnel; the study's purpose is to locate the boundary of safe use, and the data show that boundary is far more restrictive than LLM-based evaluation alone would suggest.
 
@@ -44,8 +44,9 @@ Specifically:
 - The main text was shortened by approximately 27% (from about 7,500 to about 5,500 words), with the Methods section reduced by more than 40%; implementation detail was moved to the Supplementary Material rather than deleted, and every methodological statement retained in the main text.
 - The Conclusions were rewritten from 444 to approximately 220 words as a single connected argument (finding → practical implications → closing position), with interpretive topic sentences carrying the thread (e.g., *"Nor is more context safer"*; *"Evaluation, too, cannot be delegated"*).
 - The Limitations section was rewritten from an enumerated list into six plain prose paragraphs.
+- The scoring rubric, previously a main-text table, was moved to Supplementary Table S2, keeping the display items within the journal limit while the remaining four tables carry the results.
 - Redundant cross-references and parenthetical statistics were pruned; all remaining statistics follow one uniform bracket format [estimate, 95% CI (…); adjusted p].
-- A small self-preference table was merged into a single sentence of text, and the per-dimension and per-task-class effect decompositions were consolidated into Table 3 rather than scattered through prose.
+- A small self-preference table was merged into a single sentence of text, and the per-dimension and per-task-class effect decompositions were consolidated into Table 2 rather than scattered through prose.
 
 **Comment 2.2.** In the abstract, it is not immediately clear what C_full is; the explanation appears later in the text.
 
@@ -65,7 +66,7 @@ Specifically:
 
 **Comment 2.6.** Avoid deep vertical technical detail unless functional; gather numerical data into tables rather than scattering them in parentheses.
 
-**Response.** Done as part of the condensation described under 2.1: stratified and per-dimension effect estimates now sit in Table 3; document counts, parameters, and rating tallies are stated once in Methods rather than repeated; and parenthetical numbers in the Discussion were removed except where a specific claim depends on them.
+**Response.** Done as part of the condensation described under 2.1: stratified and per-dimension effect estimates now sit in Table 2; document counts, parameters, and rating tallies are stated once in Methods rather than repeated; and parenthetical numbers in the Discussion were removed except where a specific claim depends on them.
 
 ---
 

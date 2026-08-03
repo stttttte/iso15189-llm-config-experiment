@@ -11,7 +11,7 @@
 
 **Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation**
 
-We are grateful to both reviewers. The two critiques pointed in different directions — one at what LLM drafting means for accreditation, the other at how the paper reads — and between them they have changed the manuscript a great deal.
+We are grateful to both reviewers. The two critiques addressed different aspects of the work — what LLM drafting means for accreditation, and how the paper reads — and both have had an important influence on this revision; together they have substantially reshaped the manuscript.
 
 A note on marking the changes. The revision touches nearly every section: the title is new, the main text is about 27% shorter, the Methods have been cut by more than 40%, all four figures have been redrawn, and the Limitations are now plain prose. Underlining what changed would leave almost the whole document underlined, so we have set out below what changed and where. We will gladly supply a marked copy if the editorial office prefers one.
 

@@ -21,7 +21,7 @@ Two changes of record accompany the revision. First, the title has been changed 
 
 **Comment (summarized).** ISO 15189 documentation is not a bureaucratic exercise but tangible evidence that the laboratory operates in a controlled, competent, and verifiable manner. Drafting procedures is an integral part of staff training, responsibility and accountability, competence development, and risk awareness. If AI replaces personnel in this task, the laboratory loses active participation, process understanding, and quality culture; ISO 15189 requires competent professionals, not merely well-written documents. Proposing such tools for drafting procedures would ultimately reduce the value of accreditation itself.
 
-**Response.** We agree with every element of this assessment, and we have revised the manuscript so that this position is now explicit and structural rather than incidental. We would respectfully add that our empirical results are, in substance, evidence *for* the reviewer's position: they quantify exactly how far polished-looking LLM output stands from genuine compliance, and show that only expert review detects the gap.
+**Response.** We agree with every element of this assessment, and we have revised the manuscript so that this position is now explicit and structural rather than incidental. We would also note that our findings speak directly to this concern: they quantify how far polished-looking LLM output stands from genuine compliance, and show that only expert review detects the gap.
 
 Specifically:
 

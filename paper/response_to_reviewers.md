@@ -11,7 +11,7 @@
 
 **Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation**
 
-We thank both reviewers for their careful reading and constructive criticism. The manuscript has been revised extensively in response. Because the revision touches nearly every part of the paper – a new title, a condensed and restructured text (main text shortened by approximately 15%), a compressed abstract, four redesigned figures, a rewritten Limitations section, and corrected methodological reporting – a change-highlighted copy would mark almost the entire document; we therefore provide the detailed point-by-point mapping below and can supply a highlighted copy on request.
+We thank both reviewers for their careful reading and constructive criticism. The manuscript has been revised extensively in response. Because the revision touches nearly every part of the paper – a new title, a condensed and restructured text (main text shortened by approximately 27%, from about 7,500 to about 5,500 words), a compressed abstract, four redesigned figures, a rewritten Limitations section, and corrected methodological reporting – a change-highlighted copy would mark almost the entire document; we therefore provide the detailed point-by-point mapping below and can supply a highlighted copy on request.
 
 Two changes of record accompany the revision. First, the title has been changed to reflect the study's actual scope. Second, the author list has been expanded from one to five: Lan Yang and Xinying Chen (Raters 2 and 3 of the blinded expert panel) and Dan Wu (data curation) have been added as co-authors, and Dongdong Li joins as supervising and corresponding author; individual roles are specified in the Author Contributions statement, and all authors have read and approved the resubmitted manuscript.
 
@@ -41,7 +41,7 @@ Specifically:
 
 **Response.** We have condensed and rewritten the text throughout:
 
-- The main text was shortened by approximately 15%, and the abstract was compressed from over 350 to approximately 250 words.
+- The main text was shortened by approximately 27% (from about 7,500 to about 5,500 words), with the Methods section reduced by more than 40%; implementation detail was moved to the Supplementary Material rather than deleted, and every methodological statement retained in the main text.
 - The Conclusions were rewritten from 444 to approximately 220 words as a single connected argument (finding → practical implications → closing position), with interpretive topic sentences carrying the thread (e.g., *"Nor is more context safer"*; *"Evaluation, too, cannot be delegated"*).
 - The Limitations section was rewritten from an enumerated list into six plain prose paragraphs.
 - Redundant cross-references and parenthetical statistics were pruned; all remaining statistics follow one uniform bracket format [estimate, 95% CI (…); adjusted p].

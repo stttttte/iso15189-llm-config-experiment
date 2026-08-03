@@ -22,6 +22,8 @@
 
 **Conclusions**: The optimal configuration varied with the evaluation tier: minimal prompts (~1,000–2,000 tokens) suit exploratory drafts requiring subsequent human review; template-anchored prompts (~15,000–16,000 tokens) tended to perform best for accreditation submission; and C_full performed markedly worse with GPT-5.4 and should be used with caution – a preliminary observation based on three tasks and not corroborated at the expert tier. LLM-as-judge can support first-pass screening, but expert final review remains indispensable.
 
+**Keywords**: accreditation; artificial intelligence; inter-rater reliability; large language models; medical laboratory
+
 ---
 
 ## 1. Introduction

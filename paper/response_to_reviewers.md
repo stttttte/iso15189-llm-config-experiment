@@ -15,7 +15,7 @@ We are grateful to both reviewers. The two critiques addressed different aspects
 
 A note on marking the changes. The revision touches nearly every section: the title is new, the main text is about 27% shorter, the Methods have been cut by more than 40%, all four figures have been redrawn, and the Limitations are now plain prose. Underlining what changed would leave almost the whole document underlined, so we have set out below what changed and where. We will gladly supply a marked copy if the editorial office prefers one.
 
-Two changes of record. The title now names what the study actually did. And the author list has grown from one to five: Lan Yang and Xinying Chen served as Raters 2 and 3 on the blinded panel, Dan Wu handled data curation, and Dongdong Li supervised the work and is corresponding author. Individual roles are given in the Author Contributions statement, and all five authors have read and approved this version.
+Two further changes should be placed on record. The title now names what the study actually did, and the author list has grown from one to five: Lan Yang and Xinying Chen served as Raters 2 and 3 on the blinded panel, Dan Wu handled data curation, and Dongdong Li supervised the work and is corresponding author. Individual roles are given in the Author Contributions statement, and all five authors have read and approved this version.
 
 ---
 
@@ -33,9 +33,9 @@ This is consistent with the published consensus that LLMs in healthcare quality 
 
 *"Ultimately, ISO 15189 documentation is the process by which laboratory staff learn processes and risks, take responsibility, and demonstrate competence; an LLM can take over only its routine textual work – expert final review remains indispensable."*
 
-Throughout the revised text, no configuration is described as producing anything more than a reference draft. What actually decides whether a document can be used for accreditation is the laboratory's own quality-control data, its patient data distributions and its proficiency-testing history. All of it has to be entered and interpreted by competent staff, because the model holds none of it. Section 4.4 is now titled "Provisional configuration guidance", and every scenario in Table 4 ends with revision by laboratory staff and expert sign-off.
+In the revised text, every configuration is described as producing a reference draft and nothing more. A document becomes usable for accreditation only through the laboratory's own data: its quality-control records, its patient data distributions, and its proficiency-testing history. Competent staff have to enter and interpret all of it, because the model holds none of it. Section 4.4 is now titled "Provisional configuration guidance", and every scenario in Table 4 ends with revision by laboratory staff and expert sign-off.
 
-Our numbers support the concern. Both LLM judges rated compliance 0.52–0.90 points above the expert panel. The configuration the judges ranked first fell to fifth under expert review, only 0.16 points above a document produced with no prompt at all. And the documents the judges overrated most were precisely the ones that look right, with correct structure and correct terminology, but carry no clinically grounded operational detail (Section 3.5). We are not proposing that LLMs replace laboratory staff. The study set out to find where the safe boundary lies, and the data put that boundary considerably further back than LLM-based evaluation alone would suggest.
+Our numbers support the concern. Both LLM judges rated compliance 0.52–0.90 points above the expert panel. The configuration the judges ranked first fell to fifth under expert review, only 0.16 points above a document produced with no prompt at all. The documents the judges overrated most were the ones that look right on the surface: correct structure, correct terminology, but no clinically grounded operational detail (Section 3.5). We are not proposing that LLMs replace laboratory staff. The study set out to find where the safe boundary lies, and the data put that boundary considerably further back than LLM-based evaluation alone would suggest.
 
 ---
 

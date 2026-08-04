@@ -22,7 +22,7 @@
 
 **Conclusions**：最优配置因评估层级而异：极简 prompt（~1,000–2,000 tokens）较适合需后续人工把关的探索性草稿；对于拟提交认可的文件，带完整文档模板的 prompt（~15,000–16,000 tokens）往往表现更好；C_full 在 GPT-5.4 下表现明显下降、宜谨慎使用——此项基于 3 个任务、未经专家层验证，属初步观察。LLM-as-judge 可用于初筛，但专家终审仍不可或缺。
 
-**Keywords**：accreditation; artificial intelligence; inter-rater reliability; large language models; medical laboratory
+**Keywords**：ISO 15189; large language models; LLM-as-judge; medical laboratory accreditation; prompt engineering; quality management system
 
 ---
 

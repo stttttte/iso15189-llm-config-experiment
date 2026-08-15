@@ -1,4 +1,4 @@
-# LLM 辅助起草 ISO 15189 质量管理体系文件的评估：prompt 配置、LLM-as-judge 偏差与探索性专家验证
+# LLM 辅助起草 ISO 15189 质量管理体系文件的评估：输入规格、LLM-as-judge 偏差与探索性专家验证
 
 **作者**：刘斯迪（Sidi Liu）¹、杨岚（Lan Yang）¹、陈欣盈（Xinying Chen）¹、吴丹（Dan Wu）¹、李冬冬（Dongdong Li）²,³,*
 
@@ -8,19 +8,21 @@
 
 **ORCID**：刘斯迪 0009-0006-1695-5372；李冬冬 0000-0002-0290-6485
 
-**Short title**：Prompt configuration and LLM-as-judge bias in ISO 15189 drafting
+**Short title**：Input specification and LLM-as-judge bias in ISO 15189 drafting
 
 ---
 
 ## 摘要
 
-**Objectives**：评估大语言模型（LLM）辅助起草的 ISO 15189:2022 质量管理体系（QMS）文件的合规性。
+**Background**：ISO 15189 质量管理体系（QMS）文件是实验室建立并运行体系所依据的，不仅仅是一项写作任务。大语言模型（LLM）被用于起草此类文件时，prompt 中通常未写明本地需求，产出也常由 LLM 来评分。这两个环节各藏着一个风险：输入不足时，模型可能只产出表面合规的通用文本；而 LLM 评分与专家判断是否一致，并不清楚。两者目前都缺乏实证检验。
 
-**Methods**：我们使用 Claude Opus 4.6（405 份）与 GPT-5.4（81 份）在 9 个 prompt 配置下共生成 486 份 QMS 文件，配置涵盖 4 个内容成分（规则、文档骨架、详细内容、worked examples；0–56,000 tokens）。合规性按 0–5 分在三层评估：自动化评分器、两位 LLM 评判者（864 条评分）、以及 3 位 ISO 15189 内审员对 10 份抽样文件的盲法评审。消融效应用 Mann–Whitney U 检验配合 BH 校正与 bootstrap 95% CI；一致性用 ICC。
+**Objective**：评估 LLM 辅助起草的 QMS 文件对 ISO 15189:2022 的合规性，并确定这类起草需要向模型提供多少内容的输入。
+
+**Methods**：我们使用 Claude Opus 4.6（405 份）与 GPT-5.4（81 份）在 9 个 prompt 配置下共生成 486 份 QMS 文件，配置涵盖 4 个内容成分（规则、文档骨架、详细内容、worked examples；0–56,000 tokens）。这 9 个配置基本覆盖了当下实验室常用的输入内容，而且任何配置均不包含实验室特定的本地信息。合规性按 0–5 分在三层评估：自动化评分器、两位 LLM 评判者（864 条评分）、以及 3 位 ISO 15189 内审员对 10 份抽样文件的盲法评审。消融效应用 Mann–Whitney U 检验配合 BH 校正与 bootstrap 95% CI；一致性用 ICC。
 
 **Results**：在 LLM 评判者层，只有“规则”成分显著提高合规分［Δ=0.511，bootstrap 95% CI（0.28, 0.75）；BH-adjusted p<0.001］。全量上下文配置 C_full（~56,000 tokens）在 Claude 下评分 3.22–4.56，在 GPT-5.4 下仅 1.40–1.84。两位评判者都把 Claude 生成的输出评得高约 0.3 分（Panickssery 自我偏好指数：Claude +0.29、GPT −0.30），该效应集中于 C_full，与经典自我偏好不符。同单位专家间一致性极佳［ICC(2,k)=0.982］；评判者与专家一致性至多中等［ICC(3,1)=0.548 vs 0.217］，置信区间宽且跨过 0，两位评判者把专家评分高估 0.52–0.90 分。LLM 偏好的 H4_sop_only 在专家评估下跌至 7 配置中的第 5 名，带完整文档模板的配置排名最高（4.06–4.24）。
 
-**Conclusions**：最优配置因评估层级而异：极简 prompt（~1,000–2,000 tokens）较适合需后续人工把关的探索性草稿；对于拟提交认可的文件，带完整文档模板的 prompt（~15,000–16,000 tokens）往往表现更好；C_full 在 GPT-5.4 下表现明显下降、宜谨慎使用——此项基于 3 个任务、未经专家层验证，属初步观察。LLM-as-judge 可用于初筛，但专家终审仍不可或缺。
+**Conclusions**：最优配置因评估层级而异，而输出质量取决于要求是否写得具体，而不是 prompt 的长短：极简 prompt（~1,000–2,000 tokens）较适合需后续人工把关的探索性草稿；对于拟提交认可的文件，带完整文档模板的 prompt（~15,000–16,000 tokens）往往表现更好；C_full 在 GPT-5.4 下表现明显下降、宜谨慎使用——此项基于 3 个任务、未经专家层验证，属初步观察。LLM-as-judge 可用于初筛，但专家终审仍不可或缺。下一步是让检验专业人员先写清本地的过程需求，再交给模型生成；该方案目前正在评估中。
 
 **Keywords**：ISO 15189; large language models; LLM-as-judge; medical laboratory accreditation; prompt engineering; quality management system
 
@@ -28,13 +30,13 @@
 
 ## 1. Introduction
 
-ISO 15189:2022《医学实验室——质量和能力的要求》[1] 是医学实验室认可的国际标准。在中国，医学实验室对该标准的采用持续推进 [2]。配套的国内实施文本为 CNAS-CL02:2023，由中国合格评定国家认可委员会（CNAS）发布。这类标准规定实验室要达到什么，但并不详细规定每家实验室应如何实施所需的过程。因此，每家实验室都必须自建一套质量管理体系（quality management system, QMS）文件，包含质量手册、程序文件、标准操作规程，以及相关的记录与表单。根据第一作者作为 ISO 15189 内审员的经验，三级甲等医院检验科的此类体系通常有 100–300 份受控文件，涉及结构组织、条款–文件映射、表单编号与职责分配；由内部质量小组撰写往往需时数月，再经多轮内审方可定稿。寻求 CNAS 认可的实验室通常会聘请外部技术专家或培训师协助。
+ISO 15189:2022《医学实验室——质量和能力的要求》[1] 是医学实验室认可的国际标准。在中国，医学实验室对该标准的采用持续推进 [2]。配套的国内实施文本为 CNAS-CL02:2023，由中国合格评定国家认可委员会（CNAS）发布。这类标准规定实验室要达到什么，但并不详细规定每家实验室应如何实施所需的过程。因此，每家实验室都必须自建一套质量管理体系（quality management system, QMS）文件，包含质量手册、程序文件、标准操作规程，以及相关的记录与表单。这套文件不仅仅是要交付的文本，还记录实验室实际如何运转，撰写文件的过程本身就是人员建立能力、责任与风险意识的一部分。根据第一作者作为 ISO 15189 内审员的经验，三级甲等医院检验科的此类体系通常有 100–300 份受控文件，涉及结构组织、条款–文件映射、表单编号与职责分配；由内部质量小组撰写往往需时数月，再经多轮内审方可定稿。寻求 CNAS 认可的实验室通常会聘请外部技术专家或培训师协助。
 
 大语言模型（large language models, LLMs）有望通过生成结构化的质量管理文件初稿，减少这部分工作量。Claude Opus 4.6、GPT-5.4 等前沿模型在长文档生成、结构化输出和专业术语使用上的能力不断提升 [3, 4]。但要用什么样的 prompt 才能生成既合规又可操作的 ISO 15189 质量管理文件，目前仍不清楚。实践中常用两大类 prompt 策略。第一类是“全量上下文”策略：把所有可能相关的材料——例如 ISO 与 CNAS 标准、既有的标准操作规程、模板与 worked examples——都载入 system prompt；这种做法可能使 prompt 超过 50,000 至 100,000 tokens。第二类是“极简 prompt”策略：只提供提炼后的规则、格式约束或文档骨架，其余内容交由模型依靠预训练知识生成。但两种做法都缺乏充分的研究证据：现有关于 LLM 与 prompting 的综述 [5, 6] 主要面向通用任务，尚未专门针对 QMS 这类专业监管文档做比较。
 
 第二个方法学上的挑战在于评估。现阶段评估 LLM 输出最常用的是 LLM-as-judge——让另一个 LLM 来打分 [7]；此外，针对长文本生成质量的评估方法 [8] 和靠大规模人工投票得出的偏好基准 [9] 也是两类主要做法。有研究发现，LLM 评判者会偏向同家族模型生成的输出（即 self-preference bias）[10]。但这种偏差在医学实验室 QMS 这种专业、受监管的场景下是否出现、如何出现，又会如何影响配置之间的比较，目前仍缺乏实证。
 
-为填补这一空白，本研究生成了 486 份 QMS 文件、收集了 864 条 LLM 评判者评分，并取得 30 条专家盲评评分，围绕以下五个问题展开：(i) 规则、文档骨架、详细内容、worked examples 这四类 prompt 成分，哪一类对合规性贡献最大？(ii) 最少需要多少 token？(iii) 最优配置在 Claude Opus 4.6 与 GPT-5.4 之间是否一致？(iv) 在本领域，LLM 评判者的 self-preference bias 有多大？(v) 哪种配置在自动评分、LLM 评判者评分与专家评分这三层评估下表现稳定？本研究把 LLM 视为起草与初筛的工具，而不是受控质量管理文件的自主撰写者。ISO 15189 文件必须反映实验室经过确认的过程、仪器、职责、工作流程与记录，并由有能力的人员审核与批准。LLM 生成的文件可以作为有用的初稿，但它本身并不是受控文件：它没有机构层面的责任归属，未经与本地实际做法核对，也不能取代专家审核。因此，本研究关注的不是 LLM 能否独立产出可直接用于认可的文件，而是不同 prompt 配置如何影响草稿质量，以及基于 LLM 的评估能在多大程度上可靠反映专家判断。
+为填补这一空白，本研究生成了 486 份 QMS 文件、收集了 864 条 LLM 评判者评分，并取得 30 条专家盲评评分，围绕以下五个问题展开：(i) 规则、文档骨架、详细内容、worked examples 这四类 prompt 成分，哪一类对合规性贡献最大？(ii) 至少需要提供什么内容、使用多少的 token？(iii) 最优配置在 Claude Opus 4.6 与 GPT-5.4 之间是否一致？(iv) 在本领域，LLM 评判者的 self-preference bias 有多大？(v) 哪种配置在自动评分、LLM 评判者评分与专家评分这三层评估下表现稳定？本研究把 LLM 视为起草与初筛的工具，而不是受控质量管理文件的自主撰写者。ISO 15189 文件必须反映实验室经过确认的过程、仪器、职责、工作流程与记录，并由有能力的人员审核与批准。LLM 生成的文件可以作为有用的初稿，但它本身并不是受控文件：它没有机构层面的责任归属，未经与本地实际做法核对，也不能取代专家审核。因此，本研究关注的不是 LLM 能否独立产出可直接用于认可的文件，而是不同 prompt 配置如何影响草稿质量，以及基于 LLM 的评估能在多大程度上可靠反映专家判断。
 
 ---
 
@@ -46,9 +48,11 @@ ISO 15189:2022《医学实验室——质量和能力的要求》[1] 是医学�
 
 规则成分是一份 `rules.md`（~1,200 tokens），经领域专家校验后保留 10 条术语映射（如把“标本”规范为“样品”、把“室间质评”规范为“能力验证”；实际部署的规则文件以中文书写）与 7 类被禁的模糊表述。文档骨架由自定义脚本 *strip_to_skeleton* 从机构模板中提取，只保留章节标题、各节首段说明与表单编号。文中所有 token 数均用公开的 cl100k_base（OpenAI tiktoken）计算；Claude 自家 tokenizer 不公开，但在中英混合文本上两者相差不到 10%。
 
+这 9 组配置给模型的输入内容包括：要求规则、文档骨架、详细编写指引与 worked examples；C_full 包含标准全文和既有文档库（Figure 1，全部 system prompt 已公开）。这些内容都不含实际的本地信息。C_full 虽然设置了一份实验室的基础信息模板，包括人员、场地、设备、标本流转、质控等章节，但字段全是空的占位符；各配置也都没有写明实验室实际的过程需求、可用资源和基于风险的验收准则。这正是本研究考察的输入内容。
+
 ### 2.2 生成模型与任务
 
-主实验采用 Claude Opus 4.6（Anthropic，美国加州 San Francisco），通过 Claude Code Agent 以纯文本模式运行，生成阶段没有任何工具调用，但框架自带的工具定义始终存在于 system prompt 中（第 4.6 节）。9 组配置 × 15 项任务 × 3 次重复，共生成 405 份文件。15 项任务按 CNAS 评审场景分三类、每类 5 项：A 类文件编写、B 类体系运行、C 类审核模拟。完整任务清单及其对应的 ISO 15189:2022 条款见 Supplementary Table S1，原始 prompt 见 GitHub 仓库。这些任务覆盖的是文件控制、内审与管理评审一类的体系文件，不含检验方法确认/验证报告、测量不确定度评定程序等技术类文件（第 4.6 节）。
+主实验采用 Claude Opus 4.6（Anthropic，美国加州 San Francisco），通过 Claude Code Agent 以纯文本模式运行，生成阶段没有任何工具调用，但框架自带的工具定义始终存在于 system prompt 中（第 4.6 节）。9 组配置 × 15 项任务 × 3 次重复，共生成 405 份文件。15 项任务按 CNAS 评审场景分三类、每类 5 项：A 类文件编写、B 类体系运行、C 类审核模拟。完整任务清单及其对应的 ISO 15189:2022 条款见 Table S1 in Multimedia Appendix 1，原始 prompt 见 GitHub 仓库。这些任务覆盖的是文件控制、内审与管理评审一类的体系文件，不含检验方法确认/验证报告、测量不确定度评定程序等技术类文件（第 4.6 节）。
 
 跨模型验证采用 GPT-5.4（OpenAI，美国加州 San Francisco），经官方 openai Python SDK（v2.30.0）调用；因研究期间作者所在地区无法直接访问 OpenAI API，base URL 改指向 AIHubMix 端点。为控制 API 成本，GPT-5.4 的生成只覆盖每类的第一项任务（A1、B1、C1，并非随机抽取），在相同的 9 组配置下各重复 3 次，共生成 81 份文件。
 
@@ -56,7 +60,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》[1] 是医学�
 
 ### 2.3 三层评估框架
 
-我们用三层互补的框架评估合规性，三层均按 0–5 分评分：基于规则的自动评分器（Tier 1）、两位 LLM 评判者（Tier 2a、2b）、以及独立的盲法专家评审（Tier 3）。Tier 1 只度量代码能客观检测的结构性特征；Tier 2 和 Tier 3 共用一套五维度评分量规（Supplementary Table S2）——条款满足度、可操作性、内部一致性、PDCA 闭环、专业深度。
+我们用三层互补的框架评估合规性，三层均按 0–5 分评分：基于规则的自动评分器（Tier 1）、两位 LLM 评判者（Tier 2a、2b）、以及独立的盲法专家评审（Tier 3）。Tier 1 只度量代码能客观检测的结构性特征；Tier 2 和 Tier 3 共用一套五维度评分量规（Table S2 in Multimedia Appendix 1）——条款满足度、可操作性、内部一致性、PDCA 闭环、专业深度。
 
 #### 2.3.1 Tier 1 – 结构性合规的自动评分
 
@@ -66,7 +70,7 @@ ISO 15189:2022《医学实验室——质量和能力的要求》[1] 是医学�
 
 #### 2.3.2 Tier 2 – LLM-as-judge
 
-两位评判者（Claude、GPT）各自给两个模型生成的文件打分，构成 2×2 交叉设计，从而把评判者的自我偏好与真实质量差异分开。Claude Opus 4.6 扮演“CNAS 主任评审员”，按共用量规的五个维度给每份覆盖到的文件打一次分，经 Claude Code 的 Agent 子代理运行、未显式设定 temperature 与 max_tokens。Claude 评审随配置集扩展分批进行，部分批次只保留了组均值而非逐文件评分（第 4.6 节），故文件级评分共 378 条、占 486 份文件的 77.8%。GPT-5.4 用相同的 prompt、量规与 0–5 分尺度对全部 486 份文件各打一次分（405 份 Claude 生成 + 81 份 GPT 生成），其参数为 temperature = 0、max_completion_tokens = 2,000，与 Tier 2a 不同（第 4.6 节）；输出未被 max_tokens 截断（486 份 JSON 全部正常解析），每份原始 JSON 均已公开。两位评判者合计 864 条评分；两边数目不等原因如上，但 2×2 的四个象限都有数据，因此仍能做自我偏好分解。Supplementary Table S2 给出了 5 分、3 分、1 分的明确标准（分别对应完全符合、部分符合、严重不符）；中间的 4、2 分由评分者在相邻两档之间判断；0 分表示该维度无法评估。这些标准对所有评判者与专家完全一致。
+两位评判者（Claude、GPT）各自给两个模型生成的文件打分，构成 2×2 交叉设计，从而把评判者的自我偏好与真实质量差异分开。Claude Opus 4.6 扮演“CNAS 主任评审员”，按共用量规的五个维度给每份覆盖到的文件打一次分，经 Claude Code 的 Agent 子代理运行、未显式设定 temperature 与 max_tokens。Claude 评审随配置集扩展分批进行，部分批次只保留了组均值而非逐文件评分（第 4.6 节），故文件级评分共 378 条、占 486 份文件的 77.8%。GPT-5.4 用相同的 prompt、量规与 0–5 分尺度对全部 486 份文件各打一次分（405 份 Claude 生成 + 81 份 GPT 生成），其参数为 temperature = 0、max_completion_tokens = 2,000，与 Tier 2a 不同（第 4.6 节）；输出未被 max_tokens 截断（486 份 JSON 全部正常解析），每份原始 JSON 均已公开。两位评判者合计 864 条评分；两边数目不等原因如上，但 2×2 的四个象限都有数据，因此仍能做自我偏好分解。Table S2 in Multimedia Appendix 1 给出了 5 分、3 分、1 分的明确标准（分别对应完全符合、部分符合、严重不符）；中间的 4、2 分由评分者在相邻两档之间判断；0 分表示该维度无法评估。这些标准对所有评判者与专家完全一致。
 
 #### 2.3.3 Tier 3 – 专家评审
 
@@ -136,7 +140,7 @@ bias_M = mean(judge = M, generator = M) − mean(judge = M, generator = M′)，
 
 四者之中只有规则在多重比较校正后仍然显著［BH-adjusted p<0.001］。文档骨架方向为正、bootstrap 区间不含 0，但基于秩的检验未达显著［BH-adjusted p=0.11］，只能算提示性证据；详细内容和 worked examples 均无可检出的效应。补充对比显示，H4_sop_only（仅含单个 SOP 骨架）与 H3_skeleton（完整模块骨架）作用相当［Δ=−0.009］。按任务类别分层看（Table 2 右三列），规则的效应在三类任务中方向一致、量级相近（+0.41 至 +0.61），并未逆转；其余三个成分则随类别波动且量级远小于规则。
 
-规则成分的效应还可按评分维度分解（GPT 评判者，每个配置 n=45）：可操作性 +0.867、专业深度 +0.644、条款满足度 +0.400、PDCA 闭环 +0.333、内部一致性 +0.311。增益最大的两个维度是可操作性与专业深度，而非格式与结构类维度——这说明规则约束并不只是在规范文件的外形，也提高了文件写入检验专业细节的程度。不过，这里分层的是评分维度，不是文件类型。“专业深度”只是技术性的一个代理指标（Supplementary Table S2）。真正按文件类型分层——把通用管理文件与检验技术文件分开比较——本研究做不到，因为任务集里根本没有技术类文件（第 4.6 节 局限性）。
+规则成分的效应还可按评分维度分解（GPT 评判者，每个配置 n=45）：可操作性 +0.867、专业深度 +0.644、条款满足度 +0.400、PDCA 闭环 +0.333、内部一致性 +0.311。增益最大的两个维度是可操作性与专业深度，而非格式与结构类维度——这说明规则约束并不只是在规范文件的外形，也提高了文件写入检验专业细节的程度。不过，这里分层的是评分维度，不是文件类型。“专业深度”只是技术性的一个代理指标（Table S2 in Multimedia Appendix 1）。真正按文件类型分层——把通用管理文件与检验技术文件分开比较——本研究做不到，因为任务集里根本没有技术类文件（第 4.6 节 局限性）。
 
 以上结果仅针对 LLM 评判者层；专家层的对比见第 3.5 节。
 
@@ -194,7 +198,7 @@ Figure 4a 将三方（专家、Claude 评判者、GPT 评判者）的合规分�
 
 在 LLM 评判者层，四成分消融给出一个明确的结论：规则成分必需［BH-adjusted p<0.001］，文档骨架方向为正但未达显著［p=0.11］，详细内容与示例均未产生可检测的提升（第 3.2 节）。这与 Liu 等 [13] 报告的 lost-in-the-middle 现象一致（在长 prompt 中叠加过多上下文，反而可能分散模型注意力、降低输出质量），也与更广义的 prompt engineering 文献相符 [6]。
 
-专家层的结果对这一结论作出了限定（第 3.5 节）。带完整文档模板的 F_template 与 G_template_rules 获得了明显更高的专家评分，而仅含骨架的 H4_sop_only 约低 1 分（每个配置样本极小，仅为探索性观察）。一个可能的解释是：模型自身的知识并不能可靠覆盖 ISO 15189:2022 与 CNAS-CL02:2023 所要求的临床操作细节——在本研究的任务中，包括急诊样本处理、患者自采样本的接收、样本运送人员的资格要求，以及详细的样本拒收标准。当这些内容未在 system prompt 中明确给出时，模型往往回退至通用的程序化表述：这类表述虽能满足结构与术语层面的合规（自动评分与 LLM 评判者最易识别的两个维度，第 3.6 节），却缺乏拟提交认可的文件所要求的实际可操作性。因此，prompt 精简适用于仅由 LLM 评分的快速起草场景；但若文件需要通过专家审核、用于正式的认可申请，则必须采用带完整文档模板的 prompt。
+专家层的结果对这一结论作出了限定（第 3.5 节）。带完整文档模板的 F_template 与 G_template_rules 获得了明显更高的专家评分，而仅含骨架的 H4_sop_only 约低 1 分（每个配置样本极小，仅为探索性观察）。这个差距在预期之内：模型写不出没有人告诉它的东西。这些文件需要的临床操作细节——急诊样本处理、患者自采样本的接收、样本运送人员的资格要求、详细的样本拒收标准——属于各个实验室的基础信息，并不是模型自带的，而且我们的任何配置里都没有包含这些（第 2.1 节）。缺少这些输入时，模型只能回退至通用的程序化表述：这类表述虽能满足结构与术语层面的合规（自动评分与 LLM 评判者最易识别的两个维度，第 3.6 节），却缺乏拟提交认可的文件所要求的实际可操作性。专家评分的差距正是由此而来。因此，prompt 精简适用于仅由 LLM 评分的快速起草场景；但若文件需要通过专家审核、用于正式的认可申请，则必须采用带完整文档模板的 prompt。
 
 ### 4.2 全量上下文陷阱的模型依赖性
 
@@ -229,6 +233,8 @@ Figure 4a 将三方（专家、Claude 评判者、GPT 评判者）的合规分�
 
 QMS 文件的起草并不是单纯的事务性产出，而是实验室人员建立责任意识与风险意识的过程。如果完全交由 LLM 代劳，实验室人员会逐渐丧失文本撰写能力，也难以对 ISO 15189 的整个过程形成深刻理解。因此，我们将人工监督视为 LLM 在此场景下应用的约束条件。ISO 15189:2022 要求的是有能力的人员和完整的检验过程，而不只是格式规整的文件；本研究的数据说明了 LLM 输出与这一要求的距离：LLM 评判者把专家评定的合规度高估了 0.52–0.90 分。这一立场与近期形成的共识一致：在医疗质量管理中，LLM 应限于以历史数据为基础、且在强制性人工核验下完成的事务性任务，自主运行尚不成熟 [14]。因此，我们将 LLM 辅助定位为一种提效工具：最终的撰写、审核与批准仍由合格人员负责，而它在起草环节节省下来的时间，可投入到 ISO 15189 更重视的审核、确认与持续改进等高阶活动中。
 
+实施 ISO 15189 并不是把标准里的“应做 A”改写成文件里的“我们做 A”；一份文件要在 QMS 中站得住，前提是它描述的过程实验室真正建立过、配置过资源、验证过。LLM 输出若只是用第一人称复述标准，那不是实施；本研究的专家层结果也显示了这类文件在合格评审下的差距。
+
 ### 4.6 局限性
 
 本研究存在若干局限。第一，专家评审的样本量小：3 位内审员仅评估了 10 份文件，每个配置 1–2 份。所评文件全部是 Claude 生成的 A 类程序文件，未纳入任何 GPT 生成的文件，也未纳入 B 类或 C 类文件。因此，专家层的结果只能作为探索性的校准，而非统计上稳健的配置排名。
@@ -241,7 +247,7 @@ QMS 文件的起草并不是单纯的事务性产出，而是实验室人员建�
 
 第五，任务集聚焦于体系层面的 QMS 文件，未纳入技术要求较高的文件，例如检验方法确认或验证报告、测量不确定度评定程序、生物参考区间验证，以及危急值报告。推广到这类文件需要另行验证。此外，全部文件均以中文生成与评估，因此本文报告的配置效应与偏差模式在英文及其他语言下尚未得到验证。
 
-最后，本研究的评分量规没有直接评估患者安全风险、一线人员的本地可执行性，以及模型编造实验室特有参数的风险。后续研究应采用规模更大的多中心专家组，纳入配对的 GPT 生成样本，覆盖技术类与检验后过程文件，统一模型参数，并评估返工负担与患者安全影响。
+最后，本研究的评分量规没有直接评估患者安全风险、一线人员的本地可执行性，以及模型编造实验室特有参数的风险。后续研究应采用规模更大的多中心专家组，纳入配对的 GPT 生成样本，覆盖技术类与检验后过程文件，统一模型参数，并评估返工负担与患者安全影响。更根本的是，所有配置都没有一份成形的本地需求规格，因此本研究测得的是缺少本地输入时的起草表现，而不是 LLM 辅助所能达到的上限。
 
 ---
 
@@ -249,7 +255,7 @@ QMS 文件的起草并不是单纯的事务性产出，而是实验室人员建�
 
 
 
-LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置随评估层级而异：LLM 评判者偏好的 H4_sop_only 在专家评估下跌至第 5，带完整文档模板的 F_template、H2_keep_examples 与 G_template_rules 排名最高（Table 3）。但无论哪类配置，生成的都只是供参考的初稿，不能直接提交认可。极简 prompt 给出快速起步的简要框架；带完整文档模板的配置给出更贴近送审形态的工作草稿，其价值在于一份可靠的文档骨架——真正决定文件能否用于认可的内容（本实验室的质控数据、患者数据分布、能力验证历史结果）必须由具备能力的人员填入并解读，因为 LLM 不掌握这些数据。而上下文并非越全越稳：载入全部参考材料的 C_full（~56,000 tokens）反而宜谨慎使用，尤其当生成模型为 GPT-5.4 时（该失败模式仅见于自动评分与 LLM 评判者两层）。评估环节同样离不开人：LLM-as-judge 只宜承担专家审阅前的大批量初筛，Claude 评判者初步可胜任这一角色［ICC(3,1)=0.548，95% CI 跨过 0，n=10］，GPT-5.4 评判者则不能［ICC(3,1)=0.217］。归根结底，ISO 15189 体系文件的编写本身就是实验室人员学习过程与风险、建立责任意识、体现能力的过程，LLM 能接手的只是其中事务性的文字工作——专家终审仍不可或缺。
+LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置随评估层级而异，而输出质量取决于要求是否写得具体，而不是 prompt 的长短：LLM 评判者偏好的 H4_sop_only 在专家评估下跌至第 5，带完整文档模板的 F_template、H2_keep_examples 与 G_template_rules 排名最高（Table 3）。但无论哪类配置，生成的都只是供参考的初稿，不能直接提交认可。极简 prompt 给出快速起步的简要框架；带完整文档模板的配置给出更贴近送审形态的工作草稿，其价值在于一份可靠的文档骨架——真正决定文件能否用于认可的内容（本实验室的质控数据、患者数据分布、能力验证历史结果）必须由具备能力的人员填入并解读，因为 LLM 不掌握这些数据。而上下文并非越全越稳：载入全部参考材料的 C_full（~56,000 tokens）反而宜谨慎使用，尤其当生成模型为 GPT-5.4 时（该失败模式仅见于自动评分与 LLM 评判者两层）。评估环节同样离不开人：LLM-as-judge 只宜承担专家审阅前的大批量初筛，Claude 评判者初步可胜任这一角色［ICC(3,1)=0.548，95% CI 跨过 0，n=10］，GPT-5.4 评判者则不能［ICC(3,1)=0.217］。归根结底，ISO 15189 体系文件的编写本身就是实验室人员学习过程与风险、建立责任意识、体现能力的过程，LLM 能接手的只是其中事务性的文字工作——专家终审仍不可或缺。下一步是让检验专业人员先写清本地的过程需求，再交给模型生成；该方案目前正在评估中。
 
 ---
 
@@ -307,39 +313,37 @@ LLM 辅助 ISO 15189 QMS 文件生成的最优 prompt 配置随评估层级而�
 
 ## References
 
-1. ISO 15189:2022. Medical laboratories — Requirements for quality and competence. Geneva: International Organization for Standardization; 2022.
+1. International Organization for Standardization. ISO 15189:2022 Medical laboratories — requirements for quality and competence. International Organization for Standardization; 2022. Accessed August 5, 2026. https://www.iso.org/standard/76677.html
 
-2. Yang S, Zhou Y, Wang C, Luo M. The 'Double Helix' model of quality monitoring: risk mapping of quality management system during initial ISO 15189 implementation in a medical laboratory. PLoS One 2026;21:e0342129.
+2. Yang S, Zhou Y, Wang C, Luo M. The 'Double Helix' model of quality monitoring: risk mapping of quality management system during initial ISO 15189 implementation in a medical laboratory. *PLoS One*. 2026;21:e0342129. doi:10.1371/journal.pone.0342129
 
-3. Anthropic. Claude Opus 4.6 System Card. San Francisco (CA): Anthropic; 2026. Available at: https://www.anthropic.com/claude-opus-4-6-system-card. [Accessed 9 May 2026].
+3. Anthropic. Claude Opus 4.6 system card. Anthropic; 2026. Accessed May 9, 2026. https://www.anthropic.com/claude-opus-4-6-system-card
 
-4. OpenAI. GPT-5 System Card. San Francisco (CA): OpenAI; 2025. Available at: https://openai.com/index/gpt-5-system-card/. [Accessed 9 May 2026].
+4. OpenAI. GPT-5 system card. OpenAI; 2025. Accessed May 9, 2026. https://openai.com/index/gpt-5-system-card/
 
+5. Zhao WX, Zhou K, Li J, et al. A survey of large language models. arXiv. Preprint posted online 2023. doi:10.48550/arXiv.2303.18223
 
+6. Schulhoff S, Ilie M, Balepur N, et al. The prompt report: a systematic survey of prompting techniques. arXiv. Preprint posted online 2024. doi:10.48550/arXiv.2406.06608
 
-5. Zhao WX, Zhou K, Li J, Tang T, Wang X, Hou Y, et al. A survey of large language models. arXiv preprint 2023; arXiv:2303.18223.
+7. Zheng L, Chiang WL, Sheng Y, et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems 36 (NeurIPS 2023), Datasets and Benchmarks Track; 2023. doi:10.48550/arXiv.2306.05685
 
-6. Schulhoff S, Ilie M, Balepur N, Kahadze K, Liu A, Si C, et al. The prompt report: a systematic survey of prompting techniques. arXiv preprint 2024; arXiv:2406.06608.
+8. Tan H, Guo Z, Shi Z, et al. ProxyQA: an alternative framework for evaluating long-form text generation with large language models. In: Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers). Association for Computational Linguistics; 2024:6806-6827. doi:10.18653/v1/2024.acl-long.368
 
-7. Zheng L, Chiang WL, Sheng Y, Zhuang S, Wu Z, Zhuang Y, et al. Judging LLM-as-a-judge with MT-Bench and Chatbot Arena. In: Advances in Neural Information Processing Systems 36 (NeurIPS 2023) Datasets and Benchmarks Track. 2023.
+9. Chiang WL, Zheng L, Sheng Y, et al. Chatbot Arena: an open platform for evaluating LLMs by human preference. arXiv. Preprint posted online 2024. doi:10.48550/arXiv.2403.04132
 
-8. Tan H, Guo Z, Shi Z, Xu L, Liu Z, Feng Y, et al. ProxyQA: an alternative framework for evaluating long-form text generation with large language models. In: Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers); 2024 Aug 11–16; Bangkok, Thailand. Stroudsburg (PA): Association for Computational Linguistics; 2024. p. 6806–27.
+10. Panickssery A, Bowman SR, Feng S. LLM evaluators recognize and favor their own generations. arXiv. Preprint posted online 2024. doi:10.48550/arXiv.2404.13076
 
-9. Chiang WL, Zheng L, Sheng Y, Angelopoulos AN, Li T, Li D, et al. Chatbot Arena: an open platform for evaluating LLMs by human preference. arXiv preprint 2024; arXiv:2403.04132.
+11. Shrout PE, Fleiss JL. Intraclass correlations: uses in assessing rater reliability. *Psychol Bull*. 1979;86(2):420-428. doi:10.1037//0033-2909.86.2.420
 
-10. Panickssery A, Bowman SR, Feng S. LLM evaluators recognize and favor their own generations. arXiv preprint 2024; arXiv:2404.13076.
+12. Cicchetti DV. Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology. *Psychol Assess*. 1994;6(4):284-290. doi:10.1037/1040-3590.6.4.284
 
-11. Shrout PE, Fleiss JL. Intraclass correlations: uses in assessing rater reliability. Psychol Bull 1979;86:420–8.
+13. Liu NF, Lin K, Hewitt J, et al. Lost in the middle: how language models use long contexts. *Trans Assoc Comput Linguist*. 2024;12:157-173. doi:10.1162/tacl_a_00638
 
-12. Cicchetti DV. Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology. Psychol Assess 1994;6:284–90.
-
-13. Liu NF, Lin K, Hewitt J, Paranjape A, Bevilacqua M, Petroni F, et al. Lost in the middle: how language models use long contexts. Trans Assoc Comput Linguist 2024;12:157–73.
-
-14. Knott M, Krebs M, Kerscher A. Large language models in healthcare quality management: a European perspective on process automation and compliance. Front Digit Health 2026;8:1761641.
+14. Knott M, Krebs M, Kerscher A. Large language models in healthcare quality management: a European perspective on process automation and compliance. *Front Digit Health*. 2026;8:1761641. doi:10.3389/fdgth.2026.1761641
 
 ---
 
-**Word count（正文，不含题页、摘要、表、图与参考文献）**：约 8,800 字  
+**Word count（正文，不含题页、摘要、表、图与参考文献）**：约 9,200 字  
 **Tables**：4  
 **Figures**：4  
 **References**：14

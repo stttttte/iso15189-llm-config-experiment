@@ -52,6 +52,6 @@ ORCID: 0000-0002-0290-6485
 
 - 收信人 Arriel Benis：2025 年起任 JMIR Medical Informatics 主编（官方公告已核实），投稿当天再看一眼有无变动
 - 全信不提 CCLM 投稿史；JMIR 系统若问"是否曾投他刊/被拒"，如实勾选即可
-- Shin 的邮箱投稿时从其 JMIR AI 2026 论文通讯页取；Lehmann 邮箱按 JHU 通用格式，投稿前核实
+- Shin 无公开邮箱（已查，斯坦福临床医生不公开），信里不写；系统表单若强制邮箱则只填前三位，或整体跳过（JMIR 建议审稿人为可选项）
 - 四位审稿人：两位方法学（Mowery/Lehmann，同一综述不同单位）+ 一位工业评估框架（Kocaman）+ 一位临床评估实践（Shin）；无中国专家、无 ISO 15189 圈内人
 - JMIR 投稿在 mc04.manuscriptcentral.com/jmir 系（或其新系统），cover letter 通常粘贴为文本

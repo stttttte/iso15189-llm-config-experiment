@@ -2,7 +2,7 @@
 
 > **Dataset and code for: "Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents: Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation"**
 
-Release **v1.2.0** contains the author-approved reporting and reproducibility corrections dated 20 September 2026. See the [release notes](docs/RELEASE_NOTES_v1.2.0.md). Zenodo archiving is requested through the connected GitHub integration; its new version DOI will be added after verification. The existing [v1.1.0 archive](https://doi.org/10.5281/zenodo.21769007) is a historical release and does not contain this revision.
+Release **v1.2.0** contains the author-approved reporting and reproducibility corrections dated 20 September 2026 and is archived on [Zenodo, DOI: 10.5281/zenodo.22855972](https://doi.org/10.5281/zenodo.22855972). See the [release notes](docs/RELEASE_NOTES_v1.2.0.md). The main-branch manuscript and cover letter include a post-release citation-only update to this newly assigned DOI; research data and analyses are unchanged. The [v1.1.0 archive](https://doi.org/10.5281/zenodo.21769007) remains a historical release.
 
 The current manuscript is `paper/CCA_manuscript_consistency_revised.md` (with a matching Word file). Earlier `paper/manuscript_v2_en_CCLM.*` and `Liu_2026_CCLM_*` submission files remain historical records; their wording and numerical claims are not the corrected version.
 
@@ -128,7 +128,7 @@ Code comments, historical notes, and source documents include Chinese; this READ
 
 ## Citation
 
-For these corrected materials, cite [release v1.2.0](https://github.com/stttttte/iso15189-llm-config-experiment/releases/tag/v1.2.0). The version-specific Zenodo DOI will be added after archival verification. [v1.1.0, DOI: 10.5281/zenodo.21769007](https://doi.org/10.5281/zenodo.21769007) identifies the historical archive, not this correction release.
+For these corrected materials, cite [release v1.2.0](https://github.com/stttttte/iso15189-llm-config-experiment/releases/tag/v1.2.0), archived at [DOI: 10.5281/zenodo.22855972](https://doi.org/10.5281/zenodo.22855972). [v1.1.0, DOI: 10.5281/zenodo.21769007](https://doi.org/10.5281/zenodo.21769007) identifies the historical archive, not this correction release.
 
 1. Manuscript under revision for *Clinica Chimica Acta* (not yet published):
    ```
@@ -166,7 +166,7 @@ For these corrected materials, cite [release v1.2.0](https://github.com/stttttte
 
 本仓库为一项针对 LLM 辅助 ISO 15189:2022 医学实验室质量管理体系（QMS）文件生成的研究提供数据和代码。
 
-当前为作者确认的 v1.2.0 一致性修订版本（2026-09-20）。通过既有 GitHub 集成申请 Zenodo 自动归档，新版本 DOI 将在核验成功后补入；历史 v1.1.0 的 DOI 不代表本次修订归档。
+当前为作者确认的 v1.2.0 一致性修订版本（2026-09-20），已归档至 Zenodo，DOI：10.5281/zenodo.22855972。主分支的稿件和投稿信在归档完成后仅补入新 DOI，研究数据和分析不变；历史 v1.1.0 继续保留。
 
 本次修订稿为 `paper/CCA_manuscript_consistency_revised.*`。原 CCLM 稿及 `Liu_2026_CCLM_*` 投稿文件保留为历史记录，其数值和结论不代表本次修订口径。
 

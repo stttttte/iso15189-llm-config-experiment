@@ -248,7 +248,7 @@ Informed consent: This study involved no patients or human subjects. Written inf
 
 Ethical approval: This study did not require formal ethical approval, because it did not involve patient data, biological samples, or human intervention. The QMS documents generated and evaluated used fictitious placeholder names (e.g., "Dr Li", "Dr Zhang") and contained no identifiable personal information. The inter-rater dataset was collected as methodological research from informed-consent volunteers; rater-level identifying data are stored under coded labels (Rater 1 / Rater 2 / Rater 3) in the released dataset.
 
-Data availability: The public repository (https://github.com/stttttte/iso15189-llm-config-experiment) contains 486 generated documents, 486 GPT-judge document-level evaluations, 273 Claude-judge document-level evaluations, additional retained Claude group means, and 30 blinded expert ratings. Code is licensed under MIT and data under CC BY 4.0. The existing v1.1.0 archive is available on Zenodo (DOI: 10.5281/zenodo.21769007; https://doi.org/10.5281/zenodo.21769007). Complete document-level records for the aggregate-only Claude batches and complete historical Claude input logs are not available. The existing archive predates the present reporting and reproducibility corrections.
+Data availability: The public repository (https://github.com/stttttte/iso15189-llm-config-experiment) contains 486 generated documents, 486 GPT-judge document-level evaluations, 273 Claude-judge document-level evaluations, additional retained Claude group means, and 30 blinded expert ratings. Code is licensed under MIT and data under CC BY 4.0. Release v1.2.0 is archived on Zenodo (DOI: 10.5281/zenodo.22855972; https://doi.org/10.5281/zenodo.22855972). Complete document-level records for the aggregate-only Claude batches and complete historical Claude input logs are not available. This release contains the research materials and the present reporting and reproducibility corrections.
 
 Acknowledgments
 
@@ -319,4 +319,3 @@ Tables: 4
 Figures: 4
 
 References: 14
-

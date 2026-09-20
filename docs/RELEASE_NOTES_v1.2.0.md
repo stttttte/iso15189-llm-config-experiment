@@ -18,7 +18,9 @@ Eight reproduction tests passed immediately before release. The 486 generated fi
 
 ## Archive and citation status
 
-The connected GitHub-to-Zenodo integration will archive this release. The version-specific DOI is not known until Zenodo processes the release. Manuscript and cover-letter archive citations in this snapshot describe the previously verified v1.1.0 archive; after the new DOI is verified, a citation-only follow-up on the main branch and local submission copies will point to this v1.2.0 archive. This publication-metadata update will not change the release's research data, analyses, or scientific results.
+The connected GitHub-to-Zenodo integration archived release commit `8ed33a0f980d01d81017e05250d349e3d58b000a` under DOI https://doi.org/10.5281/zenodo.22855972. The public archive reports version v1.2.0 and publication date 20 September 2026.
+
+Manuscript and cover-letter archive citations within the immutable release snapshot describe the previously verified v1.1.0 archive. A citation-only follow-up on the main branch and local submission copies points to the newly assigned v1.2.0 DOI. This publication-metadata update does not change the release's research data, analyses, or scientific results. The release tag and archived files are not overwritten.
 
 Historical v1.1.0 DOI: https://doi.org/10.5281/zenodo.21769007
 

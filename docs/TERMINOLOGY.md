@@ -110,17 +110,19 @@ These are expressions flagged by the auto-scorer's "vagueness" detector:
 
 See [DATA_DICTIONARY.md §7](DATA_DICTIONARY.md#7-group-naming-conventions) for the full definition.
 
-| Group | Token count | Composition (plain English) |
-|-------|-------------|-----------------------------|
-| A_bare | 0 | No configuration (bare user prompt only) |
-| B_simple | 0.4K | Minimal system prompt |
-| C_full | 71K | Full dump (all rules, skeleton, detail, examples) |
-| E_rules_v2 | 3.1K | Rules layer only |
-| F_template | 35K | Template layer only (skeleton + detail, no rules) |
-| G_template_rules | 38K | Rules + template (no examples) |
-| H2_keep_examples | 61K | Rules + template + examples |
-| H3_skeleton | 13K | Rules + module-level skeleton only |
-| **H4_sop_only** | **6K** | **Rules + task-specific SOP skeleton only** (LLM-layer optimum) |
+| Group | Archived configuration tokens | Composition (plain English) |
+|-------|-------------------------------:|-----------------------------|
+| A_bare | 0 | No experimental configuration text |
+| B_simple | 348 | Minimal system prompt |
+| C_full | 56,151 | Full configuration (rules, skeleton, detail, examples) |
+| E_rules_v2 | 1,236 | Rules layer only |
+| F_template | 23,089.7 | Template layer only (skeleton + detail, no rules) |
+| G_template_rules | 24,234.7 | Rules + template (no examples) |
+| H2_keep_examples | 25,052.4 | Rules + template + examples |
+| H3_skeleton | 5,375.3 | Rules + module-level skeleton only |
+| H4_sop_only | 2,373.1 | Rules + task-specific SOP skeleton only |
+
+Counts use cl100k_base on archived configuration text. F/G/H2/H3/H4 values are means across all 15 task-specific files; ranges and source files are in the [data dictionary](DATA_DICTIONARY.md#7-group-naming-conventions) and configuration inventory. The standalone F/G reference files are historical alternatives, not the values above. These counts exclude other request context and are not verified Claude input usage or minimum effective token thresholds. H4 leads the auto-plus-GPT composite but ranks fifth of seven expert-reviewed groups; “optimum” depends on the outcome and is not established by this exploratory sample.
 
 ## 8. Abbreviations
 

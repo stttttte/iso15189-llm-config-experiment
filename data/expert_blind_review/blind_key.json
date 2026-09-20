@@ -1,0 +1,12 @@
+[
+  {"blind_id": "paper_01", "group": "E_rules_v2", "task": "A3", "rep": 2},
+  {"blind_id": "paper_02", "group": "C_full", "task": "A2", "rep": 2},
+  {"blind_id": "paper_03", "group": "C_full", "task": "A1", "rep": 1},
+  {"blind_id": "paper_04", "group": "A_bare", "task": "A2", "rep": 1},
+  {"blind_id": "paper_05", "group": "G_template_rules", "task": "A2", "rep": 3},
+  {"blind_id": "paper_06", "group": "H2_keep_examples", "task": "A1", "rep": 3},
+  {"blind_id": "paper_07", "group": "F_template", "task": "A1", "rep": 2},
+  {"blind_id": "paper_08", "group": "G_template_rules", "task": "A1", "rep": 1},
+  {"blind_id": "paper_09", "group": "H4_sop_only", "task": "A1", "rep": 2},
+  {"blind_id": "paper_10", "group": "H4_sop_only", "task": "A3", "rep": 1}
+]

@@ -1,0 +1,15 @@
+{
+  "title": "ISO 15189 LLM Config Experiment: Dataset and Analysis Code",
+  "description": "Dataset, analysis code, manuscript variants, and reproducibility materials for LLM-assisted ISO 15189:2022 medical laboratory quality management system document drafting. Release v1.2.0 corrects reporting and reproducibility without changing original generated documents, score records, or configuration text. It contains 486 generated documents (405 Claude Opus 4.6 and 81 GPT-5.4), 759 recoverable document-level LLM-judge records (486 GPT and 273 Claude), additional retained aggregate-only Claude means, and 30 expert ratings of 10 Claude-generated documents by three same-institution coauthor raters. The nine-configuration composite uses automated and GPT-judge scores, not both LLM judges. Configuration sizes were recounted from archived text and are not verified historical Claude input usage. Missing historical inputs, individual ratings, and some aggregate denominators remain unavailable. Includes corrected CCA manuscript materials, four figures, reproducibility instructions, and eight passing reproduction tests.",
+  "creators": [{
+    "name": "Liu, Sidi",
+    "affiliation": "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China",
+    "orcid": "0009-0006-1695-5372"
+  }],
+  "license": "MIT",
+  "upload_type": "software",
+  "version": "v1.2.0",
+  "publication_date": "2026-09-20",
+  "keywords": ["ISO 15189", "LLM-assisted document generation", "medical laboratory QMS", "prompt engineering", "LLM-as-judge", "cross-model validation", "expert evaluation"],
+  "notes": "Code is licensed under MIT; data and documents are licensed under CC BY 4.0 as described in LICENSE-DATA. Earlier manuscript and submission files are preserved as historical artifacts. Use the CCA consistency-revised files for the corrected reporting. The manuscript has not been published in a journal."
+}

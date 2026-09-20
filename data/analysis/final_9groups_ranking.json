@@ -3,56 +3,56 @@
     [
       "H4_sop_only",
       0.9939393939393937,
-      6,
+      2.373133333333333,
       2.0246666666666666,
       4.022222222222222
     ],
     [
       "H3_skeleton",
       0.8691159586681976,
-      13,
+      5.375266666666667,
       1.822,
       4.0311111111111115
     ],
     [
       "G_template_rules",
       0.8506305883171552,
-      38,
+      24.23466666666667,
       1.8262222222222222,
       4.0
     ],
     [
       "H2_keep_examples",
       0.758583829106217,
-      61,
+      25.0524,
       1.74,
       3.9466666666666668
     ],
     [
       "E_rules_v2",
       0.728794837003792,
-      3.1,
+      1.236,
       1.8393333333333333,
       3.8088888888888888
     ],
     [
       "C_full",
       0.4933966530981456,
-      71,
+      56.151,
       1.7704444444444445,
       3.528888888888889
     ],
     [
       "F_template",
       0.34520752878961825,
-      35,
+      23.089666666666666,
       1.4424444444444444,
       3.6222222222222222
     ],
     [
       "B_simple",
       0.2274623386563687,
-      0.4,
+      0.348,
       1.522888888888889,
       3.3733333333333335
     ],
@@ -90,5 +90,33 @@
       "b": "G_template_rules",
       "delta": -0.05333333333333323
     }
+  },
+  "_metadata": {
+    "revision_status": "Corrected working copy, unreleased; numerical scores and ranking order preserved.",
+    "ranking_columns": [
+      "group",
+      "composite",
+      "archived_configuration_mean_k_tokens",
+      "auto_weighted_mean",
+      "gpt_judge_mean"
+    ],
+    "composite_definition": "Mean of two separately min-max-normalized sets of nine group means: archived auto_weighted and GPT-judge mean; 45 Claude-generated documents per group. Claude-judge scores are not part of this composite.",
+    "size_unit": "Thousands of cl100k_base tokens (1 k-token = 1000 tokens), counting archived configuration text only.",
+    "size_source": "data/analysis/configuration_token_inventory.json",
+    "size_basis": "Fixed configuration text for A/B/C/E; mean across all 15 archived task-specific configurations for F/G/H2/H3/H4, not only the three GPT generation tasks.",
+    "size_limitations": "Excludes task messages, agent wrappers, tools and unarchived context. Historical Claude input logs are absent; values are not verified API input-token usage, cross-generator input equivalence, or minimum effective thresholds.",
+    "legacy_labels": "The original third-column values were byte-based size labels misidentified as tokens. They are retained below for provenance, not for quantitative token analysis.",
+    "comparison_delta": "comparisons[*].delta is the difference in GPT-judge means (a minus b), not a composite-score difference."
+  },
+  "legacy_token_labels_preserved": {
+    "H4_sop_only": 6,
+    "H3_skeleton": 13,
+    "G_template_rules": 38,
+    "H2_keep_examples": 61,
+    "E_rules_v2": 3.1,
+    "C_full": 71,
+    "F_template": 35,
+    "B_simple": 0.4,
+    "A_bare": 0
   }
 }

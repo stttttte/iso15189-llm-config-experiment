@@ -1,13 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this dataset or code, please cite both the paper (once available) and this repository."
+message: "Please cite release v1.2.0 for these reporting and reproducibility corrections. The historical v1.1.0 archive has DOI 10.5281/zenodo.21769007 and does not include them. The manuscript is under revision for Clinica Chimica Acta."
 title: "ISO 15189 LLM Config Experiment: Dataset and Analysis Code"
 abstract: >-
   Dataset, analysis code, manuscript variants, and reproducibility materials
   for a study on LLM-assisted ISO 15189:2022 medical laboratory quality
   management system (QMS) document generation. Includes 486 generated QMS
-  documents (Claude Opus 4.6 and GPT-5.4) across 9 prompt configurations and
-  15 task types, 864 LLM-judge evaluations (Claude + GPT), and 30 expert
-  blind-review ratings (3 raters x 10 stratified-sampled documents).
+  documents: 405 Claude Opus 4.6 documents across 9 configurations, 15 tasks,
+  and 3 repetitions; 81 GPT-5.4 documents across the same configurations,
+  tasks A1/B1/C1, and 3 repetitions. Contains 759 archived document-level
+  LLM-judge records (486 GPT and 273 Claude) and 30 expert rating forms
+  from 3 same-institution coauthor raters on 10 Claude-generated Class A
+  documents. Additional historical Claude means survive only in aggregate.
+  Release v1.2.0 contains author-approved reporting and reproducibility corrections.
 type: software
 authors:
   - family-names: "Liu"
@@ -15,8 +19,8 @@ authors:
     email: "lllsssddd@icloud.com"
     orcid: "https://orcid.org/0009-0006-1695-5372"
     affiliation: "Department of Laboratory Medicine, West China Hospital Xiamen, Sichuan University, Xiamen, Fujian 361024, China"
-version: "1.1.0"
-date-released: "2026-08-03"
+version: "v1.2.0"
+date-released: "2026-09-20"
 repository-code: "https://github.com/stttttte/iso15189-llm-config-experiment"
 license: MIT
 keywords:
@@ -32,7 +36,7 @@ preferred-citation:
   title: >-
     Evaluating LLM-Assisted Drafting of ISO 15189 Quality Management Documents:
     Prompt Configuration, LLM-as-Judge Bias, and Exploratory Expert Validation
-  status: submitted
+  status: in-preparation
   year: 2026
   authors:
     - family-names: "Liu"

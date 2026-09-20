@@ -1,5 +1,5 @@
 # Python dependencies for iso15189-llm-config-experiment
-# Tested on Python 3.11
+# Python 3.11+; dependency minimums are not a frozen environment lock.
 
 # Core data / statistics
 numpy>=1.24
@@ -7,6 +7,11 @@ pandas>=2.0
 scipy>=1.10
 scikit-learn>=1.3
 pingouin>=0.5
+
+# Offline figure reproduction and archived configuration-text token inventory
+matplotlib>=3.7
+Pillow>=9.0
+tiktoken>=0.7
 
 # LLM API client (used for GPT-5.4 generation + GPT judge)
 # Claude generation was performed via Claude Code Agent tool (no SDK dependency here)

@@ -1,0 +1,165 @@
+{
+  "tokenizer": "cl100k_base",
+  "unit": "tokens",
+  "scope": "Archived configuration text only; excludes task/user messages, agent wrapper and tool definitions. Not verified historical per-call Claude input sizes.",
+  "groups": {
+    "F_template": {
+      "basis": "mean across 15 archived task-specific configurations",
+      "n": 15,
+      "mean": 23089.666666666668,
+      "min": 12160,
+      "max": 42885,
+      "per_file": {
+        "configs/per_task_assembled/F_A1.txt": 25748,
+        "configs/per_task_assembled/F_A2.txt": 36047,
+        "configs/per_task_assembled/F_A3.txt": 33315,
+        "configs/per_task_assembled/F_A4.txt": 28300,
+        "configs/per_task_assembled/F_A5.txt": 42885,
+        "configs/per_task_assembled/F_B1.txt": 12160,
+        "configs/per_task_assembled/F_B2.txt": 33315,
+        "configs/per_task_assembled/F_B3.txt": 12160,
+        "configs/per_task_assembled/F_B4.txt": 28300,
+        "configs/per_task_assembled/F_B5.txt": 12160,
+        "configs/per_task_assembled/F_C1.txt": 12160,
+        "configs/per_task_assembled/F_C2.txt": 33315,
+        "configs/per_task_assembled/F_C3.txt": 12160,
+        "configs/per_task_assembled/F_C4.txt": 12160,
+        "configs/per_task_assembled/F_C5.txt": 12160
+      }
+    },
+    "G_template_rules": {
+      "basis": "mean across 15 archived task-specific configurations",
+      "n": 15,
+      "mean": 24234.666666666668,
+      "min": 13305,
+      "max": 44030,
+      "per_file": {
+        "configs/per_task_assembled/G_A1.txt": 26893,
+        "configs/per_task_assembled/G_A2.txt": 37192,
+        "configs/per_task_assembled/G_A3.txt": 34460,
+        "configs/per_task_assembled/G_A4.txt": 29445,
+        "configs/per_task_assembled/G_A5.txt": 44030,
+        "configs/per_task_assembled/G_B1.txt": 13305,
+        "configs/per_task_assembled/G_B2.txt": 34460,
+        "configs/per_task_assembled/G_B3.txt": 13305,
+        "configs/per_task_assembled/G_B4.txt": 29445,
+        "configs/per_task_assembled/G_B5.txt": 13305,
+        "configs/per_task_assembled/G_C1.txt": 13305,
+        "configs/per_task_assembled/G_C2.txt": 34460,
+        "configs/per_task_assembled/G_C3.txt": 13305,
+        "configs/per_task_assembled/G_C4.txt": 13305,
+        "configs/per_task_assembled/G_C5.txt": 13305
+      }
+    },
+    "H2_keep_examples": {
+      "basis": "mean across 15 archived task-specific configurations",
+      "n": 15,
+      "mean": 25052.4,
+      "min": 13397,
+      "max": 44345,
+      "per_file": {
+        "configs/per_task_assembled/H2_A1.txt": 29886,
+        "configs/per_task_assembled/H2_A2.txt": 37489,
+        "configs/per_task_assembled/H2_A3.txt": 35563,
+        "configs/per_task_assembled/H2_A4.txt": 31799,
+        "configs/per_task_assembled/H2_A5.txt": 44345,
+        "configs/per_task_assembled/H2_B1.txt": 13397,
+        "configs/per_task_assembled/H2_B2.txt": 35563,
+        "configs/per_task_assembled/H2_B3.txt": 13397,
+        "configs/per_task_assembled/H2_B4.txt": 31799,
+        "configs/per_task_assembled/H2_B5.txt": 13397,
+        "configs/per_task_assembled/H2_C1.txt": 13397,
+        "configs/per_task_assembled/H2_C2.txt": 35563,
+        "configs/per_task_assembled/H2_C3.txt": 13397,
+        "configs/per_task_assembled/H2_C4.txt": 13397,
+        "configs/per_task_assembled/H2_C5.txt": 13397
+      }
+    },
+    "H3_skeleton": {
+      "basis": "mean across 15 archived task-specific configurations",
+      "n": 15,
+      "mean": 5375.266666666666,
+      "min": 4262,
+      "max": 6916,
+      "per_file": {
+        "configs/per_task_assembled/H3_A1.txt": 6021,
+        "configs/per_task_assembled/H3_A2.txt": 5435,
+        "configs/per_task_assembled/H3_A3.txt": 6916,
+        "configs/per_task_assembled/H3_A4.txt": 6429,
+        "configs/per_task_assembled/H3_A5.txt": 5733,
+        "configs/per_task_assembled/H3_B1.txt": 4262,
+        "configs/per_task_assembled/H3_B2.txt": 6916,
+        "configs/per_task_assembled/H3_B3.txt": 4262,
+        "configs/per_task_assembled/H3_B4.txt": 6429,
+        "configs/per_task_assembled/H3_B5.txt": 4262,
+        "configs/per_task_assembled/H3_C1.txt": 4262,
+        "configs/per_task_assembled/H3_C2.txt": 6916,
+        "configs/per_task_assembled/H3_C3.txt": 4262,
+        "configs/per_task_assembled/H3_C4.txt": 4262,
+        "configs/per_task_assembled/H3_C5.txt": 4262
+      }
+    },
+    "H4_sop_only": {
+      "basis": "mean across 15 archived task-specific configurations",
+      "n": 15,
+      "mean": 2373.133333333333,
+      "min": 1939,
+      "max": 3937,
+      "per_file": {
+        "configs/per_task_assembled/H4_A1.txt": 3937,
+        "configs/per_task_assembled/H4_A2.txt": 2342,
+        "configs/per_task_assembled/H4_A3.txt": 2536,
+        "configs/per_task_assembled/H4_A4.txt": 2569,
+        "configs/per_task_assembled/H4_A5.txt": 2164,
+        "configs/per_task_assembled/H4_B1.txt": 1939,
+        "configs/per_task_assembled/H4_B2.txt": 2984,
+        "configs/per_task_assembled/H4_B3.txt": 1939,
+        "configs/per_task_assembled/H4_B4.txt": 2569,
+        "configs/per_task_assembled/H4_B5.txt": 1997,
+        "configs/per_task_assembled/H4_C1.txt": 2260,
+        "configs/per_task_assembled/H4_C2.txt": 2428,
+        "configs/per_task_assembled/H4_C3.txt": 1939,
+        "configs/per_task_assembled/H4_C4.txt": 1997,
+        "configs/per_task_assembled/H4_C5.txt": 1997
+      }
+    },
+    "C_full": {
+      "basis": "fixed archived configuration",
+      "n": 1,
+      "mean": 56151,
+      "min": 56151,
+      "max": 56151,
+      "per_file": {
+        "configs/full_config.txt": 56151
+      }
+    },
+    "E_rules_v2": {
+      "basis": "fixed archived configuration",
+      "n": 1,
+      "mean": 1236,
+      "min": 1236,
+      "max": 1236,
+      "per_file": {
+        "configs/rules.md": 1236
+      }
+    },
+    "B_simple": {
+      "basis": "load_simple_prompt string in code/gpt_generate.py",
+      "n": 1,
+      "mean": 348,
+      "min": 348,
+      "max": 348
+    },
+    "A_bare": {
+      "basis": "no experimental configuration text",
+      "n": 1,
+      "mean": 0,
+      "min": 0,
+      "max": 0
+    }
+  },
+  "legacy_fixed_references": {
+    "F_template_config.txt": 14947,
+    "G_template_rules_config.txt": 16138
+  }
+}

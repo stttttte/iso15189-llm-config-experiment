@@ -2,21 +2,23 @@
 P0-1 三评分者 ICC 分析：3 位专家盲评 vs Claude judge vs GPT judge
 
 输入文件：
-  - blind_review/rating_sheet.md          (Rater 1: 第一作者 / CNAS 主任技师)
-  - blind_review/rating_sheet_rater2.md   (Rater 2: 内审员)
-  - blind_review/rating_sheet_rater3.md   (Rater 3: 内审员)
-  - blind_review/key.json
-  - cnas_judge_final_15tasks.json + h_claude_judge_supplement.json
-  - gpt_judge_summary.json
+  - data/expert_blind_review/rating_sheet_rater{1,2,3}_filled.md
+  - data/expert_blind_review/blind_key.json
+    (仅从已公开 icc_results_3raters.json 的 per_paper 提取样本映射，不使用其评分)
+  - data/scores/cnas_judge_final_15tasks.json + h_claude_judge_supplement.json
+  - data/scores/gpt_judge_summary.json
 
 输出：
   - 每篇 5-rater 矩阵（3 专家 + Claude + GPT），每维度 + 均值
-  - 专家间一致性：Fleiss κ（连续版——ICC(2,k) + ICC(3,k)）
+  - 专家间一致性：ICC(2,k) + ICC(3,k)
   - 3 专家均值 vs LLM judge 的 ICC / Pearson / Spearman
   - 按组的专家均值排名
-  - blind_review/icc_results_3raters.json
+  - reproduced/icc_results_3raters.json（可用 --output-dir 指定其他目录）
+
+仅离线重算；不会修改 data/。diff 保持原有定义：专家均值减去 judge 均值。
 """
 
+import argparse
 import json
 import re
 import statistics
@@ -25,17 +27,17 @@ from pathlib import Path
 import pandas as pd
 import pingouin as pg
 
-BASE = Path(__file__).resolve().parent
-BLIND = BASE / "blind_review"
-KEY_FILE = BLIND / "key.json"
+BASE = Path(__file__).resolve().parents[1]
+BLIND = BASE / "data" / "expert_blind_review"
+KEY_FILE = BLIND / "blind_key.json"
 SHEETS = {
-    "rater1": BLIND / "rating_sheet.md",
-    "rater2": BLIND / "rating_sheet_rater2.md",
-    "rater3": BLIND / "rating_sheet_rater3.md",
+    "rater1": BLIND / "rating_sheet_rater1_filled.md",
+    "rater2": BLIND / "rating_sheet_rater2_filled.md",
+    "rater3": BLIND / "rating_sheet_rater3_filled.md",
 }
-CLAUDE_JUDGE = BASE / "cnas_judge_final_15tasks.json"
-CLAUDE_SUPPLEMENT = BASE / "h_claude_judge_supplement.json"
-GPT_JUDGE = BASE / "gpt_judge_summary.json"
+CLAUDE_JUDGE = BASE / "data" / "scores" / "cnas_judge_final_15tasks.json"
+CLAUDE_SUPPLEMENT = BASE / "data" / "scores" / "h_claude_judge_supplement.json"
+GPT_JUDGE = BASE / "data" / "scores" / "gpt_judge_summary.json"
 
 DIMS = ["条款满足度", "可操作性", "内部一致性", "PDCA闭环", "专业深度"]
 DIM_ALIASES = {
@@ -105,6 +107,20 @@ def get_gpt_scores(gpt_data, group, task, rep):
     return None
 
 
+def select_icc_row(icc, icc_type):
+    """Pingouin 0.5.x and 0.6.x label the same ICC models differently."""
+    aliases = {
+        "ICC2": ("ICC2", "ICC(A,1)"),
+        "ICC3": ("ICC3", "ICC(C,1)"),
+        "ICC2k": ("ICC2k", "ICC(A,k)"),
+        "ICC3k": ("ICC3k", "ICC(C,k)"),
+    }
+    rows = icc[icc["Type"].isin(aliases[icc_type])]
+    if len(rows) != 1:
+        raise ValueError(f"Expected one {icc_type} row; received {icc['Type'].tolist()}")
+    return rows.iloc[0]
+
+
 def compute_icc_pair(df, rater_a, rater_b, label):
     sub = df[[rater_a, rater_b]].dropna()
     if len(sub) < 3:
@@ -116,8 +132,8 @@ def compute_icc_pair(df, rater_a, rater_b, label):
     long = sub.melt(id_vars="target", value_vars=[rater_a, rater_b],
                     var_name="rater", value_name="rating")
     icc = pg.intraclass_corr(data=long, targets="target", raters="rater", ratings="rating")
-    icc_21 = icc[icc["Type"] == "ICC(A,1)"].iloc[0]
-    icc_31 = icc[icc["Type"] == "ICC(C,1)"].iloc[0]
+    icc_21 = select_icc_row(icc, "ICC2")
+    icc_31 = select_icc_row(icc, "ICC3")
     ci21 = icc_21["CI95%"] if "CI95%" in icc_21.index else icc_21.get("CI95", [None, None])
     ci31 = icc_31["CI95%"] if "CI95%" in icc_31.index else icc_31.get("CI95", [None, None])
 
@@ -149,21 +165,21 @@ def compute_icc_multi(df, raters, label):
     icc = pg.intraclass_corr(data=long, targets="target", raters="rater", ratings="rating")
 
     print(f"\n### {label}  (n={len(sub)}, k={len(raters)} raters)")
-    for icc_type in ["ICC(A,1)", "ICC(C,1)", "ICC(A,k)", "ICC(C,k)"]:
-        row = icc[icc["Type"] == icc_type].iloc[0]
+    for icc_type in ["ICC2", "ICC3", "ICC2k", "ICC3k"]:
+        row = select_icc_row(icc, icc_type)
         ci = row["CI95%"] if "CI95%" in row.index else row.get("CI95", [None, None])
-        name = {"ICC(A,1)": "ICC(2,1) single",
-                "ICC(C,1)": "ICC(3,1) single",
-                "ICC(A,k)": "ICC(2,k) avg  ",
-                "ICC(C,k)": "ICC(3,k) avg  "}[icc_type]
+        name = {"ICC2": "ICC(2,1) single",
+                "ICC3": "ICC(3,1) single",
+                "ICC2k": "ICC(2,k) avg  ",
+                "ICC3k": "ICC(3,k) avg  "}[icc_type]
         print(f"  {name} = {row['ICC']:.3f}   95% CI [{ci[0]:.3f}, {ci[1]:.3f}]  p={row['pval']:.4f}")
 
     return {
         "n": int(len(sub)), "k": len(raters),
-        "ICC_2_1": float(icc[icc["Type"] == "ICC(A,1)"].iloc[0]["ICC"]),
-        "ICC_3_1": float(icc[icc["Type"] == "ICC(C,1)"].iloc[0]["ICC"]),
-        "ICC_2_k": float(icc[icc["Type"] == "ICC(A,k)"].iloc[0]["ICC"]),
-        "ICC_3_k": float(icc[icc["Type"] == "ICC(C,k)"].iloc[0]["ICC"]),
+        "ICC_2_1": float(select_icc_row(icc, "ICC2")["ICC"]),
+        "ICC_3_1": float(select_icc_row(icc, "ICC3")["ICC"]),
+        "ICC_2_k": float(select_icc_row(icc, "ICC2k")["ICC"]),
+        "ICC_3_k": float(select_icc_row(icc, "ICC3k")["ICC"]),
     }
 
 
@@ -175,37 +191,42 @@ def interpret_icc(icc):
     return "优"
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=BASE / "reproduced")
+    args = parser.parse_args(argv)
+    output_dir = args.output_dir.resolve()
+    if output_dir.is_relative_to(BASE / "data"):
+        parser.error("Output directory must be outside released data/")
+
     # 1) 加载三位专家评分
     raters = {}
     for name, path in SHEETS.items():
         if not path.exists():
-            print(f"❌ 未找到 {path}")
-            return
+            raise FileNotFoundError(f"未找到 {path}")
         raters[name] = parse_rating_sheet(path)
 
-    key = {r["blind_id"]: r for r in json.load(open(KEY_FILE))}
-    claude_data = json.load(open(CLAUDE_JUDGE))
-    claude_supp = json.load(open(CLAUDE_SUPPLEMENT)) if CLAUDE_SUPPLEMENT.exists() else {"scores": []}
-    gpt_data = json.load(open(GPT_JUDGE))
+    key = {r["blind_id"]: r for r in json.loads(KEY_FILE.read_text(encoding="utf-8"))}
+    claude_data = json.loads(CLAUDE_JUDGE.read_text(encoding="utf-8"))
+    claude_supp = json.loads(CLAUDE_SUPPLEMENT.read_text(encoding="utf-8"))
+    gpt_data = json.loads(GPT_JUDGE.read_text(encoding="utf-8"))
 
     # 2) 组装每篇的完整评分矩阵
     rows = []
     for blind_id, meta in sorted(key.items()):
         row = {"blind_id": blind_id, "group": meta["group"], "task": meta["task"], "rep": meta["rep"]}
-        complete = True
         for rater_name, rater_scores in raters.items():
             s = rater_scores.get(blind_id, {})
             if not all(d in s for d in DIMS):
-                complete = False
-                print(f"⚠️ {rater_name} on {blind_id}: missing dims")
-                continue
+                raise ValueError(f"{rater_name} on {blind_id}: missing dimensions")
             row[f"{rater_name}_mean"] = statistics.mean(s.values())
             for d in DIMS:
                 row[f"{rater_name}_{d}"] = s[d]
 
         c = get_claude_scores(claude_data, claude_supp, meta["group"], meta["task"], meta["rep"])
         g = get_gpt_scores(gpt_data, meta["group"], meta["task"], meta["rep"])
+        if c is None or g is None:
+            raise ValueError(f"{blind_id}: missing Claude or GPT judge scores")
         row["claude_mean"] = statistics.mean(c.values()) if c else None
         row["gpt_mean"] = statistics.mean(g.values()) if g else None
 
@@ -262,7 +283,8 @@ def main():
     print(by_group.round(3))
 
     # 7) 保存
-    out = BLIND / "icc_results_3raters.json"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out = output_dir / "icc_results_3raters.json"
     out_dict = {
         "n_papers": int(len(df)),
         "per_paper": df.round(3).to_dict("records"),
